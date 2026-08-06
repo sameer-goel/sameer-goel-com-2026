@@ -1,0 +1,60 @@
+# Sameer Goel
+
+> AI Solutions Architect, Forward Deployed Engineer, trainer, speaker, and author based in the Netherlands. He helps purpose-driven founders turn ambitious AI ideas into buildable products and market experiments, and has shipped 28 live AI solutions across autonomous agents, AI education, wellbeing, sustainability, cognition, and consciousness.
+
+Roles: AI Solutions Architect, Forward Deployed Engineer (FDE), AI Educator, Trainer, Speaker, Author.
+Expertise: agentic AI, AI agents, generative AI, machine learning, AWS cloud architecture, Amazon SageMaker, Amazon Rekognition, computer vision, prompt engineering, responsible AI, AI literacy, mindful technology.
+Speaking: AWS re:Invent (Las Vegas), AWS Summit Stockholm, AWS Summit New York, university panels, corporate hackathons, mindfulness and breathwork sessions.
+Publishing: AWS Machine Learning Blog and AWS Architecture Blog, plus essays on human cognition and mindful use of AI.
+Contact: https://cal.com/sameer-goel/collab
+
+## Primary
+
+- [Portfolio homepage](https://sameer-goel.com/): Public speaking, thought leadership, 28 shipped AI solutions, and the book.
+- [Cultivate Inner Intelligence](https://updatemind.space/bookreader.html): Book on strengthening awareness, discernment, and human agency in the age of AI.
+- [Solutions Portfolio](https://sol.sameerai.com/): Immersive index of all shipped solutions.
+- [Public speaking archive](https://sameer-publicspeaker.pages.dev/): Talks, workshops, competitions, and community.
+- [Thought leadership archive](https://sameer-thoughtleader.pages.dev/): Technical deep dives and essays.
+
+## Autonomous AI and agents
+
+- [Learn Agent Workflows](https://learnagentworkflows.pages.dev/): Course on designing and running AI agent workflows.
+- [Web4Agents](https://sameer-goel.github.io/web4agents/): Framework for an agent-native web.
+- [SAaaS](https://sameer-goel.github.io/innovative-solutions/Autonomous-AI/saaas/): Solution architecture as a service, driven by autonomous agents.
+- [AI Hackathon Arena](https://ai-pool.netlify.app/): Multi-model arena for hackathon-style AI competition.
+- [Build a Completely Sovereign AI System](https://sameer-goel.github.io/Build-Completely-Sovereign-AI-System/): Seven-level curriculum to reverse-engineer an AI coding agent and build a fully local one with Python and Ollama.
+- [Digital Consciousness](https://sameerai.com): Explorations at the boundary of AI and consciousness.
+
+## AI education
+
+- [AI for Kids](https://ai-for-kids.pages.dev/): AI literacy for children.
+- [AI Evolution Timeline](https://sameer-goel.github.io/innovative-solutions/Learn-AI/ai-evolution-timeline/): Interactive history of artificial intelligence.
+- [AI Career Explorer](https://sameer-goel.github.io/innovative-solutions/Learn-AI/ai-career-explorer/): Guide to careers in AI.
+- [Learn Creative Prompt Engineering](https://sameer-goel.github.io/learn_creative_prompt_engineering/): Course on creative prompting.
+- [Sustainable AI Escape Rooms](https://sustainable-ai-escape-rooms.pages.dev/): Game-based learning on sustainability and AI.
+
+## Wellbeing and cognition
+
+- [Flow State Tuner](https://flow-state-tuner.pages.dev/): Tool for entering and sustaining focus.
+- [Inner Voice](https://updatemind.space/): Mindfulness and journalling practice.
+- [Brain Gym](https://sameer-goel.github.io/innovative-solutions/mind/brain-gym/): Cognitive training exercises.
+- [Total Recall](https://sameer-goel.github.io/innovative-solutions/mind/total-recall/): Memory practice built around books.
+- [Binaural Beats](https://sameer-goel.github.io/innovative-solutions/mind/binaural-beats/): Sound-based focus tool.
+- [Solfeggio Frequency](https://sameer-goel.github.io/innovative-solutions/mind/solfeggio-frequency/): Frequency player for restoration.
+- [Meditation Game](https://sameer-goel.github.io/innovative-solutions/mind/meditation-game/): Gamified meditation practice.
+- [Breathing Circle](https://sameer-goel.github.io/breathing-circle/): Guided breathwork timer.
+- [Ayurvedic Meal Recommender](https://mealasperdosha.pages.dev): Meal guidance based on dosha.
+
+## Consciousness and purpose
+
+- [Ego Death Simulation](https://sameer-goel.github.io/innovative-solutions/soul/ego-death-simulation/): Simulation exploring ego dissolution.
+- [Numerology Gateway](https://sameer-goel.github.io/numerology/): Numerology-based self-inquiry.
+- [Gene Keys](https://genekeys.pages.dev/): Gene Keys profile and insight tool.
+- [Dvine Meet](https://sameer-goel.github.io/divinemeet/): App for organising meaningful gatherings.
+
+## Social impact and sustainability
+
+- [Crisis Support](https://sameer-goel.github.io/crisis-support-program/): Support resources during humanitarian crises.
+- [Recycle360](https://recycle360.pages.dev/): Computer vision for recycling guidance.
+- [Government Funding Finder](https://build-tomorrow.pages.dev/): Discovery tool for government funding.
+- [Meet Sameer](https://sameer-goel.github.io/meet/): Personal introduction page.

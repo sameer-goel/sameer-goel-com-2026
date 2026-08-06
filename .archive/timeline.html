@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Sameer Goel — Journey</title>
+<meta name="description" content="From a master's in Boston to agentic AI in Europe — the path, in order.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="previews/speaking-portrait.webp" type="image/webp" fetchpriority="high">
+
+<noscript>
+  <style>
+    /* No JS: the portrait simply stays in the hero and the bar shows a static avatar. */
+    .stage { display: none !important; }
+    .hero-slot, .avatar-slot {
+      background-image: url('previews/speaking-portrait.jpg');
+      background-size: cover;
+      background-position: 44% 26%;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .hero-slot { border-radius: 28px; }
+    .avatar-slot { border-radius: 50%; background-position: 30% 20%; background-size: 240%; }
+    .profilebar { opacity: 1 !important; }
+  </style>
+</noscript>
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #f4f0eb;
+    --bg: #050a0f;
+    --green: #22c55e;
+    --blue: #4b8dff;
+    --muted: rgba(244,240,235,.55);
+    --line: rgba(244,240,235,.12);
+    --pad: clamp(1.15rem, 5vw, 5.5rem);
+    --bar: 84px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: -15vh -10vw auto;
+    height: 80vh;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(55% 50% at 30% 15%, rgba(75,141,255,.15), transparent 70%),
+      radial-gradient(45% 40% at 78% 30%, rgba(34,197,94,.09), transparent 72%);
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: .04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- the one moving piece ---------- */
+  .stage {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+  }
+  .photo {
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
+    will-change: transform, width, height;
+    box-shadow: 0 26px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08) inset;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* zooms toward the face as the frame shrinks */
+    transform: scale(var(--zoom, 1.05));
+    transform-origin: var(--ox, 46%) var(--oy, 32%);
+  }
+  .halo {
+    position: absolute;
+    top: 0; left: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(75,141,255,.2), rgba(34,197,94,.07) 55%, transparent 72%);
+    filter: blur(20px);
+    will-change: transform, width, height;
+  }
+
+  /* ---------- profile bar (the photo's destination) ---------- */
+  .profilebar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .8rem var(--pad);
+    background: rgba(6, 11, 16, .82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transition: opacity .25s linear;
+  }
+  .avatar-slot {
+    width: var(--bar);
+    height: var(--bar);
+    border-radius: 50%;
+    flex: none;
+  }
+  .bar-id { min-width: 0; }
+  .bar-id b {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+  }
+  .bar-id span {
+    display: block;
+    font-size: .72rem;
+    color: var(--muted);
+    margin-top: .12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .bar-actions {
+    margin-left: auto;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .6rem 1.1rem;
+    border-radius: 999px;
+    font-size: .7rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.04);
+    transition: transform .2s, border-color .2s, color .2s, box-shadow .2s;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-1px); border-color: rgba(34,197,94,.45); color: var(--green); }
+  .btn.solid {
+    background: linear-gradient(135deg, var(--green), #16a34a);
+    border-color: transparent;
+    color: #04140a;
+  }
+  .btn.solid:hover { color: #04140a; box-shadow: 0 8px 24px rgba(34,197,94,.26); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 3rem);
+    padding: clamp(4rem, 10vh, 8rem) var(--pad);
+    position: relative;
+  }
+  .hero-copy { position: relative; z-index: 31; }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(2.8rem, 13.5vw, 11.5rem);
+    line-height: .9;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+    margin-right: -22vw;
+    text-shadow: 0 14px 50px rgba(5,10,15,.8);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(244,240,235,.7);
+  }
+  .hero .sub {
+    margin-top: 1.5rem;
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .hero .where {
+    margin-top: .6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(34,197,94,.7);
+  }
+  .hero-slot {
+    width: min(36vw, 400px);
+    aspect-ratio: 1122 / 1402;
+    max-height: 76svh;
+    border-radius: 28px;
+    transform: translateX(-1.5vw);
+    pointer-events: none;
+  }
+  .scroll-hint {
+    position: absolute;
+    left: var(--pad);
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .6rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(244,240,235,.4);
+  }
+  .scroll-hint i {
+    width: 1px; height: 34px;
+    transform-origin: top;
+    background: linear-gradient(180deg, rgba(244,240,235,.5), transparent);
+    animation: drip 2.4s ease-in-out infinite;
+  }
+  @keyframes drip { 0%,100% { transform: scaleY(.35); opacity: .3 } 50% { transform: scaleY(1); opacity: 1 } }
+
+  /* ---------- timeline ---------- */
+  .tl-head {
+    padding: 2rem var(--pad) 0;
+    max-width: 62rem;
+  }
+  .eyebrow {
+    font-size: .64rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: rgba(34,197,94,.8);
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: 1rem;
+  }
+  .eyebrow::before { content: ''; width: 26px; height: 1px; background: rgba(34,197,94,.5); }
+  .tl-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+  }
+  .tl-head p {
+    margin-top: .9rem;
+    color: rgba(244,240,235,.65);
+    font-size: .95rem;
+    line-height: 1.7;
+    max-width: 46ch;
+  }
+
+  .timeline {
+    position: relative;
+    padding: 3.5rem var(--pad) 4rem;
+    max-width: 62rem;
+  }
+  /* the rail */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--pad) + 7px);
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--line) 6%, var(--line) 94%, transparent);
+  }
+  .rail-fill {
+    position: absolute;
+    left: calc(var(--pad) + 7px);
+    top: 0;
+    width: 1px;
+    height: 0;
+    background: linear-gradient(180deg, var(--blue), var(--green));
+    box-shadow: 0 0 12px rgba(34,197,94,.5);
+  }
+
+  ol.entries { list-style: none; }
+
+  .entry {
+    position: relative;
+    padding-left: 2.6rem;
+    padding-bottom: 2.6rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+  .entry.in { opacity: 1; transform: none; }
+
+  .entry .dot {
+    position: absolute;
+    left: 0; top: .35rem;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid rgba(244,240,235,.3);
+    display: grid;
+    place-items: center;
+  }
+  .entry .dot::after {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(244,240,235,.4);
+    transition: background .3s, box-shadow .3s;
+  }
+  .entry.in .dot::after { background: var(--green); box-shadow: 0 0 10px rgba(34,197,94,.8); }
+  .entry.edu .dot { border-color: rgba(75,141,255,.55); }
+  .entry.edu.in .dot::after { background: var(--blue); box-shadow: 0 0 10px rgba(75,141,255,.8); }
+
+  .entry .when {
+    font-size: .64rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(244,240,235,.45);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
+  .entry .kind {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .12rem .5rem;
+    font-size: .55rem;
+    letter-spacing: .12em;
+  }
+  .entry.edu .kind { border-color: rgba(75,141,255,.35); color: rgba(139,180,255,.9); }
+
+  .entry h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    line-height: 1.15;
+    margin: .45rem 0 .2rem;
+    letter-spacing: -.01em;
+  }
+  .entry .org {
+    font-size: .82rem;
+    font-weight: 500;
+    color: rgba(244,240,235,.8);
+  }
+  .entry .org b { color: var(--ink); font-weight: 600; }
+  .entry .org span { color: var(--muted); font-weight: 400; }
+  .entry p {
+    margin-top: .7rem;
+    font-size: .9rem;
+    line-height: 1.75;
+    color: rgba(244,240,235,.66);
+    max-width: 52ch;
+  }
+  .entry ul.marks {
+    list-style: none;
+    margin-top: .9rem;
+    display: grid;
+    gap: .35rem;
+  }
+  .entry ul.marks li {
+    font-size: .78rem;
+    color: rgba(244,240,235,.5);
+    display: flex;
+    gap: .55rem;
+  }
+  .entry ul.marks li::before { content: '·'; color: rgba(34,197,94,.7); }
+  .entry ul.marks b { color: rgba(244,240,235,.75); font-weight: 500; }
+
+  .entry .tags {
+    display: flex;
+    gap: .3rem;
+    flex-wrap: wrap;
+    margin-top: .9rem;
+  }
+  .entry .tags span {
+    font-size: .58rem;
+    letter-spacing: .06em;
+    padding: .18rem .5rem;
+    border-radius: 4px;
+    background: rgba(34,197,94,.07);
+    border: 1px solid rgba(34,197,94,.14);
+    color: rgba(34,197,94,.75);
+  }
+
+  /* the big ghost year that tracks the entry you're reading */
+  .ghost-year {
+    position: fixed;
+    right: clamp(.5rem, 3vw, 3rem);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 13vw, 11rem);
+    line-height: 1;
+    color: rgba(244,240,235,.05);
+    letter-spacing: -.04em;
+    pointer-events: none;
+    transition: opacity .4s;
+    opacity: 0;
+  }
+  .ghost-year.on { opacity: 1; }
+
+  .outro {
+    padding: 1rem var(--pad) 5rem;
+    max-width: 62rem;
+  }
+  .outro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+    line-height: 1.15;
+  }
+  .cta-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+  footer {
+    padding: 2rem var(--pad) 3rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: .62rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(244,240,235,.3);
+  }
+
+  /* ---------- reduced motion ---------- */
+  html.static { scroll-behavior: auto; }
+  html.static .stage { display: none; }
+  html.static .hero-slot,
+  html.static .avatar-slot {
+    background-image: url('previews/speaking-portrait.webp');
+    background-size: cover;
+    background-position: 44% 26%;
+    border: 1px solid rgba(255,255,255,.12);
+  }
+  html.static .avatar-slot { background-size: 240%; background-position: 30% 20%; }
+  html.static .profilebar { opacity: 1; }
+  html.static .entry { opacity: 1; transform: none; }
+
+  /* ---------- small screens ---------- */
+  @media (max-width: 860px) {
+    :root { --bar: 60px; }
+    .hero {
+      grid-template-columns: 1fr;
+      justify-items: start;
+      gap: 1.8rem;
+      padding-top: 5.5rem;
+    }
+    .hero h1 { white-space: normal; margin-right: 0; font-size: clamp(2.8rem, 15vw, 5rem); }
+    .hero h1 em { display: block; }
+    .hero-slot { order: -1; width: min(64vw, 300px); max-height: 46svh; transform: none; }
+    .bar-id b { font-size: 1.05rem; }
+    .bar-id span { max-width: 40vw; }
+    .ghost-year { display: none; }
+  }
+  @media (max-width: 560px) {
+    .bar-actions .btn.ghost { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="ghost-year" id="ghost" aria-hidden="true"></div>
+
+<!-- Where the portrait ends up: a LinkedIn-style profile bar. -->
+<header class="profilebar" id="bar">
+  <div class="avatar-slot" id="avatar-slot" aria-hidden="true"></div>
+  <div class="bar-id">
+    <b>Sameer Goel</b>
+    <span>AI Agent Architect · AWS · Europe</span>
+  </div>
+  <div class="bar-actions">
+    <a class="btn ghost" href="/index.html">Main site</a>
+    <a class="btn solid" href="https://www.linkedin.com/in/sameer-goel/" target="_blank" rel="noopener">Connect</a>
+  </div>
+</header>
+
+<!-- The portrait itself: one element, hero-sized to avatar-sized. -->
+<div class="stage" id="stage" aria-hidden="true">
+  <div class="halo" id="halo"></div>
+  <figure class="photo" id="photo">
+    <picture>
+      <source srcset="previews/speaking-portrait.webp" type="image/webp">
+      <img src="previews/speaking-portrait.jpg" width="1000" height="1250"
+           alt="Sameer Goel speaking on a panel titled The Future of AI" fetchpriority="high">
+    </picture>
+  </figure>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <h1>Sameer <em>Goel</em></h1>
+    <p class="sub">AI Agent Architect · Speaker · Author</p>
+    <p class="where">Boston → Seattle → Amsterdam → Madrid</p>
+  </div>
+  <div class="hero-slot" id="hero-slot" aria-hidden="true"></div>
+  <div class="scroll-hint"><i></i> Scroll</div>
+</section>
+
+<div class="tl-head">
+  <p class="eyebrow">The path</p>
+  <h2>It started with a master's<br>in Boston.</h2>
+  <p>Data science at Northeastern, then fifteen years of building — first prototypes for
+     customers in Seattle, then data and AI across Europe, now agents that do real work.</p>
+</div>
+
+<main class="timeline" id="timeline">
+  <div class="rail-fill" id="rail" aria-hidden="true"></div>
+  <ol class="entries" id="entries"></ol>
+</main>
+
+<section class="outro">
+  <h2>Still the same question:<br>does it leave a person more capable?</h2>
+  <div class="cta-row">
+    <a class="btn solid" href="https://cal.com/sameer-goel/collab" target="_blank" rel="noopener">Book 30 min</a>
+    <a class="btn" href="https://www.linkedin.com/in/sameer-goel/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="/scroll-portfolio.html">Portfolio</a>
+  </div>
+</section>
+
+<footer>
+  <span>Journey · test page</span>
+  <span>© 2026 Sameer Goel</span>
+</footer>
+
+<script>
+(() => {
+  /* ------------------------------------------------------------------
+     EDIT ME. Ranges are drafted from public sources (the AWS blog author
+     bio and the dates on sameer-publicspeaker.pages.dev); the exact months
+     and titles should be corrected against LinkedIn.
+     ------------------------------------------------------------------ */
+  const journey = [
+    {
+      kind: 'Education', edu: true,
+      when: '2015 — 2017', year: '2015',
+      role: "Master's Degree, Data Science concentration",
+      org: 'Northeastern University', place: 'Boston, MA',
+      text: 'The turn from delivery engineering into data. Boston is where the statistics, ' +
+            'the machine learning, and the habit of building small experiments came together.',
+      marks: [['2015', 'Brainnovation BrainWaves — first neuroscience community talk, Boston']],
+      tags: ['Data science', 'Machine learning', 'Co-op']
+    },
+    {
+      kind: 'Amazon Web Services',
+      when: '2018 — 2021', year: '2018',
+      role: 'Solutions Architect',
+      org: 'Amazon Web Services', place: 'Seattle, WA',
+      text: 'Driving customer success by building prototypes on cutting-edge initiatives — ' +
+            'analytics platforms, ML pipelines, and the odd AR/VR experiment with partners.',
+      marks: [
+        ['2018', 'AWS Summit New York · co-op panel at Northeastern, Seattle'],
+        ['2019', 're:Invent Las Vegas — caching architecture session'],
+        ['2019', 'DeepRacer event with Deloitte, Toronto'],
+        ['2020', 'Published: 5G Smart Airport Assistant with the Accenture AWS Business Group']
+      ],
+      tags: ['Prototyping', 'Analytics', 'Partner solutions']
+    },
+    {
+      kind: 'Amazon Web Services',
+      when: '2021 — 2024', year: '2021',
+      role: 'Solutions Architect — Data & AI',
+      org: 'Amazon Web Services', place: 'Amsterdam, Netherlands',
+      text: 'Same job, new continent. Machine learning with European customers, and a lot of ' +
+            'time on stages and whiteboards explaining what the models could and could not do.',
+      marks: [
+        ['2022', 'AWS Summit Stockholm — AI/ML booth and DeepRacer podium'],
+        ['2022', 'Data Science Rotterdam meetup — live model training and face detection demos']
+      ],
+      tags: ['ML', 'EMEA', 'Enablement']
+    },
+    {
+      kind: 'Amazon Web Services',
+      when: '2024 — now', year: '2024',
+      role: 'AI Agent Architect',
+      org: 'Amazon Web Services', place: 'Madrid, Spain',
+      text: 'Agents that do work: one-click deployments, agent-driven training loops, and the ' +
+            'guardrails that make them safe enough to hand to a customer. Plus a book, and ' +
+            'fifteen small products shipped in public.',
+      marks: [
+        ['2025', 'Keynote — Accenture AI Coding Days · VibeCoding hackathon (Infra Genius award)'],
+        ['2025', '“Emotional Intelligence in the AI Era” — PSA offsite, Madrid'],
+        ['2025', 'Teaching breathwork at the Amazon office'],
+        ['2025', 'Published: Cultivate Inner Intelligence using AI']
+      ],
+      tags: ['Agentic AI', 'Bedrock', 'Speaking', 'Writing']
+    }
+  ];
+
+  const esc = s => String(s).replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  document.getElementById('entries').innerHTML = journey.map(e => `
+    <li class="entry${e.edu ? ' edu' : ''}" data-year="${esc(e.year)}">
+      <span class="dot" aria-hidden="true"></span>
+      <p class="when">${esc(e.when)} <span class="kind">${esc(e.kind)}</span></p>
+      <h3>${esc(e.role)}</h3>
+      <p class="org"><b>${esc(e.org)}</b> <span>· ${esc(e.place)}</span></p>
+      <p>${esc(e.text)}</p>
+      ${e.marks && e.marks.length ? `<ul class="marks">${e.marks
+        .map(([y, m]) => `<li><span><b>${esc(y)}</b> — ${esc(m)}</span></li>`).join('')}</ul>` : ''}
+      <div class="tags">${e.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+    </li>`).join('');
+
+  /* ---------- reveal + ghost year + rail fill ---------- */
+  const entries = [...document.querySelectorAll('.entry')];
+  const ghost = document.getElementById('ghost');
+  const rail = document.getElementById('rail');
+  const timeline = document.getElementById('timeline');
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealObserver = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { rootMargin: '0px 0px -18% 0px', threshold: .18 });
+  entries.forEach(el => revealObserver.observe(el));
+
+  // whichever entry is nearest the middle of the screen owns the ghost year
+  const yearObserver = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        ghost.textContent = e.target.dataset.year;
+        ghost.classList.add('on');
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  entries.forEach(el => yearObserver.observe(el));
+
+  if (reduce) { document.documentElement.classList.add('static'); return; }
+
+  /* ---------- hero portrait → profile avatar ----------
+     One transition, driven by how far the hero frame has travelled up the
+     screen. Both boxes are real elements (.hero-slot in flow, .avatar-slot
+     inside the fixed bar), so the frame is lerped between their live rects
+     and simply parks in the avatar for the rest of the page. */
+  const photo = document.getElementById('photo');
+  const halo = document.getElementById('halo');
+  const bar = document.getElementById('bar');
+  const heroSlot = document.getElementById('hero-slot');
+  const avatarSlot = document.getElementById('avatar-slot');
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const ease = t => t * t * (3 - 2 * t);
+
+  const FROM = { radius: 28, zoom: 1.05, ox: 46, oy: 32 };
+  const TO   = { radius: 999, zoom: 2.45, ox: 30, oy: 36 };
+
+  let travel = 1, heroTop = 0, docH = 1;
+  function measure() {
+    const r = heroSlot.getBoundingClientRect();
+    heroTop = r.top + scrollY;               // document-space top of the hero frame
+    travel = Math.max(120, r.height * 0.62); // the shrink is done within this much scroll
+    docH = document.documentElement.scrollHeight - innerHeight;
+  }
+
+  function targetState() {
+    const p = ease(clamp01((scrollY - Math.max(0, heroTop - innerHeight * .12)) / travel));
+    const a = heroSlot.getBoundingClientRect();
+    const b = avatarSlot.getBoundingClientRect();
+    return {
+      p,
+      x: lerp(a.left, b.left, p),
+      y: lerp(a.top, b.top, p),
+      w: lerp(a.width, b.width, p),
+      h: lerp(a.height, b.height, p),
+      r: lerp(FROM.radius, TO.radius, p),
+      zoom: lerp(FROM.zoom, TO.zoom, p),
+      ox: lerp(FROM.ox, TO.ox, p),
+      oy: lerp(FROM.oy, TO.oy, p)
+    };
+  }
+
+  let shown = null, running = false;
+
+  function paint() {
+    const t = targetState();
+    if (!shown) shown = { ...t };
+
+    // damped follow, so the shrink has a little weight
+    const k = 0.24;
+    ['x', 'y', 'w', 'h', 'r', 'zoom', 'ox', 'oy'].forEach(key => {
+      shown[key] = lerp(shown[key], t[key], k);
+    });
+
+    photo.style.transform = `translate3d(${shown.x.toFixed(1)}px, ${shown.y.toFixed(1)}px, 0)`;
+    photo.style.width = shown.w.toFixed(1) + 'px';
+    photo.style.height = shown.h.toFixed(1) + 'px';
+    photo.style.borderRadius = Math.min(shown.r, shown.w / 2).toFixed(1) + 'px';
+    photo.style.setProperty('--zoom', shown.zoom.toFixed(3));
+    photo.style.setProperty('--ox', shown.ox.toFixed(1) + '%');
+    photo.style.setProperty('--oy', shown.oy.toFixed(1) + '%');
+
+    const hw = shown.w * 1.45, hh = shown.h * 1.25;
+    halo.style.width = hw + 'px';
+    halo.style.height = hh + 'px';
+    halo.style.opacity = (1 - t.p * .5).toFixed(2);
+    halo.style.transform =
+      `translate3d(${(shown.x - (hw - shown.w) / 2).toFixed(1)}px, ${(shown.y - (hh - shown.h) / 2).toFixed(1)}px, 0)`;
+
+    bar.style.opacity = clamp01((t.p - .45) / .35).toFixed(2);
+
+    // rail fill follows the timeline's own progress
+    const tr = timeline.getBoundingClientRect();
+    const fill = clamp01((innerHeight * .62 - tr.top) / Math.max(1, tr.height));
+    rail.style.height = (fill * tr.height).toFixed(1) + 'px';
+
+    const settled = ['x', 'y', 'w', 'h'].every(key => Math.abs(shown[key] - t[key]) < .3);
+    running = !settled;
+    if (running) requestAnimationFrame(paint);
+  }
+
+  function kick() { if (!running) { running = true; requestAnimationFrame(paint); } }
+
+  addEventListener('scroll', kick, { passive: true });
+  addEventListener('resize', () => { measure(); kick(); });
+  addEventListener('orientationchange', () => { measure(); kick(); });
+
+  measure();
+  shown = { ...targetState() };
+  paint();
+  addEventListener('load', () => { measure(); kick(); });
+  if (document.fonts) document.fonts.ready.then(() => { measure(); kick(); });
+})();
+</script>
+</body>
+</html>

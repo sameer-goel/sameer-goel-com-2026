@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Sameer Goel — Scroll Portfolio (test)</title>
+<meta name="description" content="Scroll-driven portfolio concept: one portrait that reframes itself as the story unfolds.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="previews/speaking-portrait.webp" type="image/webp" fetchpriority="high">
+
+<noscript>
+  <style>
+    /* No JS: the travelling portrait becomes six static, well-framed images. */
+    .stage { display: none !important; }
+    .slot {
+      background-image: url('previews/speaking-portrait.jpg');
+      background-size: cover;
+      background-position: 38% 28%;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+  </style>
+</noscript>
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #f4f0eb;
+    --bg: #050a0f;
+    --green: #22c55e;
+    --blue: #4b8dff;
+    --muted: rgba(244,240,235,.55);
+    --line: rgba(244,240,235,.12);
+    --pad: clamp(1.25rem, 5vw, 6rem);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Ambient light that answers the navy of the photograph */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: -20vh -10vw auto;
+    height: 90vh;
+    background:
+      radial-gradient(60% 55% at 22% 18%, rgba(75,141,255,.16), transparent 70%),
+      radial-gradient(50% 45% at 82% 32%, rgba(34,197,94,.10), transparent 72%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* Film grain */
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: .045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- chrome ---------- */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem var(--pad);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    mix-blend-mode: difference;
+  }
+  .topbar a { color: inherit; text-decoration: none; transition: color .25s; }
+  .topbar a:hover { color: var(--ink); }
+
+  .rail {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 100%;
+    z-index: 45;
+    background: transparent;
+  }
+  .rail span {
+    display: block;
+    height: 100%;
+    width: var(--p, 0%);
+    background: linear-gradient(90deg, var(--blue), var(--green));
+  }
+
+  .dots {
+    position: fixed;
+    right: clamp(.6rem, 2vw, 1.6rem);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: .85rem;
+    align-items: flex-end;
+  }
+  .dots button {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: var(--muted);
+    font: inherit;
+    font-size: .58rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 0;
+  }
+  .dots .label {
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity .3s, transform .3s;
+    white-space: nowrap;
+  }
+  .dots button:hover .label,
+  .dots button[aria-current="true"] .label { opacity: 1; transform: none; }
+  .dots i {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(244,240,235,.25);
+    transition: background .3s, transform .3s, box-shadow .3s;
+  }
+  .dots button[aria-current="true"] i {
+    background: var(--green);
+    transform: scale(1.5);
+    box-shadow: 0 0 0 4px rgba(34,197,94,.14);
+  }
+  @media (max-width: 900px) { .dots { display: none; } }
+
+  /* ---------- the travelling portrait ---------- */
+  .stage {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    contain: layout paint;
+  }
+
+  .photo {
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
+    will-change: transform, width, height;
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.55),
+      0 0 0 1px rgba(255,255,255,.08) inset;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* zoom happens around the face, so tight crops stay on the face */
+    transform: scale(var(--zoom, 1.04));
+    transform-origin: var(--ox, 50%) var(--oy, 40%);
+  }
+  /* legibility scrim, only where a section puts copy over the frame */
+  .photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(100deg, rgba(5,10,15,.96) 0%, rgba(5,10,15,.7) 34%, rgba(5,10,15,.1) 62%, transparent 78%),
+      linear-gradient(180deg, transparent 35%, rgba(5,10,15,.85));
+    opacity: var(--scrim, 0);
+  }
+  .halo {
+    position: absolute;
+    top: 0; left: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(75,141,255,.22), rgba(34,197,94,.08) 55%, transparent 72%);
+    filter: blur(18px);
+    will-change: transform, width, height;
+  }
+  .caption {
+    position: absolute;
+    left: 0; top: 0;
+    font-size: .62rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(244,240,235,.7);
+    padding: .45rem .7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(5,10,15,.55);
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+    will-change: transform, opacity;
+  }
+
+  /* ---------- sections ----------
+     main deliberately has no z-index: it must not create a stacking context,
+     so individual pieces of copy can be layered over the fixed portrait. */
+  main { position: relative; }
+
+  .sec {
+    position: relative;
+    padding: clamp(5rem, 12vh, 10rem) var(--pad);
+    min-height: 100svh;
+    display: grid;
+    align-content: center;
+  }
+
+  .eyebrow {
+    font-size: .64rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: rgba(34,197,94,.8);
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 26px; height: 1px;
+    background: rgba(34,197,94,.5);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4.4vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+  }
+
+  p.lede {
+    font-size: clamp(1rem, 1.3vw, 1.12rem);
+    line-height: 1.75;
+    color: rgba(244,240,235,.72);
+    max-width: 46ch;
+    margin-top: 1.2rem;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .08s; }
+  .reveal.d2 { transition-delay: .16s; }
+  .reveal.d3 { transition-delay: .24s; }
+
+  /* slots reserve the space the portrait will occupy */
+  .slot { pointer-events: none; }
+
+  /* 01 — hero */
+  .hero {
+    /* minmax(0,…) lets the name overflow its column and cross the portrait */
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(1rem, 4vw, 3rem);
+    align-items: center;
+    min-height: 100svh;
+  }
+  .hero-copy { position: relative; z-index: 3; }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: clamp(2.8rem, 14.5vw, 12rem);
+    line-height: .9;
+    letter-spacing: -.04em;
+    /* the name runs across the photograph — the overlap is the point */
+    white-space: nowrap;
+    margin-right: -24vw;
+    text-shadow: 0 14px 50px rgba(5,10,15,.8);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(244,240,235,.7);
+  }
+  .hero .sub {
+    margin-top: 1.6rem;
+    font-size: .72rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .hero .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(34,197,94,.65);
+    margin-top: .9rem;
+  }
+  .slot-hero {
+    width: min(38vw, 420px);
+    aspect-ratio: 1122 / 1402;
+    max-height: 80svh;
+    border-radius: 26px;
+    /* nudged left so the name crosses the frame; the engine reads the
+       transformed rect, so the portrait follows */
+    transform: translateX(-1.5vw);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    left: var(--pad);
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .6rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(244,240,235,.4);
+  }
+  .scroll-hint i {
+    width: 1px; height: 34px;
+    background: linear-gradient(180deg, rgba(244,240,235,.5), transparent);
+    animation: drip 2.4s ease-in-out infinite;
+    transform-origin: top;
+  }
+  @keyframes drip { 0%,100% { transform: scaleY(.35); opacity: .3 } 50% { transform: scaleY(1); opacity: 1 } }
+
+  /* 02 — split */
+  .split {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(1.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+  .slot-split {
+    width: min(30vw, 330px);
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1px;
+    margin-top: 2.4rem;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .facts div { background: var(--bg); padding: 1rem 1.1rem; }
+  .facts b {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .facts span {
+    font-size: .6rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* 03 — cinematic band */
+  .band { align-content: end; gap: 0; }
+  .slot-band {
+    width: 100%;
+    height: min(62svh, 560px);
+    border-radius: 14px;
+  }
+  .band-copy {
+    position: relative;
+    z-index: 3;
+    margin-top: -20%;
+    padding-bottom: 2rem;
+    max-width: 30ch;
+  }
+  .band-copy .lede { max-width: 28ch; }
+  .band-copy h2 { text-shadow: 0 10px 40px rgba(5,10,15,.8); }
+
+  .marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: .9rem 0;
+    margin-top: 2.5rem;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .marquee ul {
+    display: flex;
+    gap: 2.4rem;
+    list-style: none;
+    width: max-content;
+    animation: slide 26s linear infinite;
+  }
+  .marquee li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: rgba(244,240,235,.4);
+    white-space: nowrap;
+  }
+  .marquee li::before { content: '◦'; margin-right: 1.6rem; color: rgba(34,197,94,.5); }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* 04 — quote */
+  .quote-sec {
+    grid-template-columns: auto minmax(0, 30rem);
+    gap: clamp(1.2rem, 3vw, 2.6rem);
+    align-items: center;
+    justify-content: center;
+  }
+  .slot-quote {
+    width: clamp(96px, 12vw, 150px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3.6vw, 3rem);
+    line-height: 1.22;
+    letter-spacing: -.01em;
+  }
+  blockquote span { color: rgba(34,197,94,.85); }
+  cite {
+    display: block;
+    margin-top: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: .64rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* 05 — work */
+  .work { align-content: start; }
+  .work-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .slot-dock {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.6rem;
+  }
+  @media (max-width: 900px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,.02);
+    transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34,197,94,.4);
+    box-shadow: 0 18px 40px rgba(0,0,0,.4);
+  }
+  .card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    filter: saturate(.9);
+  }
+  .card .meta { padding: .85rem 1rem 1.05rem; }
+  .card b { display: block; font-size: .82rem; font-weight: 600; }
+  .card small {
+    display: block;
+    margin-top: .2rem;
+    font-size: .64rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* 06 — close */
+  .close-sec {
+    justify-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  .slot-close {
+    width: min(46vw, 250px);
+    aspect-ratio: 4 / 5;
+    border-radius: 999px 999px 22px 22px;
+  }
+  .cta-row {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: .4rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .8rem 1.4rem;
+    border-radius: 999px;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.04);
+    transition: transform .25s, border-color .25s, background .25s, color .25s;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34,197,94,.45);
+    color: var(--green);
+  }
+  .btn.solid {
+    background: linear-gradient(135deg, var(--green), #16a34a);
+    border-color: transparent;
+    color: #04140a;
+  }
+  .btn.solid:hover { color: #04140a; box-shadow: 0 10px 30px rgba(34,197,94,.28); }
+
+  footer {
+    padding: 3rem var(--pad) 4rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: .64rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(244,240,235,.35);
+    position: relative;
+    z-index: 3;
+    background: var(--bg);
+  }
+
+  /* ---------- static fallback (reduced motion) ---------- */
+  html.static .stage { display: none; }
+  html.static .slot {
+    background-image: url('previews/speaking-portrait.webp');
+    background-size: cover;
+    background-position: 38% 28%;
+    border: 1px solid rgba(255,255,255,.1);
+  }
+  /* the band is the one section with copy over the picture */
+  html.static .slot-band {
+    background-image:
+      linear-gradient(100deg, rgba(5,10,15,.95), rgba(5,10,15,.62) 42%, rgba(5,10,15,.12) 70%, transparent 80%),
+      linear-gradient(180deg, transparent 40%, rgba(5,10,15,.8)),
+      url('previews/speaking-portrait.webp');
+  }
+  html.static .slot-quote { background-position: 30% 20%; }
+  html.static .reveal { opacity: 1; transform: none; }
+  html.static .marquee ul { animation: none; }
+  html.static { scroll-behavior: auto; }
+
+  /* ---------- small screens ---------- */
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; justify-items: start; gap: 2rem; }
+    .hero h1 {
+      margin-right: 0;
+      font-size: clamp(3rem, 15vw, 5rem);
+      white-space: normal;
+    }
+    .hero h1 em { display: block; }
+    .slot-hero { width: min(70vw, 320px); order: -1; max-height: 52svh; }
+    .split { grid-template-columns: 1fr; }
+    .slot-split { width: min(60vw, 260px); }
+    .band-copy { margin-top: -34%; }
+    .quote-sec { grid-template-columns: 1fr; }
+    .work-head { align-items: center; }
+    .caption { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="rail" aria-hidden="true"><span id="rail"></span></div>
+
+<header class="topbar">
+  <a href="/index.html">← Sameer Goel</a>
+  <span id="chapter">01 / 06</span>
+</header>
+
+<nav class="dots" id="dots" aria-label="Sections"></nav>
+
+<!-- One photograph. It never reloads; it just reframes itself. -->
+<div class="stage" id="stage" aria-hidden="true">
+  <div class="halo" id="halo"></div>
+  <figure class="photo" id="photo">
+    <picture>
+      <source srcset="previews/speaking-portrait.webp" type="image/webp">
+      <img src="previews/speaking-portrait.jpg" width="1000" height="1250"
+           alt="Sameer Goel speaking on a panel titled The Future of AI" fetchpriority="high">
+    </picture>
+  </figure>
+  <div class="caption" id="caption">The Future of AI · Panel</div>
+</div>
+
+<main>
+
+  <!-- 01 -->
+  <section class="sec hero" id="s1" data-label="Intro">
+    <div class="hero-copy">
+      <h1 class="reveal">Sameer <em>Goel</em></h1>
+      <p class="sub reveal d1">AI Agent Architect · Speaker · Author</p>
+      <p class="quote reveal d2">"Technology is only meaningful when it serves the human spirit."</p>
+    </div>
+    <div class="slot slot-hero"
+         data-slot
+         data-radius="26"
+         data-pos="52% 30%"
+         data-zoom="1.04"
+         data-origin="46% 34%"
+         data-scrim="0"
+         data-caption="The Future of AI · Panel"></div>
+    <div class="scroll-hint"><i></i> Scroll</div>
+  </section>
+
+  <!-- 02 -->
+  <section class="sec split" id="s2" data-label="The work">
+    <div class="slot slot-split"
+         data-slot
+         data-radius="20"
+         data-pos="34% 26%"
+         data-zoom="1.28"
+         data-origin="33% 36%"
+         data-scrim="0"
+         data-caption="Building in public"></div>
+    <div>
+      <p class="eyebrow reveal">01 — What I do</p>
+      <h2 class="reveal d1">I build AI that gives people<br>back their attention.</h2>
+      <p class="lede reveal d2">Agent architectures, learning tools, and quiet interfaces for wellbeing.
+        Fifteen shipped products, all of them free for non-profits, all of them starting from the
+        same question: does this leave a person more capable than it found them?</p>
+      <div class="facts reveal d3">
+        <div><b>15</b><span>Shipped products</span></div>
+        <div><b>1</b><span>Book published</span></div>
+        <div><b>∞</b><span>Prototypes killed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="sec band" id="s3" data-label="On stage">
+    <div class="slot slot-band"
+         data-slot
+         data-radius="14"
+         data-pos="44% 26%"
+         data-zoom="1.08"
+         data-origin="46% 34%"
+         data-scrim="0.78"
+         data-cap="0"
+         data-caption="Keynotes & panels"></div>
+    <div class="band-copy">
+      <p class="eyebrow reveal">02 — On stage</p>
+      <h2 class="reveal d1">Conversations about<br>the next ten years.</h2>
+      <p class="lede reveal d2">Panels, keynotes, and classrooms — translating what agents can
+        actually do today into decisions teams can make tomorrow.</p>
+    </div>
+    <div class="marquee reveal d3" aria-hidden="true">
+      <ul>
+        <li>Agentic workflows</li><li>Human-centred AI</li><li>AI literacy for kids</li>
+        <li>Sustainability</li><li>Consciousness &amp; code</li><li>Building in public</li>
+        <li>Agentic workflows</li><li>Human-centred AI</li><li>AI literacy for kids</li>
+        <li>Sustainability</li><li>Consciousness &amp; code</li><li>Building in public</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="sec quote-sec" id="s4" data-label="Belief">
+    <div class="slot slot-quote"
+         data-slot
+         data-radius="999"
+         data-pos="30% 27%"
+         data-zoom="2.4"
+         data-origin="30% 36%"
+         data-scrim="0"
+         data-cap="0"
+         data-caption="In his own words"></div>
+    <div>
+      <blockquote class="reveal">The most useful intelligence is the one that makes
+        <span>your own</span> sharper.</blockquote>
+      <cite class="reveal d1">Cultivate Inner Intelligence using AI</cite>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section class="sec work" id="s5" data-label="Projects">
+    <div class="work-head">
+      <div>
+        <p class="eyebrow reveal">03 — Selected work</p>
+        <h2 class="reveal d1">Things you can open<br>right now.</h2>
+      </div>
+      <div class="slot slot-dock"
+           data-slot
+           data-radius="999"
+           data-pos="30% 26%"
+           data-zoom="2.2"
+           data-origin="31% 39%"
+           data-scrim="0"
+           data-cap="0"
+           data-caption="Selected work"></div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <!-- 06 -->
+  <section class="sec close-sec" id="s6" data-label="Connect">
+    <div class="slot slot-close"
+         data-slot
+         data-radius="999 999 22 22"
+         data-pos="38% 22%"
+         data-zoom="1.45"
+         data-origin="33% 34%"
+         data-scrim="0"
+         data-cap="0"
+         data-caption="Let's talk"></div>
+    <div>
+      <p class="eyebrow reveal" style="justify-content:center">04 — Connect</p>
+      <h2 class="reveal d1">Half an hour is usually<br>enough to know.</h2>
+      <div class="cta-row reveal d2">
+        <a class="btn solid" href="https://cal.com/sameer-goel/collab" target="_blank" rel="noopener">Book 30 min</a>
+        <a class="btn" href="https://www.linkedin.com/in/sameer-goel/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="/index.html">Main site</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Scroll concept · test page</span>
+  <span>© 2026 Sameer Goel</span>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- selected work ---------- */
+  const projects = [
+    { n: 'Web4Agents',            r: 'AI infrastructure', i: 'previews/web4agents',            u: 'https://sameer-goel.github.io/web4agents/' },
+    { n: 'Inner Voice',           r: 'Wellness',          i: 'previews/inner-voice',           u: 'https://updatemind.space/' },
+    { n: 'Learn Agent Workflows', r: 'Education',         i: 'previews/learn-agent-workflows', u: 'https://learnagentworkflows.pages.dev/' },
+    { n: 'Recycle360',            r: 'Sustainability',    i: 'previews/recycle360',            u: 'https://recycle360.pages.dev/' },
+    { n: 'AI for Kids',           r: 'Education',         i: 'previews/ai-for-kids',           u: 'https://ai-for-kids.pages.dev/' },
+    { n: 'Flow State Tuner',      r: 'Productivity',      i: 'previews/flow-state-tuner',      u: 'https://flow-state-tuner.pages.dev/' }
+  ];
+  const cardsEl = document.getElementById('cards');
+  if (cardsEl) cardsEl.innerHTML = projects.map(p => `
+    <a class="card reveal" href="${p.u}" target="_blank" rel="noopener">
+      <picture>
+        <source srcset="${p.i}.webp" type="image/webp">
+        <img src="${p.i}.png" alt="${p.n}" loading="lazy" decoding="async" width="460" height="260">
+      </picture>
+      <div class="meta"><b>${p.n}</b><small>${p.r}</small></div>
+    </a>`).join('');
+
+  /* ---------- section rail + dots ---------- */
+  const sections = [...document.querySelectorAll('.sec')];
+  const dots = document.getElementById('dots');
+  dots.innerHTML = sections.map((s, i) => `
+    <button data-go="${s.id}" aria-current="${i === 0}">
+      <span class="label">${s.dataset.label}</span><i></i>
+    </button>`).join('');
+  dots.addEventListener('click', e => {
+    const b = e.target.closest('[data-go]');
+    if (b) document.getElementById(b.dataset.go).scrollIntoView({ behavior: 'smooth' });
+  });
+  const dotEls = [...dots.querySelectorAll('button')];
+  const chapter = document.getElementById('chapter');
+  const rail = document.getElementById('rail');
+
+  /* ---------- reveal on enter ---------- */
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  if (reduce) { document.documentElement.classList.add('static'); return; }
+
+  /* ---------- the travelling portrait ----------
+     Every section owns an invisible .slot that reserves the frame's space in
+     normal flow. The single fixed <figure> is FLIP-lerped from slot to slot as
+     you scroll, so one photograph does the work of six — no reloads, no jank
+     from multiple large images, and the layout stays honest because the slots
+     are real boxes. */
+  const photo   = document.getElementById('photo');
+  const img     = photo.querySelector('img');
+  const halo    = document.getElementById('halo');
+  const capEl   = document.getElementById('caption');
+
+  const slots = [...document.querySelectorAll('[data-slot]')].map(el => {
+    const radius = el.dataset.radius.trim().split(/\s+/).map(Number);
+    const [px, py] = el.dataset.pos.split(/\s+/).map(parseFloat);
+    const [ox, oy] = (el.dataset.origin || '50% 40%').split(/\s+/).map(parseFloat);
+    return {
+      el,
+      radius: radius.length === 1 ? Array(4).fill(radius[0]) : radius,
+      px, py, ox, oy,
+      zoom: +(el.dataset.zoom || 1.04),
+      scrim: +el.dataset.scrim,
+      cap: el.dataset.cap === '0' ? 0 : 1,
+      caption: el.dataset.caption
+    };
+  });
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const ease = t => t * t * (3 - 2 * t);
+
+  let docH = 0;
+  function measure() {
+    const y = scrollY, vh = innerHeight;
+    slots.forEach(s => {
+      const r = s.el.getBoundingClientRect();
+      s.top = r.top + y; s.left = r.left; s.w = r.width; s.h = r.height;
+      // scroll offset at which this slot sits dead-centre in the viewport
+      s.anchor = s.top - (vh - s.h) / 2;
+    });
+    docH = document.documentElement.scrollHeight - vh;
+
+    // Pin the ends so the frame is exactly docked at the top and bottom of the
+    // page (a slot whose centre lands off the scrollable range would otherwise
+    // leave the frame stuck mid-transition), then keep anchors increasing.
+    slots[0].anchor = Math.max(0, slots[0].anchor);
+    const last = slots[slots.length - 1];
+    last.anchor = Math.min(last.anchor, docH);
+    for (let i = 1; i < slots.length; i++) {
+      slots[i].anchor = Math.max(slots[i].anchor, slots[i - 1].anchor + 1);
+    }
+  }
+
+  let shown = null;         // what is painted right now (damped)
+  let capIndex = -1;
+
+  function target() {
+    const y = scrollY;
+    let i = 0;
+    while (i < slots.length - 2 && y > slots[i + 1].anchor) i++;
+    const A = slots[i], B = slots[i + 1] || A;
+    const t = ease(clamp01((y - A.anchor) / Math.max(1, B.anchor - A.anchor)));
+    return {
+      x: lerp(A.left, B.left, t),
+      y: lerp(A.top - y, B.top - y, t),
+      w: lerp(A.w, B.w, t),
+      h: lerp(A.h, B.h, t),
+      r: A.radius.map((v, k) => lerp(v, B.radius[k], t)),
+      px: lerp(A.px, B.px, t),
+      py: lerp(A.py, B.py, t),
+      ox: lerp(A.ox, B.ox, t),
+      oy: lerp(A.oy, B.oy, t),
+      zoom: lerp(A.zoom, B.zoom, t),
+      scrim: lerp(A.scrim, B.scrim, t),
+      capIndex: t < 0.5 ? i : i + 1,
+      // the caption only shows where a section leaves room for it
+      capOpacity: Math.min(1, Math.abs(t - 0.5) * 4) * lerp(A.cap, B.cap, t > .5 ? 1 : 0),
+      idx: Math.round(lerp(i, i + 1, t))
+    };
+  }
+
+  function paint() {
+    const t = target();
+    if (!shown) shown = { ...t };
+
+    // damped follow gives the frame a little weight as it travels
+    const k = 0.22;
+    ['x', 'y', 'w', 'h', 'px', 'py', 'ox', 'oy', 'zoom', 'scrim']
+      .forEach(p => shown[p] = lerp(shown[p], t[p], k));
+    shown.r = t.r.map((v, i) => lerp(shown.r[i], v, k));
+
+    photo.style.transform = `translate3d(${shown.x.toFixed(1)}px, ${shown.y.toFixed(1)}px, 0)`;
+    photo.style.width  = shown.w.toFixed(1) + 'px';
+    photo.style.height = shown.h.toFixed(1) + 'px';
+    photo.style.borderRadius = shown.r.map(v => v.toFixed(1) + 'px').join(' ');
+    photo.style.setProperty('--scrim', shown.scrim.toFixed(2));
+    photo.style.setProperty('--zoom', shown.zoom.toFixed(3));
+    photo.style.setProperty('--ox', shown.ox.toFixed(1) + '%');
+    photo.style.setProperty('--oy', shown.oy.toFixed(1) + '%');
+    img.style.objectPosition = `${shown.px.toFixed(1)}% ${shown.py.toFixed(1)}%`;
+
+    const hw = shown.w * 1.5, hh = shown.h * 1.2;
+    halo.style.width = hw + 'px';
+    halo.style.height = hh + 'px';
+    halo.style.transform =
+      `translate3d(${(shown.x - (hw - shown.w) / 2).toFixed(1)}px, ${(shown.y - (hh - shown.h) / 2).toFixed(1)}px, 0)`;
+
+    capEl.style.transform = `translate3d(${shown.x.toFixed(1)}px, ${(shown.y + shown.h + 14).toFixed(1)}px, 0)`;
+    capEl.style.opacity = t.capOpacity.toFixed(2);
+    if (t.capIndex !== capIndex) { capIndex = t.capIndex; capEl.textContent = slots[capIndex].caption; }
+
+    rail.style.setProperty('--p', (clamp01(scrollY / (docH || 1)) * 100).toFixed(2) + '%');
+    const n = Math.min(sections.length - 1, t.idx);
+    if (dotEls[n] && dotEls[n].getAttribute('aria-current') !== 'true') {
+      dotEls.forEach((d, i) => d.setAttribute('aria-current', String(i === n)));
+      chapter.textContent = String(n + 1).padStart(2, '0') + ' / ' + String(sections.length).padStart(2, '0');
+    }
+
+    // keep animating until the damped values have caught up
+    const settled = Math.abs(shown.x - t.x) < .3 && Math.abs(shown.y - t.y) < .3 &&
+                    Math.abs(shown.w - t.w) < .3 && Math.abs(shown.h - t.h) < .3;
+    running = !settled;
+    if (running) requestAnimationFrame(paint);
+  }
+
+  let running = false;
+  function kick() { if (!running) { running = true; requestAnimationFrame(paint); } }
+
+  addEventListener('scroll', kick, { passive: true });
+  addEventListener('resize', () => { measure(); kick(); });
+  addEventListener('orientationchange', () => { measure(); kick(); });
+
+  // slots depend on font + image layout, so re-measure once everything lands
+  measure();
+  shown = { ...target() };
+  paint();
+  addEventListener('load', () => { measure(); kick(); });
+  if (document.fonts) document.fonts.ready.then(() => { measure(); kick(); });
+})();
+</script>
+</body>
+</html>
