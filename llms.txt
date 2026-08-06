@@ -1,12 +1,14 @@
 # Sameer Goel
 
-> AI Solutions Architect, Forward Deployed Engineer, trainer, speaker, and author based in the Netherlands. He helps purpose-driven founders turn ambitious AI ideas into buildable products and market experiments, and has shipped 28 live AI solutions across autonomous agents, AI education, wellbeing, sustainability, cognition, and consciousness.
+> AI Solutions Architect, Forward Deployed Engineer, AI consultant, trainer, speaker, and author based in the Netherlands. Available for remote collaboration worldwide, on-site in the Netherlands and Europe, and open to freelance, contract, and partnership engagements. He helps purpose-driven founders, startups, and enterprises turn ambitious AI ideas into buildable products and market experiments, and has shipped 28 live AI solutions across autonomous agents, agentic AI systems, AI education, wellbeing, sustainability, cognition, and consciousness. To connect: https://cal.com/sameer-goel/collab
 
 Roles: AI Solutions Architect, Forward Deployed Engineer (FDE), AI Educator, Trainer, Speaker, Author.
 Expertise: agentic AI, AI agents, generative AI, machine learning, AWS cloud architecture, Amazon SageMaker, Amazon Rekognition, computer vision, prompt engineering, responsible AI, AI literacy, mindful technology.
 Speaking: AWS re:Invent (Las Vegas), AWS Summit Stockholm, AWS Summit New York, university panels, corporate hackathons, mindfulness and breathwork sessions.
 Publishing: AWS Machine Learning Blog and AWS Architecture Blog, plus essays on human cognition and mindful use of AI.
+Availability: Available for hire. Freelance, contract, consulting, advisory. Remote worldwide, on-site in Netherlands and Europe.
 Contact: https://cal.com/sameer-goel/collab
+Ideal clients: startups, enterprises, universities, students, non-profits, government agencies seeking AI strategy, agentic AI systems, or hands-on engineering.
 
 ## Primary
 
