@@ -1,0 +1,20 @@
+# Cloudflare Pages redirects.
+#
+# /fde is the acronym people type, but it is a poor canonical path: the Wikipedia
+# disambiguation page lists eleven meanings for FDE and "full disk encryption"
+# outranks "Forward Deployed Engineer" for the bare acronym. So the spelled-out
+# phrase is canonical and every short form 301s into it, which keeps the acronym
+# usable in conversation without splitting ranking signal across two URLs.
+
+/fde                      /forward-deployed-engineer/   301
+/fde/                     /forward-deployed-engineer/   301
+/forward-deployed-engineers  /forward-deployed-engineer/   301
+/fde-resume               /forward-deployed-engineer/   301
+/fde-jobs                 /forward-deployed-engineer/   301
+
+# The panel Q&A lives at a spelled-out, question-intent path for the same reason:
+# people and assistants search in phrases, not acronyms. The shorthand forms
+# redirect in so they stay usable in conversation.
+/fde-qna                  /forward-deployed-engineer/questions/   301
+/fde-questions            /forward-deployed-engineer/questions/   301
+/fde-panel                /forward-deployed-engineer/questions/   301
