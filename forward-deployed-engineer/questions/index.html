@@ -1,0 +1,2261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forward Deployed Engineer interview questions and answers, from FDE leads at Ramp, Nominal, Dataland, OpenAI</title>
+<meta name="description" content="34 Forward Deployed Engineer questions answered by the people who run FDE teams at Ramp, Nominal, Dataland, OpenAI, sorted into 8 categories. What the role is, where consulting begins, how ROI is measured, what they screen for when hiring. Each answer links to the exact moment in the recording.">
+<link rel="canonical" href="https://sameer-goel.com/forward-deployed-engineer/questions/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sameer-goel.com/forward-deployed-engineer/questions/">
+<meta property="og:title" content="Forward Deployed Engineer: 34 questions and answers">
+<meta property="og:description" content="69 answers from FDE leads at Ramp, Nominal, Dataland, OpenAI, in 8 categories. Each one links to the exact clip.">
+<meta property="og:image" content="https://i.ytimg.com/vi/hWuoH-ODDNc/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07080a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a forward deployed engineer?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): At Ramp the team has one job: win big enterprise customers. How they do it is left deliberately open. They are allowed to build inside the main product and do whatever winning the deal takes. Jason (Nominal): Nominal sells to people building satellites, nuclear reactors and other hardware. The role has been central since day one. The important part is finding where the product runs out of road and feeding that back into what gets built next. Howard (Dataland): Dataland builds AI that takes over work people do today, across healthcare, energy, consumer electronics, logistics and waste. Every customer gets a different agent, so the role is not a layer on top of a product. It is the whole company. Colin (OpenAI): OpenAI wants two things: more people using AI, and better models. Those become the team's two jobs. One group finds problems that repeat across many companies, builds with a customer, then ships a product or folds the work into Codex. The other takes the hardest industries and works with researchers to improve the model itself.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=103s"}},{"@type":"Question","name":"Why are there ten times more FDE jobs than last year, when AI keeps getting better?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): There is far more work to go after now. Old software picked one task, built one tool, sold it to everybody, and only so many tasks are shaped like that. Companies spend far more on people than on software, and the work people do varies enormously from place to place. AI can finally reach that messier work, but only if an engineer understands the job well enough to nearly do it themselves. Howard (Dataland): Why coding tools got good first: every software engineer already does the work the tool is automating, so the whole industry understands that job deeply. No industry has that for energy or logistics, which is exactly why someone has to go and learn it in person. Colin (OpenAI): The work moved up a level. A year ago most of the time went on wiring things together and building tests for five separate agents, which limited how hard a problem you could take on, because the customer still needs to see something soon. Since about January the models handle long tasks well, so far less time goes on plumbing and far more on the actual problem. Colin (OpenAI): His example: fourteen months with a chip company. The first ten were spent speeding up their software work, including an agent that debugs failures on its own. Only now are they building agents that help design the physical chip, because the basics underneath are finally reliable.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=311s"}},{"@type":"Question","name":"Is the rise of this role really about AI at all?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): He says AI is not the cause. Palantir was simply the one company willing to spend heavily on a field team, and he thinks most attempts at that bet fail. What has actually been happening for years is that software keeps getting cheaper to build, so the range of problems worth attacking grew steadily, then jumped with AI. Jason (Nominal): What stays constant across every era is judgement about which work belongs to the customer and which belongs to your team, which depends on your business model. You know it is working when you notice yourself building the same thing at several customers, because that shared piece gets pulled into the main product. Calvin (Ramp): The customer's world decides what you build. Ramp sells to finance teams who mostly do not write code, which is why Ramp shipped an agent that works inside Excel. Go where the customer already works, not where you wish they worked.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=574s"}},{"@type":"Question","name":"What problem does an FDE team fix for a company that already has a good product?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): He names a trap many software companies fall into. You build a product people love, growth comes easily, then you see how much money big enterprises spend. You chase those deals, and your plans get wrecked by features that help exactly one customer. An FDE team is the usual fix: the main teams keep building the plan while this team absorbs the enterprise work. He admits it is an unglamorous reason, and that it is honestly how Ramp's team started.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=703s"}},{"@type":"Question","name":"What made Ramp finally start an FDE team?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): They were heading straight into the trap and spotted it in time. The big projects enterprise customers asked for were not things Ramp would have built otherwise, which made it a real problem to solve rather than a scheduling annoyance. Calvin (Ramp): The fix was removing the relay. Before, the customer told the account manager, who told the product manager, who told the engineer, who said no, and it went back around. Now the engineer talks to the customer directly.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=767s"}},{"@type":"Question","name":"Do forward deployed engineers actually work at the customer's office?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): Ramp's engineers rarely go on site, roughly once a quarter, and mostly work over video calls. Forward deployed means direct contact with the customer, not sitting in their building.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=834s"}},{"@type":"Question","name":"Why does one engineer talking to the customer beat a chain of people passing messages?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): An engineer who knows both what the customer needs and how the codebase works can see answers nobody in the relay would ever suggest. That is how you win the customer without wrecking your plans. Jason (Nominal): He had to learn ordinary sales skills himself, because Palantir did not teach them in his day. His point is that the value comes from engineers building the relationship directly, instead of information passing through a sales layer.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=852s"}},{"@type":"Question","name":"What is the difference between an FDE and a consultant?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): He says he has scars from this. Palantir went through a stretch the team called the dark ages, when the field team effectively rebelled, said the original product was useless for the work they were doing, and started building new things instead. Jason (Nominal): To avoid repeating that, Nominal's first field engineers were people who had built products themselves and had been on the receiving end of the relay, so he could talk honestly with them about whether they were drifting into consulting. He notes this work can genuinely speed up a sale, which is sometimes a straight win, but says spend that goodwill carefully as the team grows.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=883s"}},{"@type":"Question","name":"Can you give an example where field work actually sped up a deal?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): The customer wanted forty people looking at the data after each flight instead of two. The blocker was that data had to be cleaned up by scripts sitting on individual engineers' laptops before anyone could use it. Jason (Nominal): The customer simply asked Nominal to handle it, without knowing what that meant technically. An engineer named Ross built it, but deliberately made it general: a container that holds the data-cleanup logic rather than something tied to one customer's format. It unblocked that customer and became a core feature sold to everyone else.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=980s"}},{"@type":"Question","name":"How has OpenAI changed its mind about what this team should build?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): At the start there was no platform, just the API, the customer, and an engineer in between, so success meant getting anything working at all. He cites the widely quoted finding that only about 5% of companies see real returns from AI spending. Colin (OpenAI): Six months before the panel the plan was around fifty small products, maybe with other people building on top. Then Codex got better, and the test for every idea became whether it could just be a Codex extension. That killed roughly 80% of the planned products. Colin (OpenAI): Two survived because enterprises need very consistent output: writing regulatory documents, and a workflow automation tool. Everything else folded into Codex. The standing questions are now whether it could be Codex, whether it truly needs to be separate, and whether the model could simply get good enough on its own.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1065s"}},{"@type":"Question","name":"What makes a company a software company instead of a consulting firm?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): It is not about having a platform. It is whether you deliver value that keeps arriving, off a cost you pay once. That is what makes investors treat a business as software, and he says there are many ways to satisfy it without selling one product to everybody. Howard (Dataland): Because code is getting cheaper to write, he is deliberately not attached to finding one thing to sell everyone. The test he applies instead: what does each customer teach us that makes the next custom agent cheaper to build? Once an agent runs a real workflow at scale the recurring value is large, so every use case has its own version of this equation.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1190s"}},{"@type":"Question","name":"Is having an FDE team a weakness or a strength?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): For years Palantir genuinely did not know whether the model was a flaw to engineer away or a real advantage. By the time he worked there, the answer inside the company had settled firmly on advantage.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1284s"}},{"@type":"Question","name":"How do you measure whether an FDE team is worth the money?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): His first answer is deliberately blunt arithmetic: enterprise revenue divided by salaries. Then the real version, which is that the team is always either shaping what gets built next or building it. Calvin (Ramp): They prefer shipping a planned feature over something custom, because custom work has to be maintained forever. Ramp's engineers work inside the main codebase, partner closely with each product team, and keep changes small on purpose. Colin (OpenAI): OpenAI runs the opposite shape. They bet on problems worth hundreds of millions, so fewer customers and much more depth. Their biggest engagement has about fifteen engineers at one chip company, trying to change how an entire industry works. Colin (OpenAI): So the money from the field work itself is a minor concern for them. The real measure is the recurring revenue unlocked later, when many smaller, faster-moving customers adopt what was proven with one large one.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1309s"}},{"@type":"Question","name":"Which engagements actually make the most money in the long run?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): The most profitable work over time is the small, product-shaped kind with two to four engineers, not the huge engagement. Big custom projects generate revenue now and very little that carries forward.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1445s"}},{"@type":"Question","name":"Why do consulting firms do this badly?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): The money is addictive. Once services revenue is flowing, the incentive is to sell bigger and bigger custom projects, and nothing pushes back. What protects OpenAI is that the commercial side is not where power sits, product and research are, so the team gets pushed toward work customers can eventually run themselves.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1468s"}},{"@type":"Question","name":"When does this revenue start fooling you into thinking you have a real product?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): He flips the usual worry around. The danger is not only that your company gets hooked on the money. It is that the customer gets hooked on the specific people, so removing them gets you fired.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1511s"}},{"@type":"Question","name":"What does a healthy customer relationship look like?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): Four signs it is going well: they value the product itself, you teach them how to use it, they treat you as a thinking partner, and they give you blunt feedback. The best ones will host your team so you can build alongside them.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1571s"}},{"@type":"Question","name":"How do you tell lasting value from value that disappears?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): Dataland was two people going to three, aiming for around ten, so revenue per person is the number he watches. Build whatever the customer asks for and the asks never end, and the value shows up once then disappears. Sometimes you build the throwaway thing anyway to earn trust, but the long-term test is value that keeps arriving from a fixed amount of work.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1635s"}},{"@type":"Question","name":"How do two people serve that many customers?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): Much of their time goes into building agents that help them build agents faster. His deeper point is that an agent is never a finished object. It lives inside a business whose systems, policies and product lines keep changing, and the agent has to keep up. Howard (Dataland): So the real engineering problem is automating the improvement loop itself, so the agent keeps pace without a person nudging it. That is what lets a tiny team earn many millions per person.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1697s"}},{"@type":"Question","name":"How does the team work with researchers, not just the product team?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): The model is outcome first, then scale, and there are two ways to scale: build a product, or improve the model itself. His example is slide making. The model was bad at it, and a Japanese sales organisation of about two thousand people wanted a slide assistant. Colin (OpenAI): They worked out how to describe the task so the model could do it, starting with fixed boxes, which looked terrible, then generating HTML instead. Around fifty approaches later they picked one, produced many examples, handed those to the research team, and three months later a new model version made good slides.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1808s"}},{"@type":"Question","name":"What does it look like when the model cannot do the job yet?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): They ran ten attempts at simply getting the model to read his phone number back, and it would not do it. Alarming, given the real job involves following company policies on live calls. Colin (OpenAI): Six months of work with the research team later it shipped. He says roughly 70,000 calls a day are now handled, with no serious failures. They also built tools so the customer can write their own tests and keep improving it without the team, which he calls the goal.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1910s"}},{"@type":"Question","name":"Did the slide work put consultants out of a job?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): His team includes former consultants who joked about mourning their old colleagues. Then he punctures the hype: the slides are not actually good yet, so nobody is out of a job soon, even if the direction is clear.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1975s"}},{"@type":"Question","name":"What makes someone good at this job?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): Two skill sets that rarely appear in one person. You need to be genuinely strong technically, keeping up with how fast models change, and also good at ordinary software engineering, because connecting to enterprise systems is hard, unglamorous work. Howard (Dataland): The other half is the customer side: winning trust, then understanding and navigating the politics of their organisation. He says openly that people who can do all of it are very hard to find. Jason (Nominal): Only one of his five Palantir years was in the field, but he says he still draws on it constantly, including later as an early engineer at startups. What it taught: be resourceful, be a generalist, stay curious across subjects, and be humble when the situation calls for it. Calvin (Ramp): Ramp likes former founders and early engineers, specifically people who care about revenue, which he says many engineers do not. His framing: this is the team that wants to say yes, because it cares about winning the customer, while many engineers would rather say no and keep building their own thing. Colin (OpenAI): Having grown the team from two people to more than ninety, he names one trait above all: caring about the result more than the thing you made. The usual failure is falling in love with your own work, so when nobody uses it you defend it. The best people throw their own work away and build something different because that is what is needed.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2012s"}},{"@type":"Question","name":"Is this job good preparation for starting a company?","acceptedAnswer":{"@type":"Answer","text":"Howard (Dataland): He calls it the best training ground there is for a future founder, and lists why: you have to build from zero to one, stay on the cutting edge of AI, be good with people, win the trust of enterprise customers, and work out the politics of their organisation and navigate it.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2078s"}},{"@type":"Question","name":"Should engineers move between field work and core product work?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): Rotate people, because two organisations grown separately drift apart. One of his happiest moments was watching an early-career engineer fly out, try to use their own product on site, come back convinced it was bad, and get very motivated to fix it. It goes the other way too, when a field engineer cares enough about something to go and build it properly.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2162s"}},{"@type":"Question","name":"Does the ideal person for this role change as the company changes?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): Companies go through phases of expanding and then narrowing what they build, and each phase wants something different from this team. So who they should hire genuinely changes over time, and the people who do well are the ones willing to roll with that.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2204s"}},{"@type":"Question","name":"How is the interview different from a normal engineering interview?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): There is one extra stage compared with a normal engineering loop: can you actually communicate? Ordinary engineering jobs do not usually put you in front of a customer, so it is not normally tested.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2289s"}},{"@type":"Question","name":"What backgrounds do these engineers come from?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): OpenAI’s team is a deliberately mixed bag: people from the big consulting firms, a lot of ex-Palantir people, and a lot of former founders. No single background dominates. What they share is caring only about whether the customer actually uses the thing.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2316s"}},{"@type":"Question","name":"How do you stop customers becoming dependent on specific engineers?","acceptedAnswer":{"@type":"Answer","text":"Calvin (Ramp): Ramp spreads people thin on purpose. Any one customer only ever gets about a third of a person, so dropping to a quarter or a sixth is barely noticed. They have never put two engineers on one customer. Calvin (Ramp): He admits this departs from the traditional model, but says it creates the right incentive. Because every customer is asking for something, the engineer has to weigh all of it at once and decide what actually matters to the business. Howard (Dataland): He treats the fear as a diagnosis. If reducing headcount would get you fired, then you never did the work of making the value come from the system rather than from people. Howard (Dataland): Dataland also runs many accounts per person, so customers never come to expect a standing crew. Part of the job is saying out loud that the customer is buying an outcome, not a number of hours from a number of people. Jason (Nominal): The blunt structural tool is a time limit. He has seen companies assign engineers to one customer for twelve or twenty-four months or longer, and others that cap it at six weeks as policy.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2377s"}},{"@type":"Question","name":"How is this different from a solutions engineer or a solutions architect?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): The clearest breakdown of the night, at least as OpenAI draws it. Solutions engineering happens before the sale, for the broad market. Solutions architecture happens after the sale, for that same broad market. FDE is a separate business unit running only about ten engagements at a time, brought in very early when a problem looks like the right shape, then owning everything before and after the sale as one team. Colin (OpenAI): Because they check whether the work has milestones and could turn into repeat revenue, the team turns down more than it takes on. Plenty of problems are interesting without ever reaching the scale that justifies this team.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2540s"}},{"@type":"Question","name":"How do you structure the team, and does Palantir's Echo and Delta split still make sense?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): Nominal has mission ops, mission development, and a growing sales team. Mission ops are deeply technical but not always coders: often former mechanical or electrical engineers, some who designed engines, though increasingly they write code anyway. The reasoning is that understanding an engineer's workflow is far easier if you have lived it. He calls this a loose descendant of Palantir's Echo role, noting Echoes often lacked the subject background and were instead capable generalists, frequently from consulting. Howard (Dataland): He was an Echo intern and then a Delta, and thinks AI collapses the split. The division existed because writing code was expensive enough to need dedicated coders while others owned the relationship. If code gets dramatically cheaper, one person can hold the whole picture, which he calls radical ownership. Howard (Dataland): Why he thinks that is better: the same person knows what is genuinely hard and what is easy, so decisions about what is worth building are not made by someone who cannot judge the cost. He is candid that it depends on finding people with that range. Colin (OpenAI): He came from traditional consulting and disliked how many narrow roles it had, so OpenAI began with engineers only. They quickly found large accounts needed Echo-style people to carry the account work, so that role came back. Colin (OpenAI): Now they are adding genuine industry experts, such as chip verification engineers and working scientists, because harder problems mean writing good tasks and tests inside a specialism. There are deliberately few, on the bet that the generalists learn from them.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2649s"}},{"@type":"Question","name":"Where does the salesperson end and the field engineer begin?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): They have not settled it. Their mission ops role did not exist at Palantir, so there is no template to copy, and the boundary with sales is still being drawn. His advice to anyone considering these jobs: interrogate the company the way this panel was interrogated, because every company answers differently.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2750s"}},{"@type":"Question","name":"Which comes first, the platform or the field work?","acceptedAnswer":{"@type":"Answer","text":"Jason (Nominal): He ties it to those expansion and narrowing phases and says the answer is changing for Nominal right now. They are finally big enough to build a real platform, and the field team is the honest test of it: do they find it useful, do they build on it. He credits Palantir for doing exactly this until customers could build on it directly. Calvin (Ramp): At Ramp the platform comes first, because they already know what it should do. The field engineers work out how to achieve that inside each customer's constraints rather than inventing something new. But there is a cycle: when many customers hit the same blocker, it belongs in the platform, and that is when one of these engineers gets to work like a core engineer. Same if something already planned needs to arrive sooner.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2920s"}},{"@type":"Question","name":"All four teams are hiring. How do you get in touch?","acceptedAnswer":{"@type":"Answer","text":"Colin (OpenAI): All four confirmed they were hiring, and each gave a direct work email rather than pointing at a careers page, which itself says something about how these teams recruit. Listen to the closing minute for the addresses, or go to each company's careers page.","url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=3069s"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"The Future of Forward Deployed Engineering | OpenAI, Ramp, Nominal, Dataland","description":"Panel discussion on forward deployed engineering with practitioners from Ramp, Nominal, Dataland, OpenAI, hosted by South Park Commons.","uploadDate":"2026-05-28","duration":"PT51M44S","embedUrl":"https://www.youtube.com/embed/hWuoH-ODDNc","thumbnailUrl":["https://i.ytimg.com/vi/hWuoH-ODDNc/maxresdefault.jpg"],"publisher":{"@type":"Organization","name":"South Park Commons"},"hasPart":[{"@type":"Clip","name":"What is a forward deployed engineer? (Calvin, Ramp)","startOffset":133,"endOffset":158,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=131s"},{"@type":"Clip","name":"What is a forward deployed engineer? (Jason, Nominal)","startOffset":158,"endOffset":199,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=156s"},{"@type":"Clip","name":"What is a forward deployed engineer? (Howard, Dataland)","startOffset":199,"endOffset":261,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=197s"},{"@type":"Clip","name":"What is a forward deployed engineer? (Colin, OpenAI)","startOffset":261,"endOffset":313,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=259s"},{"@type":"Clip","name":"Why are there ten times more FDE jobs than last year, when AI keeps getting better? (Howard, Dataland)","startOffset":346,"endOffset":431,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=344s"},{"@type":"Clip","name":"Why are there ten times more FDE jobs than last year, when AI keeps getting better? (Howard, Dataland)","startOffset":431,"endOffset":473,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=429s"},{"@type":"Clip","name":"Why are there ten times more FDE jobs than last year, when AI keeps getting better? (Colin, OpenAI)","startOffset":473,"endOffset":557,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=471s"},{"@type":"Clip","name":"Why are there ten times more FDE jobs than last year, when AI keeps getting better? (Colin, OpenAI)","startOffset":557,"endOffset":576,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=555s"},{"@type":"Clip","name":"Is the rise of this role really about AI at all? (Jason, Nominal)","startOffset":576,"endOffset":641,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=574s"},{"@type":"Clip","name":"Is the rise of this role really about AI at all? (Jason, Nominal)","startOffset":641,"endOffset":686,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=639s"},{"@type":"Clip","name":"Is the rise of this role really about AI at all? (Calvin, Ramp)","startOffset":686,"endOffset":705,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=684s"},{"@type":"Clip","name":"What problem does an FDE team fix for a company that already has a good product? (Calvin, Ramp)","startOffset":705,"endOffset":769,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=703s"},{"@type":"Clip","name":"What made Ramp finally start an FDE team? (Calvin, Ramp)","startOffset":780,"endOffset":813,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=778s"},{"@type":"Clip","name":"What made Ramp finally start an FDE team? (Calvin, Ramp)","startOffset":813,"endOffset":836,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=811s"},{"@type":"Clip","name":"Do forward deployed engineers actually work at the customer's office? (Calvin, Ramp)","startOffset":836,"endOffset":854,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=834s"},{"@type":"Clip","name":"Why does one engineer talking to the customer beat a chain of people passing messages? (Calvin, Ramp)","startOffset":854,"endOffset":885,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=852s"},{"@type":"Clip","name":"Why does one engineer talking to the customer beat a chain of people passing messages? (Jason, Nominal)","startOffset":1614,"endOffset":1637,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1612s"},{"@type":"Clip","name":"What is the difference between an FDE and a consultant? (Jason, Nominal)","startOffset":907,"endOffset":939,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=905s"},{"@type":"Clip","name":"What is the difference between an FDE and a consultant? (Jason, Nominal)","startOffset":939,"endOffset":982,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=937s"},{"@type":"Clip","name":"Can you give an example where field work actually sped up a deal? (Jason, Nominal)","startOffset":995,"endOffset":1024,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=993s"},{"@type":"Clip","name":"Can you give an example where field work actually sped up a deal? (Jason, Nominal)","startOffset":1024,"endOffset":1067,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1022s"},{"@type":"Clip","name":"How has OpenAI changed its mind about what this team should build? (Colin, OpenAI)","startOffset":1070,"endOffset":1109,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1068s"},{"@type":"Clip","name":"How has OpenAI changed its mind about what this team should build? (Colin, OpenAI)","startOffset":1109,"endOffset":1150,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1107s"},{"@type":"Clip","name":"How has OpenAI changed its mind about what this team should build? (Colin, OpenAI)","startOffset":1150,"endOffset":1192,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1148s"},{"@type":"Clip","name":"What makes a company a software company instead of a consulting firm? (Howard, Dataland)","startOffset":1192,"endOffset":1234,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1190s"},{"@type":"Clip","name":"What makes a company a software company instead of a consulting firm? (Howard, Dataland)","startOffset":1234,"endOffset":1275,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1232s"},{"@type":"Clip","name":"Is having an FDE team a weakness or a strength? (Howard, Dataland)","startOffset":1286,"endOffset":1311,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1284s"},{"@type":"Clip","name":"How do you measure whether an FDE team is worth the money? (Calvin, Ramp)","startOffset":1328,"endOffset":1361,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1326s"},{"@type":"Clip","name":"How do you measure whether an FDE team is worth the money? (Calvin, Ramp)","startOffset":1361,"endOffset":1405,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1359s"},{"@type":"Clip","name":"How do you measure whether an FDE team is worth the money? (Colin, OpenAI)","startOffset":1405,"endOffset":1447,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1403s"},{"@type":"Clip","name":"How do you measure whether an FDE team is worth the money? (Colin, OpenAI)","startOffset":1488,"endOffset":1513,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1486s"},{"@type":"Clip","name":"Which engagements actually make the most money in the long run? (Colin, OpenAI)","startOffset":1443,"endOffset":1452,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1441s"},{"@type":"Clip","name":"Why do consulting firms do this badly? (Colin, OpenAI)","startOffset":1454,"endOffset":1488,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1452s"},{"@type":"Clip","name":"When does this revenue start fooling you into thinking you have a real product? (Jason, Nominal)","startOffset":1537,"endOffset":1573,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1535s"},{"@type":"Clip","name":"What does a healthy customer relationship look like? (Jason, Nominal)","startOffset":1573,"endOffset":1614,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1571s"},{"@type":"Clip","name":"How do you tell lasting value from value that disappears? (Howard, Dataland)","startOffset":1637,"endOffset":1699,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1635s"},{"@type":"Clip","name":"How do two people serve that many customers? (Howard, Dataland)","startOffset":1733,"endOffset":1786,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1731s"},{"@type":"Clip","name":"How do two people serve that many customers? (Howard, Dataland)","startOffset":1786,"endOffset":1810,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1784s"},{"@type":"Clip","name":"How does the team work with researchers, not just the product team? (Colin, OpenAI)","startOffset":1828,"endOffset":1870,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1826s"},{"@type":"Clip","name":"How does the team work with researchers, not just the product team? (Colin, OpenAI)","startOffset":1870,"endOffset":1912,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1868s"},{"@type":"Clip","name":"What does it look like when the model cannot do the job yet? (Colin, OpenAI)","startOffset":1912,"endOffset":1954,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1910s"},{"@type":"Clip","name":"What does it look like when the model cannot do the job yet? (Colin, OpenAI)","startOffset":1954,"endOffset":1977,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1952s"},{"@type":"Clip","name":"Did the slide work put consultants out of a job? (Colin, OpenAI)","startOffset":1980,"endOffset":2014,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=1978s"},{"@type":"Clip","name":"What makes someone good at this job? (Howard, Dataland)","startOffset":2038,"endOffset":2080,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2036s"},{"@type":"Clip","name":"What makes someone good at this job? (Howard, Dataland)","startOffset":2080,"endOffset":2121,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2078s"},{"@type":"Clip","name":"What makes someone good at this job? (Jason, Nominal)","startOffset":2121,"endOffset":2164,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2119s"},{"@type":"Clip","name":"What makes someone good at this job? (Calvin, Ramp)","startOffset":2231,"endOffset":2291,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2229s"},{"@type":"Clip","name":"What makes someone good at this job? (Colin, OpenAI)","startOffset":2332,"endOffset":2379,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2330s"},{"@type":"Clip","name":"Is this job good preparation for starting a company? (Howard, Dataland)","startOffset":2080,"endOffset":2108,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2078s"},{"@type":"Clip","name":"Should engineers move between field work and core product work? (Jason, Nominal)","startOffset":2164,"endOffset":2206,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2162s"},{"@type":"Clip","name":"Does the ideal person for this role change as the company changes? (Jason, Nominal)","startOffset":2206,"endOffset":2231,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2204s"},{"@type":"Clip","name":"How is the interview different from a normal engineering interview? (Calvin, Ramp)","startOffset":2291,"endOffset":2318,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2289s"},{"@type":"Clip","name":"What backgrounds do these engineers come from? (Colin, OpenAI)","startOffset":2358,"endOffset":2377,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2356s"},{"@type":"Clip","name":"How do you stop customers becoming dependent on specific engineers? (Calvin, Ramp)","startOffset":2444,"endOffset":2464,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2442s"},{"@type":"Clip","name":"How do you stop customers becoming dependent on specific engineers? (Calvin, Ramp)","startOffset":2464,"endOffset":2490,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2462s"},{"@type":"Clip","name":"How do you stop customers becoming dependent on specific engineers? (Howard, Dataland)","startOffset":2490,"endOffset":2506,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2488s"},{"@type":"Clip","name":"How do you stop customers becoming dependent on specific engineers? (Howard, Dataland)","startOffset":2506,"endOffset":2530,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2504s"},{"@type":"Clip","name":"How do you stop customers becoming dependent on specific engineers? (Jason, Nominal)","startOffset":2530,"endOffset":2548,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2528s"},{"@type":"Clip","name":"How is this different from a solutions engineer or a solutions architect? (Colin, OpenAI)","startOffset":2584,"endOffset":2626,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2582s"},{"@type":"Clip","name":"How is this different from a solutions engineer or a solutions architect? (Colin, OpenAI)","startOffset":2626,"endOffset":2651,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2624s"},{"@type":"Clip","name":"How do you structure the team, and does Palantir's Echo and Delta split still make sense? (Jason, Nominal)","startOffset":2685,"endOffset":2752,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2683s"},{"@type":"Clip","name":"How do you structure the team, and does Palantir's Echo and Delta split still make sense? (Howard, Dataland)","startOffset":2794,"endOffset":2837,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2792s"},{"@type":"Clip","name":"How do you structure the team, and does Palantir's Echo and Delta split still make sense? (Howard, Dataland)","startOffset":2837,"endOffset":2860,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2835s"},{"@type":"Clip","name":"How do you structure the team, and does Palantir's Echo and Delta split still make sense? (Colin, OpenAI)","startOffset":2860,"endOffset":2895,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2858s"},{"@type":"Clip","name":"How do you structure the team, and does Palantir's Echo and Delta split still make sense? (Colin, OpenAI)","startOffset":2895,"endOffset":2922,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2893s"},{"@type":"Clip","name":"Where does the salesperson end and the field engineer begin? (Jason, Nominal)","startOffset":2752,"endOffset":2794,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2750s"},{"@type":"Clip","name":"Which comes first, the platform or the field work? (Jason, Nominal)","startOffset":2950,"endOffset":3006,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=2948s"},{"@type":"Clip","name":"Which comes first, the platform or the field work? (Calvin, Ramp)","startOffset":3006,"endOffset":3060,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=3004s"},{"@type":"Clip","name":"All four teams are hiring. How do you get in touch? (Colin, OpenAI)","startOffset":3071,"endOffset":3095,"url":"https://www.youtube.com/watch?v=hWuoH-ODDNc&t=3069s"}]}</script>
+<style>
+:root{
+  --bg:#07080a;
+  --panel:#0d0f13; --panel-2:#12151b; --panel-3:#171b22;
+  --line:#1b1f26; --line-2:#252a33;
+  --ink:#edf0f4; --ink-2:#9aa3b0; --ink-3:#646c78;
+  --a:#5ecfa8;                          /* answers, in every category */
+  --a-soft:rgba(94,207,168,.07);
+  --a-line:rgba(94,207,168,.24);
+  --c:#e8bd63; --c-soft:rgba(232,189,99,.10); --c-line:rgba(232,189,99,.32);
+  --max:900px;
+  /* depth: the inset top highlight is what actually reads as raised on dark */
+  --e1:inset 0 1px 0 rgba(255,255,255,.045), 0 1px 2px rgba(0,0,0,.5), 0 8px 20px -10px rgba(0,0,0,.65);
+  --e2:inset 0 1px 0 rgba(255,255,255,.07), 0 2px 4px rgba(0,0,0,.5), 0 18px 40px -16px rgba(0,0,0,.8);
+  --e3:inset 0 1px 0 rgba(255,255,255,.09), 0 4px 8px rgba(0,0,0,.55), 0 30px 60px -20px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:7.5rem}
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(900px 420px at 12% -8%, rgba(232,189,99,.055), transparent 68%),
+    radial-gradient(760px 380px at 88% 4%, rgba(94,207,168,.045), transparent 66%),
+    var(--bg);
+  font:400 17px/1.7 Inter,system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+a{color:var(--a); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 26px}
+
+/* ---------- masthead ---------- */
+.top{border-bottom:1px solid var(--line)}
+.top-in{max-width:var(--max); margin:0 auto; padding:74px 26px 44px; text-align:center}
+.kicker{
+  display:inline-block; margin:0 0 22px; padding:7px 16px; border-radius:999px;
+  font:500 11px/1 Inter; letter-spacing:.2em; text-transform:uppercase; color:var(--c);
+  border:1px solid var(--c-line); background:var(--c-soft); box-shadow:var(--e1);
+}
+h1{
+  margin:0 auto 20px; max-width:23ch;
+  font:500 clamp(2.3rem,6vw,3.9rem)/1.09 Cormorant Garamond,Georgia,serif; letter-spacing:-.012em;
+}
+h1 em{font-style:italic; color:var(--c)}
+.rule{width:54px; height:1px; margin:0 auto 24px; background:var(--c-line)}
+.lede{margin:0 auto 34px; max-width:60ch; font-size:1.05rem; color:var(--ink-2)}
+.lede strong{color:var(--ink); font-weight:500}
+
+.figs{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:0; padding:0; list-style:none}
+.figs li{
+  padding:18px 10px 15px; border-radius:14px; border:1px solid var(--line);
+  background:linear-gradient(180deg, var(--panel-2), var(--panel)); box-shadow:var(--e1);
+}
+.figs b{display:block; font:500 2rem/1.05 Cormorant Garamond,Georgia,serif; color:var(--c)}
+.figs span{font:400 .67rem/1.5 Inter; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-3)}
+
+/* ---------- timeline map ---------- */
+.map{padding:34px 0 4px; perspective:900px}
+.map-h{
+  display:flex; justify-content:space-between; align-items:baseline; gap:14px; margin:0 0 14px;
+  font:400 .71rem/1.5 Inter; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-3);
+}
+.strip{
+  position:relative; height:66px; border-radius:14px;
+  border:1px solid var(--line-2); background:linear-gradient(180deg,var(--panel-3),var(--panel));
+  box-shadow:var(--e2);
+  transform:rotateX(7deg); transform-origin:50% 100%; transition:transform .35s ease;
+}
+.map:hover .strip{transform:rotateX(0deg)}
+.tick{position:absolute; top:9px; bottom:20px; width:11px; margin-left:-5.5px; display:block}
+.tick span{
+  display:block; width:3px; height:100%; margin:0 auto; border-radius:2px;
+  background:var(--c); opacity:.5; box-shadow:0 0 9px var(--c);
+  transition:opacity .16s, transform .16s;
+}
+.tick:hover span,.tick:focus-visible span{opacity:1; transform:scaleX(1.9)}
+.tick.dim span{opacity:.09; box-shadow:none}
+.axis{position:absolute; left:0; right:0; bottom:0; height:20px}
+.axis i{
+  position:absolute; transform:translateX(-50%);
+  font:500 .63rem/20px JetBrains Mono,monospace; color:var(--ink-3); white-space:nowrap;
+}
+.map-note{margin:11px 0 0; font-size:.8rem; color:var(--ink-3); text-align:center}
+
+/* ---------- sticky category nav ---------- */
+.bar{
+  position:sticky; top:0; z-index:30; margin-top:30px;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:rgba(7,8,10,.9); backdrop-filter:blur(16px) saturate(150%);
+  box-shadow:0 12px 26px -18px rgba(0,0,0,.95);
+}
+.bar-in{max-width:var(--max); margin:0 auto; padding:12px 26px}
+.bar-row{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+.pills{display:flex; gap:7px; flex-wrap:wrap; margin:0; padding:0; list-style:none}
+.pill{
+  display:inline-flex; align-items:center; gap:7px; cursor:pointer;
+  border:1px solid var(--line-2); background:var(--panel); color:var(--ink-2);
+  border-radius:999px; padding:7px 13px; font:500 .79rem/1 Inter;
+  box-shadow:var(--e1); transition:border-color .16s, color .16s, background .16s, transform .12s;
+}
+.pill:hover{transform:translateY(-1px); color:var(--ink)}
+.pill .dot{width:7px; height:7px; border-radius:50%; background:var(--pc,var(--ink-3)); box-shadow:0 0 7px var(--pc,transparent)}
+.pill .pn{font:500 .7rem/1 JetBrains Mono,monospace; color:var(--ink-3)}
+.pill[aria-pressed="true"]{border-color:var(--pc,var(--c-line)); color:var(--ink); background:var(--panel-3)}
+.pill[aria-pressed="true"] .pn{color:var(--ink-2)}
+.bar-btns{display:flex; align-items:center; gap:7px; flex-shrink:0}
+.tbtn{
+  font:500 .79rem/1 Inter; padding:8px 14px; border-radius:999px; cursor:pointer;
+  background:transparent; border:1px solid var(--line-2); color:var(--ink-2);
+  transition:border-color .16s, color .16s;
+}
+.tbtn:hover{border-color:var(--a-line); color:var(--a)}
+.count{font:400 .73rem/1 Inter; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3)}
+
+/* ---------- categories ---------- */
+.list{padding:40px 0 10px}
+.cat{margin-bottom:44px; scroll-margin-top:8rem}
+.cat[hidden]{display:none}
+.cat-head{
+  display:flex; align-items:center; gap:18px; padding:20px 22px; margin-bottom:14px;
+  border:1px solid var(--line); border-left:3px solid var(--c); border-radius:14px;
+  background:linear-gradient(100deg, var(--c-soft), transparent 46%), linear-gradient(180deg,var(--panel-2),var(--panel));
+  box-shadow:var(--e2);
+}
+.cat-i{flex-shrink:0; font:500 .78rem/1 JetBrains Mono,monospace; letter-spacing:.08em; color:var(--c); opacity:.75}
+.cat-t{flex:1; min-width:0}
+.cat-t h2{margin:0 0 5px; font:500 1.55rem/1.2 Cormorant Garamond,Georgia,serif; color:var(--ink); letter-spacing:-.006em}
+.cat-t p{margin:0; font-size:.9rem; color:var(--ink-2)}
+.cat-n{flex-shrink:0; text-align:right}
+.cat-n b{display:block; font:500 1.5rem/1 Cormorant Garamond,Georgia,serif; color:var(--c)}
+.cat-n i{font:400 .63rem/1.6 Inter; font-style:normal; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3)}
+.cat-list{display:grid; gap:11px}
+
+/* ---------- question cards ---------- */
+.qa{
+  border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  background:linear-gradient(180deg,var(--panel-2),var(--panel)); box-shadow:var(--e1);
+  transition:box-shadow .2s, transform .16s, border-color .18s;
+}
+.qa:hover{transform:translateY(-2px); box-shadow:var(--e2); border-color:var(--line-2)}
+.qa[open]{
+  border-color:var(--c-line); box-shadow:var(--e3); transform:none;
+  background:linear-gradient(180deg,var(--panel-3),var(--panel));
+}
+.q{display:flex; gap:16px; align-items:flex-start; cursor:pointer; padding:20px 22px; list-style:none; outline:none}
+.q::-webkit-details-marker{display:none}
+.q:focus-visible{box-shadow:inset 0 0 0 2px var(--c-line)}
+.q-n{
+  flex-shrink:0; margin-top:5px; width:1.6em;
+  font:500 .78rem/1 JetBrains Mono,monospace; letter-spacing:.05em; color:var(--ink-3); transition:color .18s;
+}
+.qa[open] .q-n,.qa:hover .q-n{color:var(--c)}
+.q-main{flex:1; min-width:0}
+.q-text{
+  display:block; font:500 clamp(1.14rem,2.3vw,1.34rem)/1.42 Cormorant Garamond,Georgia,serif;
+  color:var(--ink); letter-spacing:.004em; transition:color .18s;
+}
+.qa[open] .q-text{color:var(--c)}
+.q-meta{display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin-top:10px}
+.tag{
+  font:400 .68rem/1 Inter; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3);
+  border:1px solid var(--line-2); border-radius:999px; padding:5px 9px; background:rgba(255,255,255,.015);
+}
+.tag-c{color:var(--c); border-color:var(--c-line); background:var(--c-soft)}
+.tag-t{font-family:JetBrains Mono,monospace; letter-spacing:.04em}
+.tag-aud{color:var(--a); border-color:var(--a-line); background:var(--a-soft)}
+.q-mark{position:relative; flex-shrink:0; width:15px; height:15px; margin-top:9px}
+.q-mark::before,.q-mark::after{content:''; position:absolute; background:var(--ink-3); transition:transform .22s, background .18s}
+.q-mark::before{top:7px; left:0; width:15px; height:1.5px}
+.q-mark::after{top:0; left:6.75px; width:1.5px; height:15px}
+.qa[open] .q-mark::before,.qa[open] .q-mark::after{background:var(--c)}
+.qa[open] .q-mark::after{transform:rotate(90deg)}
+
+.body{padding:0 22px 22px}
+.ctx{
+  margin:0 0 18px; padding:12px 16px; border-radius:10px;
+  border:1px solid var(--line); border-left:2px solid var(--c-line); background:rgba(255,255,255,.014);
+  color:var(--ink-2); font-size:.93rem; font-style:italic;
+}
+.answers{display:grid; gap:12px}
+
+/* answers: teal in every category, so Q and A never blur */
+.a{
+  background:linear-gradient(180deg, var(--a-soft), rgba(94,207,168,.02));
+  border:1px solid var(--a-line); border-radius:12px; padding:17px 19px; box-shadow:var(--e1);
+}
+.a-top{display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; margin-bottom:11px}
+.a-who{display:inline-flex; align-items:center; gap:10px}
+.a-disc{
+  display:grid; place-items:center; width:28px; height:28px; border-radius:50%; flex-shrink:0;
+  border:1px solid var(--a-line); background:rgba(94,207,168,.12);
+  font:500 .8rem/1 Inter; color:var(--a); box-shadow:var(--e1);
+}
+.a-name{display:inline-flex; align-items:baseline; gap:9px; font:500 .96rem/1.2 Inter; color:var(--ink)}
+.a-org{font:400 .7rem/1 Inter; letter-spacing:.11em; text-transform:uppercase; color:var(--a)}
+.clip{
+  display:inline-flex; align-items:center; gap:8px; flex-shrink:0;
+  border:1px solid var(--a-line); border-radius:999px; padding:7px 13px;
+  color:var(--a); font:500 .79rem/1 Inter; background:rgba(94,207,168,.08); box-shadow:var(--e1);
+  transition:background .16s, transform .12s;
+}
+.clip:hover{background:rgba(94,207,168,.18); transform:translateY(-1px); text-decoration:none}
+.clip-play{font-size:.58rem}
+.clip-t{font-family:JetBrains Mono,monospace}
+.a-body{margin:0; color:var(--ink-2); font-size:1rem}
+.pull{margin:14px 0 0; padding:0 0 0 15px; border-left:2px solid var(--a)}
+.pull p{margin:0; color:var(--ink); font:400 1.11rem/1.55 Cormorant Garamond,Georgia,serif; font-style:italic}
+.pull p::before{content:'\201C'} .pull p::after{content:'\201D'}
+
+/* ---------- closing ---------- */
+.tip{
+  margin:46px 0 0; padding:34px 32px; border-radius:18px;
+  border:1px solid var(--c-line); box-shadow:var(--e3);
+  background:linear-gradient(165deg, rgba(232,189,99,.10), transparent 58%), linear-gradient(180deg,var(--panel-2),var(--panel));
+}
+.tip .eye{margin:0 0 12px; font:500 11px/1 Inter; letter-spacing:.2em; text-transform:uppercase; color:var(--c)}
+.tip h2{margin:0 0 16px; font:500 1.85rem/1.2 Cormorant Garamond,Georgia,serif; letter-spacing:-.008em}
+.tip p{margin:0 0 15px; color:var(--ink-2); font-size:1rem}
+.tip ol{margin:0 0 22px; padding-left:22px; color:var(--ink-2)}
+.tip li{margin-bottom:12px; padding-left:5px}
+.tip li strong{color:var(--ink); font-weight:500}
+.btns{display:flex; flex-wrap:wrap; gap:11px; margin-top:4px}
+.btn{display:inline-flex; align-items:center; gap:9px; border-radius:999px; padding:13px 24px; font:500 .93rem/1 Inter; border:1px solid transparent}
+.btn-1{background:var(--c); color:#171204; box-shadow:var(--e2)}
+.btn-1:hover{background:#f1cd80; text-decoration:none}
+.btn-2{border-color:var(--line-2); color:var(--ink); background:transparent}
+.btn-2:hover{border-color:var(--a); color:var(--a); text-decoration:none}
+
+.src{border-top:1px solid var(--line); margin-top:56px}
+.src .wrap{padding:38px 26px 62px}
+.src h3{margin:0 0 12px; font:500 1.15rem/1.3 Cormorant Garamond,Georgia,serif; color:var(--ink-2)}
+.src p{margin:0 0 12px; color:var(--ink-3); font-size:.87rem; line-height:1.75}
+.src a{color:var(--ink-2); text-decoration:underline; text-decoration-color:var(--line-2)}
+.src a:hover{color:var(--a)}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  .top-in{padding:50px 22px 34px}
+  .figs{grid-template-columns:repeat(2,1fr)}
+  .strip{transform:none; height:56px}
+  .cat-head{flex-wrap:wrap; gap:12px; padding:17px 18px}
+  .cat-n{text-align:left}
+  .q{padding:17px 16px; gap:12px}
+  .body{padding:0 16px 18px}
+  .tip{padding:26px 22px}
+  .bar-in{padding:11px 22px}
+  .axis i:nth-child(even){display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+  .strip{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <p class="kicker">Forward Deployed Engineering</p>
+    <h1>34 questions, answered by <em>the people running the teams</em></h1>
+    <div class="rule"></div>
+    <p class="lede">
+      Sorted into 8 categories: what the role is, where it ends and consulting begins, how it gets
+      measured, and what these teams screen for when they hire. Answered by the leads at
+      <strong>Ramp, Nominal, Dataland, OpenAI</strong>.
+      <strong>Pick a category, open a question, or click a timestamp to watch the answer.</strong>
+    </p>
+    <ul class="figs">
+      <li><b>34</b><span>Questions</span></li>
+      <li><b>69</b><span>Answers</span></li>
+      <li><b>8</b><span>Categories</span></li>
+      <li><b>4</b><span>Companies</span></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="map">
+    <p class="map-h"><span>Where each question sits in the 52 minute recording</span><span>51:44</span></p>
+    <div class="strip"><a class="tick" href="#what-is-an-fde" style="left:3.383%; --c:#e8bd63"
+     data-theme="definition"
+     title="1:45 &middot; What the job is &middot; What is a forward deployed engineer?"><span></span></a><a class="tick" href="#why-more-fde-jobs" style="left:10.084%; --c:#a98cf0"
+     data-theme="ai-shift"
+     title="5:13 &middot; What AI changed &middot; Why are there ten times more FDE jobs than last year, when AI keeps getting better?"><span></span></a><a class="tick" href="#is-this-really-about-ai" style="left:18.557%; --c:#a98cf0"
+     data-theme="ai-shift"
+     title="9:36 &middot; What AI changed &middot; Is the rise of this role really about AI at all?"><span></span></a><a class="tick" href="#why-companies-need-this-team" style="left:22.713%; --c:#f5b04e"
+     data-theme="product-tension"
+     title="11:45 &middot; FDE vs the main product &middot; What problem does an FDE team fix for a company that already has a good product?"><span></span></a><a class="tick" href="#ramp-tipping-point" style="left:24.774%; --c:#f5b04e"
+     data-theme="product-tension"
+     title="12:49 &middot; FDE vs the main product &middot; What made Ramp finally start an FDE team?"><span></span></a><a class="tick" href="#do-fdes-go-on-site" style="left:26.933%; --c:#e8bd63"
+     data-theme="definition"
+     title="13:56 &middot; What the job is &middot; Do forward deployed engineers actually work at the customer's office?"><span></span></a><a class="tick" href="#game-of-telephone" style="left:27.513%; --c:#e8bd63"
+     data-theme="definition"
+     title="14:14 &middot; What the job is &middot; Why does one engineer talking to the customer beat a chain of people passing messages?"><span></span></a><a class="tick" href="#fde-vs-consultant" style="left:28.512%; --c:#f0817f"
+     data-theme="services-trap"
+     title="14:45 &middot; The services trap &middot; What is the difference between an FDE and a consultant?"><span></span></a><a class="tick" href="#example-of-speeding-a-deal" style="left:31.637%; --c:#7db8f5"
+     data-theme="boundaries"
+     title="16:22 &middot; Where the job ends &middot; Can you give an example where field work actually sped up a deal?"><span></span></a><a class="tick" href="#openai-changed-its-mind" style="left:34.375%; --c:#f5b04e"
+     data-theme="product-tension"
+     title="17:47 &middot; FDE vs the main product &middot; How has OpenAI changed its mind about what this team should build?"><span></span></a><a class="tick" href="#software-or-consulting" style="left:38.402%; --c:#eb8fd0"
+     data-theme="economics"
+     title="19:52 &middot; Money and ROI &middot; What makes a company a software company instead of a consulting firm?"><span></span></a><a class="tick" href="#bug-or-feature" style="left:41.430%; --c:#f0817f"
+     data-theme="services-trap"
+     title="21:26 &middot; The services trap &middot; Is having an FDE team a weakness or a strength?"><span></span></a><a class="tick" href="#measuring-roi" style="left:42.236%; --c:#eb8fd0"
+     data-theme="economics"
+     title="21:51 &middot; Money and ROI &middot; How do you measure whether an FDE team is worth the money?"><span></span></a><a class="tick" href="#small-teams-most-profitable" style="left:46.617%; --c:#eb8fd0"
+     data-theme="economics"
+     title="24:07 &middot; Money and ROI &middot; Which engagements actually make the most money in the long run?"><span></span></a><a class="tick" href="#why-consultancies-do-it-badly" style="left:47.358%; --c:#f0817f"
+     data-theme="services-trap"
+     title="24:30 &middot; The services trap &middot; Why do consulting firms do this badly?"><span></span></a><a class="tick" href="#fake-product-market-fit" style="left:48.744%; --c:#f0817f"
+     data-theme="services-trap"
+     title="25:13 &middot; The services trap &middot; When does this revenue start fooling you into thinking you have a real product?"><span></span></a><a class="tick" href="#what-a-good-relationship-looks-like" style="left:50.677%; --c:#7db8f5"
+     data-theme="boundaries"
+     title="26:13 &middot; Where the job ends &middot; What does a healthy customer relationship look like?"><span></span></a><a class="tick" href="#value-that-evaporates" style="left:52.738%; --c:#eb8fd0"
+     data-theme="economics"
+     title="27:17 &middot; Money and ROI &middot; How do you tell lasting value from value that disappears?"><span></span></a><a class="tick" href="#two-people-at-scale" style="left:54.736%; --c:#eb8fd0"
+     data-theme="economics"
+     title="28:19 &middot; Money and ROI &middot; How do two people serve that many customers?"><span></span></a><a class="tick" href="#working-with-researchers" style="left:58.312%; --c:#a98cf0"
+     data-theme="ai-shift"
+     title="30:10 &middot; What AI changed &middot; How does the team work with researchers, not just the product team?"><span></span></a><a class="tick" href="#voice-customer-service" style="left:61.598%; --c:#a98cf0"
+     data-theme="ai-shift"
+     title="31:52 &middot; What AI changed &middot; What does it look like when the model cannot do the job yet?"><span></span></a><a class="tick" href="#did-it-replace-consultants" style="left:63.692%; --c:#a98cf0"
+     data-theme="ai-shift"
+     title="32:57 &middot; What AI changed &middot; Did the slide work put consultants out of a job?"><span></span></a><a class="tick" href="#what-makes-a-good-fde" style="left:64.884%; --c:#9ed95e"
+     data-theme="hiring"
+     title="33:34 &middot; Getting hired &middot; What makes someone good at this job?"><span></span></a><a class="tick" href="#is-fde-good-founder-training" style="left:67.010%; --c:#9ed95e"
+     data-theme="hiring"
+     title="34:40 &middot; Getting hired &middot; Is this job good preparation for starting a company?"><span></span></a><a class="tick" href="#rotating-field-and-product" style="left:69.716%; --c:#64d4e8"
+     data-theme="team"
+     title="36:04 &middot; How teams are built &middot; Should engineers move between field work and core product work?"><span></span></a><a class="tick" href="#expansion-and-contraction" style="left:71.070%; --c:#64d4e8"
+     data-theme="team"
+     title="36:46 &middot; How teams are built &middot; Does the ideal person for this role change as the company changes?"><span></span></a><a class="tick" href="#extra-interview-screen" style="left:73.808%; --c:#9ed95e"
+     data-theme="hiring"
+     title="38:11 &middot; Getting hired &middot; How is the interview different from a normal engineering interview?"><span></span></a><a class="tick" href="#where-fdes-come-from" style="left:74.678%; --c:#9ed95e"
+     data-theme="hiring"
+     title="38:38 &middot; Getting hired &middot; What backgrounds do these engineers come from?"><span></span></a><a class="tick" href="#stopping-customer-dependency" style="left:76.643%; --c:#f0817f"
+     data-theme="services-trap"
+     title="39:39 &middot; The services trap &middot; How do you stop customers becoming dependent on specific engineers?"><span></span></a><a class="tick" href="#fde-vs-solutions-architect" style="left:81.894%; --c:#7db8f5"
+     data-theme="boundaries"
+     title="42:22 &middot; Where the job ends &middot; How is this different from a solutions engineer or a solutions architect?"><span></span></a><a class="tick" href="#how-teams-are-structured" style="left:85.406%; --c:#64d4e8"
+     data-theme="team"
+     title="44:11 &middot; How teams are built &middot; How do you structure the team, and does Palantir's Echo and Delta split still make sense?"><span></span></a><a class="tick" href="#sales-and-mission-ops-boundary" style="left:88.660%; --c:#64d4e8"
+     data-theme="team"
+     title="45:52 &middot; How teams are built &middot; Where does the salesperson end and the field engineer begin?"><span></span></a><a class="tick" href="#platform-first-or-field-first" style="left:94.137%; --c:#f5b04e"
+     data-theme="product-tension"
+     title="48:42 &middot; FDE vs the main product &middot; Which comes first, the platform or the field work?"><span></span></a><a class="tick" href="#how-to-get-in-touch" style="left:98.937%; --c:#9ed95e"
+     data-theme="hiring"
+     title="51:11 &middot; Getting hired &middot; All four teams are hiring. How do you get in touch?"><span></span></a>
+      <div class="axis"><i style="left:0.00%">0:00</i><i style="left:19.33%">10:00</i><i style="left:38.66%">20:00</i><i style="left:57.99%">30:00</i><i style="left:77.32%">40:00</i><i style="left:96.65%">50:00</i></div>
+    </div>
+    <p class="map-note">Each tick is one question, coloured by category. Click a tick to jump to it.</p>
+  </div>
+
+  <div class="bar">
+    <div class="bar-in">
+      <div class="bar-row">
+        <ul class="pills">
+          <li><button class="pill" data-filter="all" aria-pressed="true"><span class="dot" style="--pc:#9aa3b0"></span>All<span class="pn">34</span></button></li>
+          <li><button class="pill" data-filter="definition" style="--pc:#e8bd63" aria-pressed="false"><span class="dot"></span>What the job is<span class="pn">3</span></button></li>
+          <li><button class="pill" data-filter="boundaries" style="--pc:#7db8f5" aria-pressed="false"><span class="dot"></span>Where the job ends<span class="pn">3</span></button></li>
+          <li><button class="pill" data-filter="ai-shift" style="--pc:#a98cf0" aria-pressed="false"><span class="dot"></span>What AI changed<span class="pn">5</span></button></li>
+          <li><button class="pill" data-filter="services-trap" style="--pc:#f0817f" aria-pressed="false"><span class="dot"></span>The services trap<span class="pn">5</span></button></li>
+          <li><button class="pill" data-filter="economics" style="--pc:#eb8fd0" aria-pressed="false"><span class="dot"></span>Money and ROI<span class="pn">5</span></button></li>
+          <li><button class="pill" data-filter="product-tension" style="--pc:#f5b04e" aria-pressed="false"><span class="dot"></span>FDE vs the main product<span class="pn">4</span></button></li>
+          <li><button class="pill" data-filter="hiring" style="--pc:#9ed95e" aria-pressed="false"><span class="dot"></span>Getting hired<span class="pn">5</span></button></li>
+          <li><button class="pill" data-filter="team" style="--pc:#64d4e8" aria-pressed="false"><span class="dot"></span>How teams are built<span class="pn">4</span></button></li>
+        </ul>
+        <div class="bar-btns">
+          <span class="count" id="count">34 shown</span>
+          <button class="tbtn" id="expand">Expand all</button>
+          <button class="tbtn" id="collapse">Collapse all</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="list">
+      <section class="cat" id="cat-definition" data-theme="definition" style="--c:#e8bd63; --c-soft:rgba(232,189,99,0.1); --c-line:rgba(232,189,99,0.32)"
+               aria-labelledby="cat-h-definition">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">01</span>
+          <div class="cat-t">
+            <h2 id="cat-h-definition">What the job is</h2>
+            <p>What the role actually is, in each company words, and what forward deployed really means in practice.</p>
+          </div>
+          <span class="cat-n"><b>3</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="what-is-an-fde">
+            <summary class="q">
+              <span class="q-n">01</span>
+              <span class="q-main">
+                <span class="q-text">What is a forward deployed engineer?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What the job is</span>
+                  <span class="tag">4 answers</span>
+                  <span class="tag tag-t">1:45</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">There is no agreed definition. Each company describes the job by what the team is responsible for, not by what it does day to day.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=131s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 2:13">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">2:13</span>
+                </a>
+              </header>
+              <p class="a-body">At Ramp the team has one job: win big enterprise customers. How they do it is left deliberately open. They are allowed to build inside the main product and do whatever winning the deal takes.</p>
+              <blockquote class="pull"><p>FDE at Ramp has a mandate to win enterprise, the upmarket segment. And the way we do that, we are allowed to get very creative.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=156s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 2:38">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">2:38</span>
+                </a>
+              </header>
+              <p class="a-body">Nominal sells to people building satellites, nuclear reactors and other hardware. The role has been central since day one. The important part is finding where the product runs out of road and feeding that back into what gets built next.</p>
+              <blockquote class="pull"><p>Learn where the bleeding edge of product is, what do our users need to fully unlock their workflows, and how does that feed into our longer-term product roadmap.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=197s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 3:19">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">3:19</span>
+                </a>
+              </header>
+              <p class="a-body">Dataland builds AI that takes over work people do today, across healthcare, energy, consumer electronics, logistics and waste. Every customer gets a different agent, so the role is not a layer on top of a product. It is the whole company.</p>
+              <blockquote class="pull"><p>It's literally the lifeblood of the company.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=259s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 4:21">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">4:21</span>
+                </a>
+              </header>
+              <p class="a-body">OpenAI wants two things: more people using AI, and better models. Those become the team's two jobs. One group finds problems that repeat across many companies, builds with a customer, then ships a product or folds the work into Codex. The other takes the hardest industries and works with researchers to improve the model itself.</p>
+              <blockquote class="pull"><p>We're the tip of the spear for OpenAI with the enterprise, and we try and make things repeatable, and we try and push the bounds of what the models can do.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="do-fdes-go-on-site">
+            <summary class="q">
+              <span class="q-n">02</span>
+              <span class="q-main">
+                <span class="q-text">Do forward deployed engineers actually work at the customer's office?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What the job is</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">13:56</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">The name suggests being physically deployed. At Ramp it does not work that way.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=834s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 13:56">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">13:56</span>
+                </a>
+              </header>
+              <p class="a-body">Ramp's engineers rarely go on site, roughly once a quarter, and mostly work over video calls. Forward deployed means direct contact with the customer, not sitting in their building.</p>
+              <blockquote class="pull"><p>We don't actually visit them all that often. So, like once a quarter or so, you will mostly do it over Zoom.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="game-of-telephone">
+            <summary class="q">
+              <span class="q-n">03</span>
+              <span class="q-main">
+                <span class="q-text">Why does one engineer talking to the customer beat a chain of people passing messages?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What the job is</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">14:14</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Both Calvin and Jason call the alternative a game of telephone. This is the clearest statement of why the role exists at all.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=852s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 14:14">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">14:14</span>
+                </a>
+              </header>
+              <p class="a-body">An engineer who knows both what the customer needs and how the codebase works can see answers nobody in the relay would ever suggest. That is how you win the customer without wrecking your plans.</p>
+              <blockquote class="pull"><p>One very smart person, a great engineer with all of the context necessary can produce brilliant solutions that a game of telephone will inevitably miss.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1612s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 26:54">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">26:54</span>
+                </a>
+              </header>
+              <p class="a-body">He had to learn ordinary sales skills himself, because Palantir did not teach them in his day. His point is that the value comes from engineers building the relationship directly, instead of information passing through a sales layer.</p>
+              <blockquote class="pull"><p>Part of the magic of forward deployed engineering is just making sure that there's not a game of telephone.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-boundaries" data-theme="boundaries" style="--c:#7db8f5; --c-soft:rgba(125,184,245,0.1); --c-line:rgba(125,184,245,0.32)"
+               aria-labelledby="cat-h-boundaries">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">02</span>
+          <div class="cat-t">
+            <h2 id="cat-h-boundaries">Where the job ends</h2>
+            <p>Where the job stops. What belongs to the customer, what belongs to the product, and which titles do what.</p>
+          </div>
+          <span class="cat-n"><b>3</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="example-of-speeding-a-deal">
+            <summary class="q">
+              <span class="q-n">04</span>
+              <span class="q-main">
+                <span class="q-text">Can you give an example where field work actually sped up a deal?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Where the job ends</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">16:22</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Nominal's first large contract. The customer tested drones and wanted more of their team looking at flight data.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=993s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 16:35">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">16:35</span>
+                </a>
+              </header>
+              <p class="a-body">The customer wanted forty people looking at the data after each flight instead of two. The blocker was that data had to be cleaned up by scripts sitting on individual engineers' laptops before anyone could use it.</p>
+              <blockquote class="pull"><p>His goal was get 40 people in his organization looking at data every single flight. On average before us it was two.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1022s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 17:04">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">17:04</span>
+                </a>
+              </header>
+              <p class="a-body">The customer simply asked Nominal to handle it, without knowing what that meant technically. An engineer named Ross built it, but deliberately made it general: a container that holds the data-cleanup logic rather than something tied to one customer's format. It unblocked that customer and became a core feature sold to everyone else.</p>
+              <blockquote class="pull"><p>This was on our road map, I knew we would build this at some point. We just pulled it left because the opportunity presented itself.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="what-a-good-relationship-looks-like">
+            <summary class="q">
+              <span class="q-n">05</span>
+              <span class="q-main">
+                <span class="q-text">What does a healthy customer relationship look like?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Where the job ends</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">26:13</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Jason describes the version worth aiming for, which is a useful checklist when judging a company you might join.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1571s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 26:13">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">26:13</span>
+                </a>
+              </header>
+              <p class="a-body">Four signs it is going well: they value the product itself, you teach them how to use it, they treat you as a thinking partner, and they give you blunt feedback. The best ones will host your team so you can build alongside them.</p>
+              <blockquote class="pull"><p>There's a really magical sweet spot. They value the product, you teach them about the product and they view you as a thought partner.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="fde-vs-solutions-architect">
+            <summary class="q">
+              <span class="q-n">06</span>
+              <span class="q-main">
+                <span class="q-text">How is this different from a solutions engineer or a solutions architect?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Where the job ends</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">42:22</span>
+                  <span class="tag tag-aud">Asked from the audience</span>
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Asked by an audience member finishing at MIT and about to start as an FDE, trying to tell similar-sounding job titles apart.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2582s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 43:04">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">43:04</span>
+                </a>
+              </header>
+              <p class="a-body">The clearest breakdown of the night, at least as OpenAI draws it. Solutions engineering happens before the sale, for the broad market. Solutions architecture happens after the sale, for that same broad market. FDE is a separate business unit running only about ten engagements at a time, brought in very early when a problem looks like the right shape, then owning everything before and after the sale as one team.</p>
+              <blockquote class="pull"><p>FDE is actually a different business unit that is separate from those, and we only really work like 10 engagements at a time.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2624s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 43:46">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">43:46</span>
+                </a>
+              </header>
+              <p class="a-body">Because they check whether the work has milestones and could turn into repeat revenue, the team turns down more than it takes on. Plenty of problems are interesting without ever reaching the scale that justifies this team.</p>
+              <blockquote class="pull"><p>We have to say no more times than we have to say yes, because there's a lot of people with interesting problems, but not every problem is going to get to scale.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-ai-shift" data-theme="ai-shift" style="--c:#a98cf0; --c-soft:rgba(169,140,240,0.1); --c-line:rgba(169,140,240,0.32)"
+               aria-labelledby="cat-h-ai-shift">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">03</span>
+          <div class="cat-t">
+            <h2 id="cat-h-ai-shift">What AI changed</h2>
+            <p>What better models changed about the work, and what was already true before AI.</p>
+          </div>
+          <span class="cat-n"><b>5</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="why-more-fde-jobs">
+            <summary class="q">
+              <span class="q-n">07</span>
+              <span class="q-main">
+                <span class="q-text">Why are there ten times more FDE jobs than last year, when AI keeps getting better?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What AI changed</span>
+                  <span class="tag">4 answers</span>
+                  <span class="tag tag-t">5:13</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">It sounds backwards. Better models should mean fewer engineers needed in the field, not more.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=344s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 5:46">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">5:46</span>
+                </a>
+              </header>
+              <p class="a-body">There is far more work to go after now. Old software picked one task, built one tool, sold it to everybody, and only so many tasks are shaped like that. Companies spend far more on people than on software, and the work people do varies enormously from place to place. AI can finally reach that messier work, but only if an engineer understands the job well enough to nearly do it themselves.</p>
+              <blockquote class="pull"><p>You need engineers who actually really understand the use case.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=429s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 7:11">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">7:11</span>
+                </a>
+              </header>
+              <p class="a-body">Why coding tools got good first: every software engineer already does the work the tool is automating, so the whole industry understands that job deeply. No industry has that for energy or logistics, which is exactly why someone has to go and learn it in person.</p>
+              <blockquote class="pull"><p>Every software engineer is naturally a forward deployed engineer in the coding space, because we all code every day, and that's why the coding agents are so good.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=471s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 7:53">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">7:53</span>
+                </a>
+              </header>
+              <p class="a-body">The work moved up a level. A year ago most of the time went on wiring things together and building tests for five separate agents, which limited how hard a problem you could take on, because the customer still needs to see something soon. Since about January the models handle long tasks well, so far less time goes on plumbing and far more on the actual problem.</p>
+              <blockquote class="pull"><p>You build a lot less plumbing and you spend a lot more time solving actual use cases.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=555s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 9:17">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">9:17</span>
+                </a>
+              </header>
+              <p class="a-body">His example: fourteen months with a chip company. The first ten were spent speeding up their software work, including an agent that debugs failures on its own. Only now are they building agents that help design the physical chip, because the basics underneath are finally reliable.</p>
+              <blockquote class="pull"><p>We can kind of trust that Codex is going to do the bottom 50% of tasks pretty well, and so we can focus on the higher level tasks.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="is-this-really-about-ai">
+            <summary class="q">
+              <span class="q-n">08</span>
+              <span class="q-main">
+                <span class="q-text">Is the rise of this role really about AI at all?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What AI changed</span>
+                  <span class="tag">3 answers</span>
+                  <span class="tag tag-t">9:36</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Jason disagrees with the framing. He interned at Palantir in 2012, long before any of this.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=574s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 9:36">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">9:36</span>
+                </a>
+              </header>
+              <p class="a-body">He says AI is not the cause. Palantir was simply the one company willing to spend heavily on a field team, and he thinks most attempts at that bet fail. What has actually been happening for years is that software keeps getting cheaper to build, so the range of problems worth attacking grew steadily, then jumped with AI.</p>
+              <blockquote class="pull"><p>Maybe in 99 out of 100 multiverse paths it would have failed, but it just happened to work.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=639s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 10:41">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">10:41</span>
+                </a>
+              </header>
+              <p class="a-body">What stays constant across every era is judgement about which work belongs to the customer and which belongs to your team, which depends on your business model. You know it is working when you notice yourself building the same thing at several customers, because that shared piece gets pulled into the main product.</p>
+              <blockquote class="pull"><p>You always have to have this kind of a taste around, what is the customer's job versus what is something that our forward-deployed team would do.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=684s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 11:26">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">11:26</span>
+                </a>
+              </header>
+              <p class="a-body">The customer's world decides what you build. Ramp sells to finance teams who mostly do not write code, which is why Ramp shipped an agent that works inside Excel. Go where the customer already works, not where you wish they worked.</p>
+              <blockquote class="pull"><p>They're in Excel.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="working-with-researchers">
+            <summary class="q">
+              <span class="q-n">09</span>
+              <span class="q-main">
+                <span class="q-text">How does the team work with researchers, not just the product team?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What AI changed</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">30:10</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">When this works well, sales, product and research stop being separate activities.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1826s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 30:28">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">30:28</span>
+                </a>
+              </header>
+              <p class="a-body">The model is outcome first, then scale, and there are two ways to scale: build a product, or improve the model itself. His example is slide making. The model was bad at it, and a Japanese sales organisation of about two thousand people wanted a slide assistant.</p>
+              <blockquote class="pull"><p>Outcome first, so always success and then scale, and you've got two ways to scale. One is product, the other is through the model.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1868s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 31:10">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">31:10</span>
+                </a>
+              </header>
+              <p class="a-body">They worked out how to describe the task so the model could do it, starting with fixed boxes, which looked terrible, then generating HTML instead. Around fifty approaches later they picked one, produced many examples, handed those to the research team, and three months later a new model version made good slides.</p>
+              <blockquote class="pull"><p>FDEs embed with the customer, figure out how to represent the task to the model, generate lots of examples of that, and then the research team can understand how to make the model do that thing.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="voice-customer-service">
+            <summary class="q">
+              <span class="q-n">10</span>
+              <span class="q-main">
+                <span class="q-text">What does it look like when the model cannot do the job yet?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What AI changed</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">31:52</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">A phone company wanted AI to handle voice customer service. At pitch time the model failed a trivial test.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1910s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 31:52">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">31:52</span>
+                </a>
+              </header>
+              <p class="a-body">They ran ten attempts at simply getting the model to read his phone number back, and it would not do it. Alarming, given the real job involves following company policies on live calls.</p>
+              <blockquote class="pull"><p>We did a test of 10 to just get it to read back my phone number and it just would not work.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1952s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 32:34">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">32:34</span>
+                </a>
+              </header>
+              <p class="a-body">Six months of work with the research team later it shipped. He says roughly 70,000 calls a day are now handled, with no serious failures. They also built tools so the customer can write their own tests and keep improving it without the team, which he calls the goal.</p>
+              <blockquote class="pull"><p>Something like 70,000 calls a day getting deflected, and no major jailbreaks so far.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="did-it-replace-consultants">
+            <summary class="q">
+              <span class="q-n">11</span>
+              <span class="q-main">
+                <span class="q-text">Did the slide work put consultants out of a job?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">What AI changed</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">32:57</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Asked as a joke. The answer is a useful reality check on how good the output really is.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1978s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 33:00">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">33:00</span>
+                </a>
+              </header>
+              <p class="a-body">His team includes former consultants who joked about mourning their old colleagues. Then he punctures the hype: the slides are not actually good yet, so nobody is out of a job soon, even if the direction is clear.</p>
+              <blockquote class="pull"><p>The slides are actually not very good. So it'll take some time before McKinsey's out of a job.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-services-trap" data-theme="services-trap" style="--c:#f0817f; --c-soft:rgba(240,129,127,0.1); --c-line:rgba(240,129,127,0.32)"
+               aria-labelledby="cat-h-services-trap">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">04</span>
+          <div class="cat-t">
+            <h2 id="cat-h-services-trap">The services trap</h2>
+            <p>How custom work turns into a consulting business, from both sides, and how these teams avoid it.</p>
+          </div>
+          <span class="cat-n"><b>5</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="fde-vs-consultant">
+            <summary class="q">
+              <span class="q-n">12</span>
+              <span class="q-main">
+                <span class="q-text">What is the difference between an FDE and a consultant?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">The services trap</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">14:45</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">The question the panel keeps returning to. Where is the line between custom work for one customer and something that belongs in the product?</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=905s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 15:07">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">15:07</span>
+                </a>
+              </header>
+              <p class="a-body">He says he has scars from this. Palantir went through a stretch the team called the dark ages, when the field team effectively rebelled, said the original product was useless for the work they were doing, and started building new things instead.</p>
+              <blockquote class="pull"><p>Palantir went through a few years of what we call the dark ages where the FD team essentially revolted.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=937s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 15:39">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">15:39</span>
+                </a>
+              </header>
+              <p class="a-body">To avoid repeating that, Nominal's first field engineers were people who had built products themselves and had been on the receiving end of the relay, so he could talk honestly with them about whether they were drifting into consulting. He notes this work can genuinely speed up a sale, which is sometimes a straight win, but says spend that goodwill carefully as the team grows.</p>
+              <blockquote class="pull"><p>I could have really high trust conversations with them that they weren't basically going off and doing consulting.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="bug-or-feature">
+            <summary class="q">
+              <span class="q-n">13</span>
+              <span class="q-main">
+                <span class="q-text">Is having an FDE team a weakness or a strength?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">The services trap</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">21:26</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Howard raises the question Palantir argued about internally for years, and gives the answer it landed on.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1284s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 21:26">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">21:26</span>
+                </a>
+              </header>
+              <p class="a-body">For years Palantir genuinely did not know whether the model was a flaw to engineer away or a real advantage. By the time he worked there, the answer inside the company had settled firmly on advantage.</p>
+              <blockquote class="pull"><p>Palantir wasn't sure for many years, but even in my time there, the realization was FDE is a huge feature. It's not a bug.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="why-consultancies-do-it-badly">
+            <summary class="q">
+              <span class="q-n">14</span>
+              <span class="q-main">
+                <span class="q-text">Why do consulting firms do this badly?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">The services trap</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">24:30</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Colin's diagnosis of the failure mode, plus the structural protection he credits at OpenAI.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1452s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 24:14">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">24:14</span>
+                </a>
+              </header>
+              <p class="a-body">The money is addictive. Once services revenue is flowing, the incentive is to sell bigger and bigger custom projects, and nothing pushes back. What protects OpenAI is that the commercial side is not where power sits, product and research are, so the team gets pushed toward work customers can eventually run themselves.</p>
+              <blockquote class="pull"><p>The services revenue is like a drug that they just can’t get off of, and they keep selling bigger and bigger custom things.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="fake-product-market-fit">
+            <summary class="q">
+              <span class="q-n">15</span>
+              <span class="q-main">
+                <span class="q-text">When does this revenue start fooling you into thinking you have a real product?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">The services trap</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">25:13</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Asked for the founders in the room. Revenue is climbing, but nothing reusable is building up underneath it.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1535s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 25:37">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">25:37</span>
+                </a>
+              </header>
+              <p class="a-body">He flips the usual worry around. The danger is not only that your company gets hooked on the money. It is that the customer gets hooked on the specific people, so removing them gets you fired.</p>
+              <blockquote class="pull"><p>The customer is addicted to the forward deployed engineers more so than you as the company are addicted to the services revenue, and then when you try to pull the forward deployed engineers away they just fire you.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="stopping-customer-dependency">
+            <summary class="q">
+              <span class="q-n">16</span>
+              <span class="q-main">
+                <span class="q-text">How do you stop customers becoming dependent on specific engineers?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">The services trap</span>
+                  <span class="tag">5 answers</span>
+                  <span class="tag tag-t">39:39</span>
+                  <span class="tag tag-aud">Asked from the audience</span>
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Asked by a working FDE in the audience, who names the tension plainly: you hire people who want to say yes and own the outcome, then need to pull them out without losing the account.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2442s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 40:44">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">40:44</span>
+                </a>
+              </header>
+              <p class="a-body">Ramp spreads people thin on purpose. Any one customer only ever gets about a third of a person, so dropping to a quarter or a sixth is barely noticed. They have never put two engineers on one customer.</p>
+              <blockquote class="pull"><p>We stretch our FDEs very thin at Ramp. So any given customer, they only ever had like a third of an FDE.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2462s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 41:04">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">41:04</span>
+                </a>
+              </header>
+              <p class="a-body">He admits this departs from the traditional model, but says it creates the right incentive. Because every customer is asking for something, the engineer has to weigh all of it at once and decide what actually matters to the business.</p>
+              <blockquote class="pull"><p>The FDE has to look at that holistically and think to themselves, what will actually move the business.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2488s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 41:30">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">41:30</span>
+                </a>
+              </header>
+              <p class="a-body">He treats the fear as a diagnosis. If reducing headcount would get you fired, then you never did the work of making the value come from the system rather than from people.</p>
+              <blockquote class="pull"><p>If the customer's going to fire you because you reduce the headcount, that means you haven't done the value engineering.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2504s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 41:46">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">41:46</span>
+                </a>
+              </header>
+              <p class="a-body">Dataland also runs many accounts per person, so customers never come to expect a standing crew. Part of the job is saying out loud that the customer is buying an outcome, not a number of hours from a number of people.</p>
+              <blockquote class="pull"><p>Part of the FDE's job is to communicate that that's not what they're buying. They're buying the outcome.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2528s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 42:10">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">42:10</span>
+                </a>
+              </header>
+              <p class="a-body">The blunt structural tool is a time limit. He has seen companies assign engineers to one customer for twelve or twenty-four months or longer, and others that cap it at six weeks as policy.</p>
+              <blockquote class="pull"><p>I've seen companies that have FDEs assigned to customers for 12, 24 months, or even longer. And then I've seen others where it's like 6 weeks as a rule.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-economics" data-theme="economics" style="--c:#eb8fd0; --c-soft:rgba(235,143,208,0.1); --c-line:rgba(235,143,208,0.32)"
+               aria-labelledby="cat-h-economics">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">05</span>
+          <div class="cat-t">
+            <h2 id="cat-h-economics">Money and ROI</h2>
+            <p>How the team is judged. Revenue per head, what value lasts, and which engagements pay off.</p>
+          </div>
+          <span class="cat-n"><b>5</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="software-or-consulting">
+            <summary class="q">
+              <span class="q-n">17</span>
+              <span class="q-main">
+                <span class="q-text">What makes a company a software company instead of a consulting firm?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Money and ROI</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">19:52</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Howard moves the question away from job titles and culture, and onto the numbers.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1190s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 19:52">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">19:52</span>
+                </a>
+              </header>
+              <p class="a-body">It is not about having a platform. It is whether you deliver value that keeps arriving, off a cost you pay once. That is what makes investors treat a business as software, and he says there are many ways to satisfy it without selling one product to everybody.</p>
+              <blockquote class="pull"><p>The question is, is there recurring value that you're delivering to your customer on some sort of fixed cost.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1232s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 20:34">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">20:34</span>
+                </a>
+              </header>
+              <p class="a-body">Because code is getting cheaper to write, he is deliberately not attached to finding one thing to sell everyone. The test he applies instead: what does each customer teach us that makes the next custom agent cheaper to build? Once an agent runs a real workflow at scale the recurring value is large, so every use case has its own version of this equation.</p>
+              <blockquote class="pull"><p>How can we have this flywheel of learning that reduces that initial fixed cost?</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="measuring-roi">
+            <summary class="q">
+              <span class="q-n">18</span>
+              <span class="q-main">
+                <span class="q-text">How do you measure whether an FDE team is worth the money?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Money and ROI</span>
+                  <span class="tag">4 answers</span>
+                  <span class="tag tag-t">21:51</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">The premise: if the work succeeds, you should eventually be able to step back, because what you built lets the customer carry on alone.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1326s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 22:08">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">22:08</span>
+                </a>
+              </header>
+              <p class="a-body">His first answer is deliberately blunt arithmetic: enterprise revenue divided by salaries. Then the real version, which is that the team is always either shaping what gets built next or building it.</p>
+              <blockquote class="pull"><p>It's really simple at Ramp. We have the revenue from the enterprise customers and the costs of the salaries. Do that division and you get the ROI.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1359s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 22:41">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">22:41</span>
+                </a>
+              </header>
+              <p class="a-body">They prefer shipping a planned feature over something custom, because custom work has to be maintained forever. Ramp's engineers work inside the main codebase, partner closely with each product team, and keep changes small on purpose.</p>
+              <blockquote class="pull"><p>We love it when we can build a road map feature for the customer instead of having to build something custom cuz the custom stuff tends to require more maintenance.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1403s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 23:25">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">23:25</span>
+                </a>
+              </header>
+              <p class="a-body">OpenAI runs the opposite shape. They bet on problems worth hundreds of millions, so fewer customers and much more depth. Their biggest engagement has about fifteen engineers at one chip company, trying to change how an entire industry works.</p>
+              <blockquote class="pull"><p>We generally go deeper with a fewer amount of customers.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1486s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 24:48">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">24:48</span>
+                </a>
+              </header>
+              <p class="a-body">So the money from the field work itself is a minor concern for them. The real measure is the recurring revenue unlocked later, when many smaller, faster-moving customers adopt what was proven with one large one.</p>
+              <blockquote class="pull"><p>The services line is a small focus, but the bigger focus is what is the long-term value.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="small-teams-most-profitable">
+            <summary class="q">
+              <span class="q-n">19</span>
+              <span class="q-main">
+                <span class="q-text">Which engagements actually make the most money in the long run?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Money and ROI</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">24:07</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Not the answer most people expect. The biggest projects are not the most valuable ones.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1441s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 24:03">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">24:03</span>
+                </a>
+              </header>
+              <p class="a-body">The most profitable work over time is the small, product-shaped kind with two to four engineers, not the huge engagement. Big custom projects generate revenue now and very little that carries forward.</p>
+              <blockquote class="pull"><p>Probably the most long-term profitable engagements are more the product-based ones, which might have only two to four FDEs.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="value-that-evaporates">
+            <summary class="q">
+              <span class="q-n">20</span>
+              <span class="q-main">
+                <span class="q-text">How do you tell lasting value from value that disappears?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Money and ROI</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">27:17</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Howard uses the same measure as Ramp, revenue divided by headcount, but adds a test for whether the value sticks.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1635s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 27:17">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">27:17</span>
+                </a>
+              </header>
+              <p class="a-body">Dataland was two people going to three, aiming for around ten, so revenue per person is the number he watches. Build whatever the customer asks for and the asks never end, and the value shows up once then disappears. Sometimes you build the throwaway thing anyway to earn trust, but the long-term test is value that keeps arriving from a fixed amount of work.</p>
+              <blockquote class="pull"><p>If you just build whatever they ask for, there's infinite things they'll ask for, and it might deliver a momentary piece of value, but then that value evaporates.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="two-people-at-scale">
+            <summary class="q">
+              <span class="q-n">21</span>
+              <span class="q-main">
+                <span class="q-text">How do two people serve that many customers?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Money and ROI</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">28:19</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Dataland reached real scale with two people. Where does the leverage come from?</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1731s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 28:53">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">28:53</span>
+                </a>
+              </header>
+              <p class="a-body">Much of their time goes into building agents that help them build agents faster. His deeper point is that an agent is never a finished object. It lives inside a business whose systems, policies and product lines keep changing, and the agent has to keep up.</p>
+              <blockquote class="pull"><p>No agent you build is a static thing in time. It's a dynamic actor within the enterprise context of your customer.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1784s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 29:46">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">29:46</span>
+                </a>
+              </header>
+              <p class="a-body">So the real engineering problem is automating the improvement loop itself, so the agent keeps pace without a person nudging it. That is what lets a tiny team earn many millions per person.</p>
+              <blockquote class="pull"><p>You actually must figure out some sort of mechanism to actually autonomize the outer loop.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-product-tension" data-theme="product-tension" style="--c:#f5b04e; --c-soft:rgba(245,176,78,0.1); --c-line:rgba(245,176,78,0.32)"
+               aria-labelledby="cat-h-product-tension">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">06</span>
+          <div class="cat-t">
+            <h2 id="cat-h-product-tension">FDE vs the main product</h2>
+            <p>The fight between one customer needs and the main roadmap, and who wins.</p>
+          </div>
+          <span class="cat-n"><b>4</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="why-companies-need-this-team">
+            <summary class="q">
+              <span class="q-n">22</span>
+              <span class="q-main">
+                <span class="q-text">What problem does an FDE team fix for a company that already has a good product?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">FDE vs the main product</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">11:45</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Calvin says Ramp's reason is less lofty than the others. The team exists to stop something bad from happening.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=703s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 11:45">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">11:45</span>
+                </a>
+              </header>
+              <p class="a-body">He names a trap many software companies fall into. You build a product people love, growth comes easily, then you see how much money big enterprises spend. You chase those deals, and your plans get wrecked by features that help exactly one customer. An FDE team is the usual fix: the main teams keep building the plan while this team absorbs the enterprise work. He admits it is an unglamorous reason, and that it is honestly how Ramp's team started.</p>
+              <blockquote class="pull"><p>I say it's a sword and a shield. We're trying to win the enterprise deals and we're trying to protect the core teams.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="ramp-tipping-point">
+            <summary class="q">
+              <span class="q-n">23</span>
+              <span class="q-main">
+                <span class="q-text">What made Ramp finally start an FDE team?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">FDE vs the main product</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">12:49</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Ramp is known as a product-driven company, so what was the conversation that changed it?</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=778s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 13:00">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">13:00</span>
+                </a>
+              </header>
+              <p class="a-body">They were heading straight into the trap and spotted it in time. The big projects enterprise customers asked for were not things Ramp would have built otherwise, which made it a real problem to solve rather than a scheduling annoyance.</p>
+              <blockquote class="pull"><p>These large projects that the enterprise customers are asking for, this is not what we were planning on building.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=811s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 13:33">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">13:33</span>
+                </a>
+              </header>
+              <p class="a-body">The fix was removing the relay. Before, the customer told the account manager, who told the product manager, who told the engineer, who said no, and it went back around. Now the engineer talks to the customer directly.</p>
+              <blockquote class="pull"><p>That’s what we were doing before we had FD, and it was causing roadmap delays.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="openai-changed-its-mind">
+            <summary class="q">
+              <span class="q-n">24</span>
+              <span class="q-main">
+                <span class="q-text">How has OpenAI changed its mind about what this team should build?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">FDE vs the main product</span>
+                  <span class="tag">3 answers</span>
+                  <span class="tag tag-t">17:47</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Colin says the plan has been rewritten twice in about a year, and one rewrite deleted most of a planned product line.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1068s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 17:50">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">17:50</span>
+                </a>
+              </header>
+              <p class="a-body">At the start there was no platform, just the API, the customer, and an engineer in between, so success meant getting anything working at all. He cites the widely quoted finding that only about 5% of companies see real returns from AI spending.</p>
+              <blockquote class="pull"><p>When we started, we didn't have a platform at OpenAI. It was just the API and then the customer and then you were in between.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1107s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 18:29">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">18:29</span>
+                </a>
+              </header>
+              <p class="a-body">Six months before the panel the plan was around fifty small products, maybe with other people building on top. Then Codex got better, and the test for every idea became whether it could just be a Codex extension. That killed roughly 80% of the planned products.</p>
+              <blockquote class="pull"><p>Now the question we ask of every product is, can this just be a Codex extension? And that probably ate like 80% of the products that we were making.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=1148s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 19:10">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">19:10</span>
+                </a>
+              </header>
+              <p class="a-body">Two survived because enterprises need very consistent output: writing regulatory documents, and a workflow automation tool. Everything else folded into Codex. The standing questions are now whether it could be Codex, whether it truly needs to be separate, and whether the model could simply get good enough on its own.</p>
+              <blockquote class="pull"><p>Can this be Codex? If not, does it really have to be a separate product? Could the model just get smarter and be good at this task?</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="platform-first-or-field-first">
+            <summary class="q">
+              <span class="q-n">25</span>
+              <span class="q-main">
+                <span class="q-text">Which comes first, the platform or the field work?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">FDE vs the main product</span>
+                  <span class="tag">2 answers</span>
+                  <span class="tag tag-t">48:42</span>
+                  <span class="tag tag-aud">Asked from the audience</span>
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">An audience member notes Ramp is clearly platform-first, and asks whether earlier-stage companies instead discover the product through field engagements.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2948s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 49:10">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">49:10</span>
+                </a>
+              </header>
+              <p class="a-body">He ties it to those expansion and narrowing phases and says the answer is changing for Nominal right now. They are finally big enough to build a real platform, and the field team is the honest test of it: do they find it useful, do they build on it. He credits Palantir for doing exactly this until customers could build on it directly.</p>
+              <blockquote class="pull"><p>In many ways they will be the first users of something that you claim to be a platform.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=3004s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 50:06">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">50:06</span>
+                </a>
+              </header>
+              <p class="a-body">At Ramp the platform comes first, because they already know what it should do. The field engineers work out how to achieve that inside each customer's constraints rather than inventing something new. But there is a cycle: when many customers hit the same blocker, it belongs in the platform, and that is when one of these engineers gets to work like a core engineer. Same if something already planned needs to arrive sooner.</p>
+              <blockquote class="pull"><p>That's where an FDE does get to act like a core engineer.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-hiring" data-theme="hiring" style="--c:#9ed95e; --c-soft:rgba(158,217,94,0.1); --c-line:rgba(158,217,94,0.32)"
+               aria-labelledby="cat-h-hiring">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">07</span>
+          <div class="cat-t">
+            <h2 id="cat-h-hiring">Getting hired</h2>
+            <p>What they screen for, what backgrounds get in, and how the interview differs.</p>
+          </div>
+          <span class="cat-n"><b>5</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="what-makes-a-good-fde">
+            <summary class="q">
+              <span class="q-n">26</span>
+              <span class="q-main">
+                <span class="q-text">What makes someone good at this job?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Getting hired</span>
+                  <span class="tag">5 answers</span>
+                  <span class="tag tag-t">33:34</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">The most directly useful question if you are trying to get hired. All four answer, and the answers do not fully agree.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2036s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 33:58">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">33:58</span>
+                </a>
+              </header>
+              <p class="a-body">Two skill sets that rarely appear in one person. You need to be genuinely strong technically, keeping up with how fast models change, and also good at ordinary software engineering, because connecting to enterprise systems is hard, unglamorous work.</p>
+              <blockquote class="pull"><p>You have to be really good at traditional software engineering as well because you're building really complex integrations.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2078s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 34:40">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">34:40</span>
+                </a>
+              </header>
+              <p class="a-body">The other half is the customer side: winning trust, then understanding and navigating the politics of their organisation. He says openly that people who can do all of it are very hard to find.</p>
+              <blockquote class="pull"><p>You have to figure out the politics of their organization and map it out and traverse it.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2119s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 35:21">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">35:21</span>
+                </a>
+              </header>
+              <p class="a-body">Only one of his five Palantir years was in the field, but he says he still draws on it constantly, including later as an early engineer at startups. What it taught: be resourceful, be a generalist, stay curious across subjects, and be humble when the situation calls for it.</p>
+              <blockquote class="pull"><p>You have to be really scrappy and kind of be super generalist in the way you solve problems.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2229s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 37:11">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">37:11</span>
+                </a>
+              </header>
+              <p class="a-body">Ramp likes former founders and early engineers, specifically people who care about revenue, which he says many engineers do not. His framing: this is the team that wants to say yes, because it cares about winning the customer, while many engineers would rather say no and keep building their own thing.</p>
+              <blockquote class="pull"><p>The FD team is the team that wants to say yes because they care about us winning that customer.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2330s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 38:52">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">38:52</span>
+                </a>
+              </header>
+              <p class="a-body">Having grown the team from two people to more than ninety, he names one trait above all: caring about the result more than the thing you made. The usual failure is falling in love with your own work, so when nobody uses it you defend it. The best people throw their own work away and build something different because that is what is needed.</p>
+              <blockquote class="pull"><p>So much of the time people love the form of what they've created more than the function.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="is-fde-good-founder-training">
+            <summary class="q">
+              <span class="q-n">27</span>
+              <span class="q-main">
+                <span class="q-text">Is this job good preparation for starting a company?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Getting hired</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">34:40</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Howard makes the strongest version of this claim, having gone from Palantir to co-founding Dataland.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2078s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 34:40">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">34:40</span>
+                </a>
+              </header>
+              <p class="a-body">He calls it the best training ground there is for a future founder, and lists why: you have to build from zero to one, stay on the cutting edge of AI, be good with people, win the trust of enterprise customers, and work out the politics of their organisation and navigate it.</p>
+              <blockquote class="pull"><p>I think it’s really sort of the best training ground to be a future founder.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="extra-interview-screen">
+            <summary class="q">
+              <span class="q-n">28</span>
+              <span class="q-main">
+                <span class="q-text">How is the interview different from a normal engineering interview?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Getting hired</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">38:11</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">One concrete, checkable difference at Ramp.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Calvin<span class="a-org">Ramp</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2289s" target="_blank" rel="noopener"
+                   aria-label="Watch Calvin answer this, at 38:11">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">38:11</span>
+                </a>
+              </header>
+              <p class="a-body">There is one extra stage compared with a normal engineering loop: can you actually communicate? Ordinary engineering jobs do not usually put you in front of a customer, so it is not normally tested.</p>
+              <blockquote class="pull"><p>There's an additional screen on the FD interviews that we do where it's, can you actually communicate?</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="where-fdes-come-from">
+            <summary class="q">
+              <span class="q-n">29</span>
+              <span class="q-main">
+                <span class="q-text">What backgrounds do these engineers come from?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Getting hired</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">38:38</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Useful if you are wondering whether your own path counts.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2356s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 39:18">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">39:18</span>
+                </a>
+              </header>
+              <p class="a-body">OpenAI’s team is a deliberately mixed bag: people from the big consulting firms, a lot of ex-Palantir people, and a lot of former founders. No single background dominates. What they share is caring only about whether the customer actually uses the thing.</p>
+              <blockquote class="pull"><p>The common thing is that they’re all just like super outcome focused.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="how-to-get-in-touch">
+            <summary class="q">
+              <span class="q-n">30</span>
+              <span class="q-main">
+                <span class="q-text">All four teams are hiring. How do you get in touch?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">Getting hired</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">51:11</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Closing question. Each panelist read out a direct work email on stage. Those are in the recording rather than reproduced here, to keep them away from scrapers.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=3069s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 51:11">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">51:11</span>
+                </a>
+              </header>
+              <p class="a-body">All four confirmed they were hiring, and each gave a direct work email rather than pointing at a careers page, which itself says something about how these teams recruit. Listen to the closing minute for the addresses, or go to each company's careers page.</p>
+              <blockquote class="pull"><p>So there you have it. You can reach out if you're interested.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="cat" id="cat-team" data-theme="team" style="--c:#64d4e8; --c-soft:rgba(100,212,232,0.1); --c-line:rgba(100,212,232,0.32)"
+               aria-labelledby="cat-h-team">
+        <header class="cat-head">
+          <span class="cat-i" aria-hidden="true">08</span>
+          <div class="cat-t">
+            <h2 id="cat-h-team">How teams are built</h2>
+            <p>How these teams are actually organised, and how the structure keeps changing.</p>
+          </div>
+          <span class="cat-n"><b>4</b><i>questions</i></span>
+        </header>
+        <div class="cat-list">
+          <details class="qa" id="rotating-field-and-product">
+            <summary class="q">
+              <span class="q-n">31</span>
+              <span class="q-main">
+                <span class="q-text">Should engineers move between field work and core product work?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">How teams are built</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">36:04</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Jason's structural advice, with the story that convinced him.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2162s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 36:04">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">36:04</span>
+                </a>
+              </header>
+              <p class="a-body">Rotate people, because two organisations grown separately drift apart. One of his happiest moments was watching an early-career engineer fly out, try to use their own product on site, come back convinced it was bad, and get very motivated to fix it. It goes the other way too, when a field engineer cares enough about something to go and build it properly.</p>
+              <blockquote class="pull"><p>If you try to grow those organizations separately, you end up wanting them to be more conjoined so that you can more smoothly rotate.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="expansion-and-contraction">
+            <summary class="q">
+              <span class="q-n">32</span>
+              <span class="q-main">
+                <span class="q-text">Does the ideal person for this role change as the company changes?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">How teams are built</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">36:46</span>
+                  
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">A caution worth hearing before you take a job based on how the team works today.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2204s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 36:46">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">36:46</span>
+                </a>
+              </header>
+              <p class="a-body">Companies go through phases of expanding and then narrowing what they build, and each phase wants something different from this team. So who they should hire genuinely changes over time, and the people who do well are the ones willing to roll with that.</p>
+              <blockquote class="pull"><p>You go through these product expansion and contraction phases, and at different times you might want different things from a forward deployed engineering team.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="how-teams-are-structured">
+            <summary class="q">
+              <span class="q-n">33</span>
+              <span class="q-main">
+                <span class="q-text">How do you structure the team, and does Palantir's Echo and Delta split still make sense?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">How teams are built</span>
+                  <span class="tag">5 answers</span>
+                  <span class="tag tag-t">44:11</span>
+                  <span class="tag tag-aud">Asked from the audience</span>
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Asked by a working FDE. Palantir split the role in two: Echo, closer to the customer and the subject matter, and Delta, closer to the code.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2683s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 44:45">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">44:45</span>
+                </a>
+              </header>
+              <p class="a-body">Nominal has mission ops, mission development, and a growing sales team. Mission ops are deeply technical but not always coders: often former mechanical or electrical engineers, some who designed engines, though increasingly they write code anyway. The reasoning is that understanding an engineer's workflow is far easier if you have lived it. He calls this a loose descendant of Palantir's Echo role, noting Echoes often lacked the subject background and were instead capable generalists, frequently from consulting.</p>
+              <blockquote class="pull"><p>It's really helpful if you have that background being part of that organization before, and that's why we have the mission ops role.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2792s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 46:34">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">46:34</span>
+                </a>
+              </header>
+              <p class="a-body">He was an Echo intern and then a Delta, and thinks AI collapses the split. The division existed because writing code was expensive enough to need dedicated coders while others owned the relationship. If code gets dramatically cheaper, one person can hold the whole picture, which he calls radical ownership.</p>
+              <blockquote class="pull"><p>If you can dramatically reduce the cost of the production of code, then perhaps you can have this radical ownership where one person can actually hold all of that context in their head.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">H</span>
+                  <span class="a-name">Howard<span class="a-org">Dataland</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2835s" target="_blank" rel="noopener"
+                   aria-label="Watch Howard answer this, at 47:17">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">47:17</span>
+                </a>
+              </header>
+              <p class="a-body">Why he thinks that is better: the same person knows what is genuinely hard and what is easy, so decisions about what is worth building are not made by someone who cannot judge the cost. He is candid that it depends on finding people with that range.</p>
+              <blockquote class="pull"><p>They're not just a pure non-technical person making those value decisions.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2858s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 47:40">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">47:40</span>
+                </a>
+              </header>
+              <p class="a-body">He came from traditional consulting and disliked how many narrow roles it had, so OpenAI began with engineers only. They quickly found large accounts needed Echo-style people to carry the account work, so that role came back.</p>
+              <blockquote class="pull"><p>When we started the team there was only FDEs, and we realized very quickly that we really needed the echoes to take up a lot of the work around the account.</p></blockquote>
+            </article>
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">C</span>
+                  <span class="a-name">Colin<span class="a-org">OpenAI</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2893s" target="_blank" rel="noopener"
+                   aria-label="Watch Colin answer this, at 48:15">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">48:15</span>
+                </a>
+              </header>
+              <p class="a-body">Now they are adding genuine industry experts, such as chip verification engineers and working scientists, because harder problems mean writing good tasks and tests inside a specialism. There are deliberately few, on the bet that the generalists learn from them.</p>
+              <blockquote class="pull"><p>When we go up the stack in chip design, we really need to know how to design a chip.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+          <details class="qa" id="sales-and-mission-ops-boundary">
+            <summary class="q">
+              <span class="q-n">34</span>
+              <span class="q-main">
+                <span class="q-text">Where does the salesperson end and the field engineer begin?</span>
+                <span class="q-meta">
+                  <span class="tag tag-c">How teams are built</span>
+                  <span class="tag">1 answer</span>
+                  <span class="tag tag-t">45:52</span>
+                  <span class="tag tag-aud">Asked from the audience</span>
+                </span>
+              </span>
+              <span class="q-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="body">
+              <p class="ctx">Nominal is around 150 people and still working this out. The advice attached to it is the most portable thing said all night.</p>
+              <div class="answers">
+            <article class="a">
+              <header class="a-top">
+                <span class="a-who">
+                  <span class="a-disc" aria-hidden="true">J</span>
+                  <span class="a-name">Jason<span class="a-org">Nominal</span></span>
+                </span>
+                <a class="clip" href="https://www.youtube.com/watch?v=hWuoH-ODDNc&amp;t=2750s" target="_blank" rel="noopener"
+                   aria-label="Watch Jason answer this, at 45:52">
+                  <span class="clip-play" aria-hidden="true">&#9654;</span><span class="clip-t">45:52</span>
+                </a>
+              </header>
+              <p class="a-body">They have not settled it. Their mission ops role did not exist at Palantir, so there is no template to copy, and the boundary with sales is still being drawn. His advice to anyone considering these jobs: interrogate the company the way this panel was interrogated, because every company answers differently.</p>
+              <blockquote class="pull"><p>Anyone who's considering a job in forward deployed engineering, ask a lot of questions like this of any company that you're considering working with.</p></blockquote>
+            </article>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+  </div>
+
+  <section class="tip">
+    <p class="eye">If you are preparing for an interview</p>
+    <h2>How to actually use these answers</h2>
+    <p>Reading them is not preparation. These are the questions FDE hiring managers care about, because they
+    are the ones they argue about internally. Four things that turn this page into an edge:</p>
+    <ol>
+      <li><strong>Have a position on the consultant line.</strong> Every panelist circled it. If you cannot say
+      when custom work should become product and when it should be refused, you sound like a contractor.</li>
+      <li><strong>Bring one story where you changed the product, not just the deployment.</strong> The recurring
+      test is whether your field work fed the roadmap. Know the before, the decision, and the outcome.</li>
+      <li><strong>Say the number.</strong> These teams are judged on revenue per head. Attach a figure to your
+      work, even a rough one, and explain how you would know whether it was real.</li>
+      <li><strong>Expect a communication screen.</strong> Several teams add one on top of the normal loop,
+      because you sit in front of the customer. Rehearse explaining your hardest project to a non-engineer.</li>
+    </ol>
+    <p>This is my work: embedded delivery, FDE resume reviews against measured job posting data, and training
+    for Solutions Architects moving into forward-deployed roles. If you are interviewing and want a second pair
+    of eyes, book a slot and bring the job description.</p>
+    <div class="btns">
+      <a class="btn btn-1" href="https://cal.com/sameer-goel/collab">Book 30 minutes</a>
+      <a class="btn btn-2" href="/forward-deployed-engineer/">See the FDE hiring data</a>
+    </div>
+  </section>
+</main>
+
+<footer class="src">
+  <div class="wrap">
+    <h3>Where this came from</h3>
+    <p>
+      These are the questions and answers from <a href="https://www.youtube.com/watch?v=hWuoH-ODDNc" target="_blank" rel="noopener">The Future of Forward Deployed Engineering | OpenAI, Ramp, Nominal, Dataland</a>,
+      a 52 minute panel published by South Park Commons on 2026-05-28,
+      with the people who lead or built the forward deployed engineering function at Ramp, Nominal, Dataland, OpenAI.
+      5 of the questions were asked by working FDEs in the audience.
+    </p>
+    <p>
+      The panel content belongs to the speakers and to South Park Commons. This page is an index, not a
+      replacement: answers are summarised in plain language rather than transcribed, quotes are short and
+      attributed, and every timestamp links back to the recording so the speakers get the view. Timestamps came
+      from the video captions and were checked against them one by one, and each link starts a couple of seconds
+      early on purpose so the first word is not clipped.
+    </p>
+    <p>Compiled by <a href="https://sameer-goel.com/">Sameer Goel</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = Array.prototype.slice.call(document.querySelectorAll('.qa'));
+  var cats  = Array.prototype.slice.call(document.querySelectorAll('.cat'));
+  var pills = Array.prototype.slice.call(document.querySelectorAll('.pill'));
+  var ticks = Array.prototype.slice.call(document.querySelectorAll('.tick'));
+  var count = document.getElementById('count');
+
+  // Expand all only touches what is currently visible, so it matches the filter.
+  document.getElementById('expand').addEventListener('click', function(){
+    items.forEach(function(d){
+      var c = d.closest('.cat');
+      if (!c || !c.hidden) d.open = true;
+    });
+  });
+  document.getElementById('collapse').addEventListener('click', function(){
+    items.forEach(function(d){ d.open = false; });
+  });
+
+  // Filtering hides whole categories rather than individual cards, so the
+  // section headers keep their meaning and the counts stay honest.
+  function apply(key){
+    var shown = 0;
+    cats.forEach(function(c){
+      var on = (key === 'all' || c.getAttribute('data-theme') === key);
+      c.hidden = !on;
+      if (on) shown += c.querySelectorAll('.qa').length;
+    });
+    ticks.forEach(function(t){
+      t.classList.toggle('dim', !(key === 'all' || t.getAttribute('data-theme') === key));
+    });
+    pills.forEach(function(p){
+      p.setAttribute('aria-pressed', String(p.getAttribute('data-filter') === key));
+    });
+    count.textContent = shown + ' shown';
+  }
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      // Clicking the active pill clears back to all.
+      apply(p.getAttribute('aria-pressed') === 'true' ? 'all' : p.getAttribute('data-filter'));
+    });
+  });
+
+  // Jumping to a question has to work whether it came from a shared link, a
+  // timeline tick, or the back button, and it has to survive an active filter:
+  // a tick for a filtered-out category would otherwise scroll to a hidden
+  // element and look broken.
+  function reveal(hash){
+    if (!hash) return;
+    var t;
+    try { t = document.querySelector(hash); } catch (e) { return; }
+    if (!t || !t.classList.contains('qa')) return;
+    var c = t.closest('.cat');
+    if (c && c.hidden) {
+      apply(c.getAttribute('data-theme'));
+      t.scrollIntoView({ block: 'center' });
+    }
+    t.open = true;
+  }
+  window.addEventListener('hashchange', function(){ reveal(location.hash); });
+  reveal(location.hash);
+})();
+</script>
+</body>
+</html>
