@@ -440,14 +440,14 @@
       position: sticky;
       z-index: 80;
       top: 0;
-      width: min(650px, 43vw);
+      width: 50%;
       height: 100svh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       margin-right: var(--pad);
       margin-left: auto;
-      padding: clamp(7rem, 18vh, 10rem) 0 clamp(4.5rem, 10vh, 7rem);
+      padding: clamp(7rem, 18vh, 10rem) var(--pad) clamp(4.5rem, 10vh, 7rem);
     }
     .hero-identity {
       position: absolute;
@@ -602,13 +602,12 @@
       position: absolute;
       z-index: 1;
       top: 0;
-      left: 50%;
-      width: min(49vw, 880px);
+      left: 0;
+      width: 50%;
       max-width: none;
       height: 100svh;
       max-height: none;
       aspect-ratio: auto;
-      transform: translateX(-50vw);
       pointer-events: none;
     }
 
@@ -1222,6 +1221,180 @@
       border-bottom-color: var(--green-bright);
     }
 
+    /* ---------- consulting ---------- */
+    .consulting {
+      position: relative;
+      z-index: 2;
+      max-width: calc(var(--shell) + var(--pad) * 2);
+      margin: 0 auto;
+      padding: clamp(5rem, 10vh, 8rem) var(--pad);
+      scroll-margin-top: 100px;
+    }
+    .consulting-header {
+      max-width: 48rem;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+    }
+    .consulting-header h2 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 600;
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+    .consulting-header p {
+      max-width: 52ch;
+      margin-top: 1.2rem;
+      color: var(--muted);
+      font-size: clamp(.92rem, 1.2vw, 1.05rem);
+      line-height: 1.7;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(1.5rem, 3vw, 2.2rem);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.028), rgba(255,255,255,.008));
+      transition: transform .25s var(--ease), border-color .25s, box-shadow .25s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 138, 91, .32);
+      box-shadow: 0 18px 44px rgba(0,0,0,.22);
+    }
+    .pricing-card.is-featured {
+      border-color: rgba(255, 138, 91, .45);
+      background: linear-gradient(145deg, rgba(255, 138, 91, .06), rgba(255, 138, 91, .02));
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -11px;
+      right: 1.5rem;
+      padding: .3rem .7rem;
+      border-radius: 999px;
+      background: var(--green);
+      color: #101820;
+      font-size: .56rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .pricing-card h3 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+    .pricing-card .price {
+      margin-top: .8rem;
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+    .pricing-card .price span {
+      color: var(--muted);
+      font-family: 'Manrope', sans-serif;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    .pricing-card .per-session {
+      margin-top: .3rem;
+      color: var(--dim);
+      font-size: .68rem;
+    }
+    .pricing-card .description {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .pricing-card ul {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .pricing-card li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: .5rem;
+      color: var(--muted);
+      font-size: .74rem;
+      line-height: 1.5;
+    }
+    .pricing-card li::before {
+      content: '';
+      position: absolute;
+      top: .45em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .pricing-cta {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1.5rem;
+      padding: 0 1.2rem;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: .72rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color .2s, background .2s, transform .2s var(--ease);
+    }
+    .pricing-cta:hover,
+    .pricing-cta:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(255, 138, 91, .55);
+      background: rgba(255, 138, 91, .08);
+    }
+    .pricing-card.is-featured .pricing-cta {
+      border-color: var(--green);
+      background: var(--green);
+      color: #101820;
+      font-weight: 700;
+    }
+    .pricing-card.is-featured .pricing-cta:hover,
+    .pricing-card.is-featured .pricing-cta:focus-visible {
+      background: var(--green-bright);
+      transform: translateY(-1px);
+    }
+    .consulting-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: .72rem;
+      line-height: 1.6;
+    }
+    .consulting-note a {
+      color: var(--green-bright);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+    .consulting-note a:hover { border-bottom-color: var(--green-bright); }
+
+    @media (max-width: 780px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 28rem; }
+    }
+
     /* ---------- contact ---------- */
     .closing {
       position: relative;
@@ -1738,6 +1911,8 @@
       <span>AI Solutions Architect · Trainer · Speaker · Author</span>
     </div>
     <nav class="dock-nav" aria-label="Profile links">
+      <a class="quiet-link" href="/forward-deployed-engineer/">FDE</a>
+      <a class="quiet-link" href="#consulting">Consulting</a>
       <a class="quiet-link" href="https://sol.sameerai.com/" target="_blank" rel="noopener">Solutions</a>
       <a class="quiet-link" href="https://www.linkedin.com/in/sameer-goel/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="pill-link" href="https://cal.com/sameer-goel/collab" target="_blank" rel="noopener">Book 30 min</a>
@@ -1935,6 +2110,7 @@
               <h3>Book, archives and contact</h3>
               <ul>
                 <li><a href="https://updatemind.space/bookreader.html">Cultivate Inner Intelligence (book)</a></li>
+                <li><a href="/forward-deployed-engineer/">Forward Deployed Engineer: resume keywords and hiring data</a></li>
                 <li><a href="https://sol.sameerai.com/">Solutions Portfolio</a></li>
                 <li><a href="https://sameer-publicspeaker.pages.dev/">Public speaking archive</a></li>
                 <li><a href="https://sameer-thoughtleader.pages.dev/">Thought leadership archive</a></li>
@@ -1945,6 +2121,64 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="consulting reveal" id="consulting" aria-labelledby="consulting-title">
+        <div class="consulting-header">
+          <p class="section-kicker">AI Strategy Consulting</p>
+          <h2 id="consulting-title">Turn AI ambition into shipped products</h2>
+          <p>From strategy to shipped: I help teams build AI that actually works in production. I work with founders, CTOs, and product leaders to define the roadmap, choose the right architecture, and get the first version live.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Single Session</h3>
+            <p class="price">&euro;99 <span>/ 30 min</span></p>
+            <p class="description">A focused strategy call. Bring your AI challenge — leave with a clear next step, architecture recommendation, or build/buy decision.</p>
+            <ul>
+              <li>AI roadmap review</li>
+              <li>Architecture decisions</li>
+              <li>Build vs buy analysis</li>
+              <li>Tool and vendor selection</li>
+            </ul>
+            <a class="pricing-cta" href="https://buy.stripe.com/5kQbJ0djQeE81ATaRz8IU0b" target="_blank" rel="noopener">Book session <span aria-hidden="true">&#8594;</span></a>
+          </div>
+
+          <div class="pricing-card is-featured">
+            <span class="pricing-badge">Most Popular</span>
+            <h3>5-Session Pack</h3>
+            <p class="price">&euro;449</p>
+            <p class="per-session">&euro;89.80 per session &middot; Save &euro;46</p>
+            <p class="description">For teams building their first AI product. Five sessions over 4-6 weeks to go from idea to implementable plan with ongoing support.</p>
+            <ul>
+              <li>Everything in Single Session</li>
+              <li>Async follow-up between calls</li>
+              <li>Written AI roadmap document</li>
+              <li>Priority scheduling</li>
+            </ul>
+            <a class="pricing-cta" href="https://buy.stripe.com/cNi4gy6Vs8fK6Vd5xf8IU0c" target="_blank" rel="noopener">Get started <span aria-hidden="true">&#8594;</span></a>
+          </div>
+
+          <div class="pricing-card">
+            <span class="pricing-badge">Best Value</span>
+            <h3>10-Session Pack</h3>
+            <p class="price">&euro;799</p>
+            <p class="per-session">&euro;79.90 per session &middot; Save &euro;191</p>
+            <p class="description">Full advisory engagement. Ten sessions over 2-3 months for companies serious about shipping AI into production with confidence.</p>
+            <ul>
+              <li>Everything in 5-Session Pack</li>
+              <li>Hands-on architecture review</li>
+              <li>Code and system design feedback</li>
+              <li>Direct Slack/email access</li>
+            </ul>
+            <a class="pricing-cta" href="https://buy.stripe.com/cNi6oG3Jg2VqdjBe3L8IU0d" target="_blank" rel="noopener">Get started <span aria-hidden="true">&#8594;</span></a>
+          </div>
+        </div>
+
+        <p class="consulting-note">
+          After payment, you'll receive a link to schedule your sessions at a time that works for you.
+          Need something custom? <a href="#contact">Send me a message</a>.
+        </p>
       </section>
 
       <section class="closing reveal" id="contact" aria-label="Contact Sameer Goel">
