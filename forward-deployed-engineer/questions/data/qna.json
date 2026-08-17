@@ -1,0 +1,921 @@
+{
+  "source": {
+    "video_id": "hWuoH-ODDNc",
+    "title": "The Future of Forward Deployed Engineering | OpenAI, Ramp, Nominal, Dataland",
+    "channel": "South Park Commons",
+    "event": "Panel hosted at South Park Commons NYC",
+    "published": "2026-05-28",
+    "duration_seconds": 3104,
+    "url": "https://www.youtube.com/watch?v=hWuoH-ODDNc"
+  },
+  "people": {
+    "finn": {
+      "name": "Finn",
+      "role": "Partner, South Park Commons",
+      "org": "South Park Commons",
+      "moderator": true
+    },
+    "calvin": {
+      "name": "Calvin",
+      "role": "Built the forward deployed engineering team",
+      "org": "Ramp"
+    },
+    "jason": {
+      "name": "Jason",
+      "role": "Co-founder and CTO, previously five years at Palantir",
+      "org": "Nominal"
+    },
+    "howard": {
+      "name": "Howard",
+      "role": "Co-founder, previously Echo then Delta at Palantir",
+      "org": "Dataland"
+    },
+    "colin": {
+      "name": "Colin",
+      "role": "Leads forward deployed engineering",
+      "org": "OpenAI"
+    },
+    "varun": {
+      "name": "Varun",
+      "role": "Working FDE, from the audience",
+      "org": "Audience"
+    },
+    "richa": {
+      "name": "Richa",
+      "role": "Graduating from MIT, starting as an FDE, from the audience",
+      "org": "Audience"
+    },
+    "emmy": {
+      "name": "Emmy",
+      "role": "Working FDE, from the audience",
+      "org": "Audience"
+    }
+  },
+  "themes": [
+    {
+      "key": "definition",
+      "label": "What the job is",
+      "blurb": "What the role actually is, in each company words, and what forward deployed really means in practice."
+    },
+    {
+      "key": "boundaries",
+      "label": "Where the job ends",
+      "blurb": "Where the job stops. What belongs to the customer, what belongs to the product, and which titles do what."
+    },
+    {
+      "key": "ai-shift",
+      "label": "What AI changed",
+      "blurb": "What better models changed about the work, and what was already true before AI."
+    },
+    {
+      "key": "services-trap",
+      "label": "The services trap",
+      "blurb": "How custom work turns into a consulting business, from both sides, and how these teams avoid it."
+    },
+    {
+      "key": "economics",
+      "label": "Money and ROI",
+      "blurb": "How the team is judged. Revenue per head, what value lasts, and which engagements pay off."
+    },
+    {
+      "key": "product-tension",
+      "label": "FDE vs the main product",
+      "blurb": "The fight between one customer needs and the main roadmap, and who wins."
+    },
+    {
+      "key": "hiring",
+      "label": "Getting hired",
+      "blurb": "What they screen for, what backgrounds get in, and how the interview differs."
+    },
+    {
+      "key": "team",
+      "label": "How teams are built",
+      "blurb": "How these teams are actually organised, and how the structure keeps changing."
+    }
+  ],
+  "questions": [
+    {
+      "id": "what-is-an-fde",
+      "theme": "definition",
+      "asked_by": "finn",
+      "question": "What is a forward deployed engineer?",
+      "context": "There is no agreed definition. Each company describes the job by what the team is responsible for, not by what it does day to day.",
+      "t": 105,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 133,
+          "end": 158,
+          "summary": "At Ramp the team has one job: win big enterprise customers. How they do it is left deliberately open. They are allowed to build inside the main product and do whatever winning the deal takes.",
+          "quote": "FDE at Ramp has a mandate to win enterprise, the upmarket segment. And the way we do that, we are allowed to get very creative."
+        },
+        {
+          "speaker": "jason",
+          "start": 158,
+          "end": 199,
+          "summary": "Nominal sells to people building satellites, nuclear reactors and other hardware. The role has been central since day one. The important part is finding where the product runs out of road and feeding that back into what gets built next.",
+          "quote": "Learn where the bleeding edge of product is, what do our users need to fully unlock their workflows, and how does that feed into our longer-term product roadmap."
+        },
+        {
+          "speaker": "howard",
+          "start": 199,
+          "end": 261,
+          "summary": "Dataland builds AI that takes over work people do today, across healthcare, energy, consumer electronics, logistics and waste. Every customer gets a different agent, so the role is not a layer on top of a product. It is the whole company.",
+          "quote": "It's literally the lifeblood of the company."
+        },
+        {
+          "speaker": "colin",
+          "start": 261,
+          "end": 313,
+          "summary": "OpenAI wants two things: more people using AI, and better models. Those become the team's two jobs. One group finds problems that repeat across many companies, builds with a customer, then ships a product or folds the work into Codex. The other takes the hardest industries and works with researchers to improve the model itself.",
+          "quote": "We're the tip of the spear for OpenAI with the enterprise, and we try and make things repeatable, and we try and push the bounds of what the models can do."
+        }
+      ]
+    },
+    {
+      "id": "why-more-fde-jobs",
+      "theme": "ai-shift",
+      "asked_by": "finn",
+      "question": "Why are there ten times more FDE jobs than last year, when AI keeps getting better?",
+      "context": "It sounds backwards. Better models should mean fewer engineers needed in the field, not more.",
+      "t": 313,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 346,
+          "end": 431,
+          "summary": "There is far more work to go after now. Old software picked one task, built one tool, sold it to everybody, and only so many tasks are shaped like that. Companies spend far more on people than on software, and the work people do varies enormously from place to place. AI can finally reach that messier work, but only if an engineer understands the job well enough to nearly do it themselves.",
+          "quote": "You need engineers who actually really understand the use case."
+        },
+        {
+          "speaker": "howard",
+          "start": 431,
+          "end": 473,
+          "summary": "Why coding tools got good first: every software engineer already does the work the tool is automating, so the whole industry understands that job deeply. No industry has that for energy or logistics, which is exactly why someone has to go and learn it in person.",
+          "quote": "Every software engineer is naturally a forward deployed engineer in the coding space, because we all code every day, and that's why the coding agents are so good."
+        },
+        {
+          "speaker": "colin",
+          "start": 473,
+          "end": 557,
+          "summary": "The work moved up a level. A year ago most of the time went on wiring things together and building tests for five separate agents, which limited how hard a problem you could take on, because the customer still needs to see something soon. Since about January the models handle long tasks well, so far less time goes on plumbing and far more on the actual problem.",
+          "quote": "You build a lot less plumbing and you spend a lot more time solving actual use cases."
+        },
+        {
+          "speaker": "colin",
+          "start": 557,
+          "end": 576,
+          "summary": "His example: fourteen months with a chip company. The first ten were spent speeding up their software work, including an agent that debugs failures on its own. Only now are they building agents that help design the physical chip, because the basics underneath are finally reliable.",
+          "quote": "We can kind of trust that Codex is going to do the bottom 50% of tasks pretty well, and so we can focus on the higher level tasks."
+        }
+      ]
+    },
+    {
+      "id": "is-this-really-about-ai",
+      "theme": "ai-shift",
+      "asked_by": "finn",
+      "question": "Is the rise of this role really about AI at all?",
+      "context": "Jason disagrees with the framing. He interned at Palantir in 2012, long before any of this.",
+      "t": 576,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 576,
+          "end": 641,
+          "summary": "He says AI is not the cause. Palantir was simply the one company willing to spend heavily on a field team, and he thinks most attempts at that bet fail. What has actually been happening for years is that software keeps getting cheaper to build, so the range of problems worth attacking grew steadily, then jumped with AI.",
+          "quote": "Maybe in 99 out of 100 multiverse paths it would have failed, but it just happened to work."
+        },
+        {
+          "speaker": "jason",
+          "start": 641,
+          "end": 686,
+          "summary": "What stays constant across every era is judgement about which work belongs to the customer and which belongs to your team, which depends on your business model. You know it is working when you notice yourself building the same thing at several customers, because that shared piece gets pulled into the main product.",
+          "quote": "You always have to have this kind of a taste around, what is the customer's job versus what is something that our forward-deployed team would do."
+        },
+        {
+          "speaker": "calvin",
+          "start": 686,
+          "end": 705,
+          "summary": "The customer's world decides what you build. Ramp sells to finance teams who mostly do not write code, which is why Ramp shipped an agent that works inside Excel. Go where the customer already works, not where you wish they worked.",
+          "quote": "They're in Excel."
+        }
+      ]
+    },
+    {
+      "id": "why-companies-need-this-team",
+      "theme": "product-tension",
+      "asked_by": "calvin",
+      "question": "What problem does an FDE team fix for a company that already has a good product?",
+      "context": "Calvin says Ramp's reason is less lofty than the others. The team exists to stop something bad from happening.",
+      "t": 705,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 705,
+          "end": 769,
+          "summary": "He names a trap many software companies fall into. You build a product people love, growth comes easily, then you see how much money big enterprises spend. You chase those deals, and your plans get wrecked by features that help exactly one customer. An FDE team is the usual fix: the main teams keep building the plan while this team absorbs the enterprise work. He admits it is an unglamorous reason, and that it is honestly how Ramp's team started.",
+          "quote": "I say it's a sword and a shield. We're trying to win the enterprise deals and we're trying to protect the core teams."
+        }
+      ]
+    },
+    {
+      "id": "ramp-tipping-point",
+      "theme": "product-tension",
+      "asked_by": "finn",
+      "question": "What made Ramp finally start an FDE team?",
+      "context": "Ramp is known as a product-driven company, so what was the conversation that changed it?",
+      "t": 769,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 780,
+          "end": 813,
+          "summary": "They were heading straight into the trap and spotted it in time. The big projects enterprise customers asked for were not things Ramp would have built otherwise, which made it a real problem to solve rather than a scheduling annoyance.",
+          "quote": "These large projects that the enterprise customers are asking for, this is not what we were planning on building."
+        },
+        {
+          "speaker": "calvin",
+          "start": 813,
+          "end": 836,
+          "summary": "The fix was removing the relay. Before, the customer told the account manager, who told the product manager, who told the engineer, who said no, and it went back around. Now the engineer talks to the customer directly.",
+          "quote": "That’s what we were doing before we had FD, and it was causing roadmap delays."
+        }
+      ]
+    },
+    {
+      "id": "do-fdes-go-on-site",
+      "theme": "definition",
+      "asked_by": "finn",
+      "question": "Do forward deployed engineers actually work at the customer's office?",
+      "context": "The name suggests being physically deployed. At Ramp it does not work that way.",
+      "t": 836,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 836,
+          "end": 854,
+          "summary": "Ramp's engineers rarely go on site, roughly once a quarter, and mostly work over video calls. Forward deployed means direct contact with the customer, not sitting in their building.",
+          "quote": "We don't actually visit them all that often. So, like once a quarter or so, you will mostly do it over Zoom."
+        }
+      ]
+    },
+    {
+      "id": "game-of-telephone",
+      "theme": "definition",
+      "asked_by": "finn",
+      "question": "Why does one engineer talking to the customer beat a chain of people passing messages?",
+      "context": "Both Calvin and Jason call the alternative a game of telephone. This is the clearest statement of why the role exists at all.",
+      "t": 854,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 854,
+          "end": 885,
+          "summary": "An engineer who knows both what the customer needs and how the codebase works can see answers nobody in the relay would ever suggest. That is how you win the customer without wrecking your plans.",
+          "quote": "One very smart person, a great engineer with all of the context necessary can produce brilliant solutions that a game of telephone will inevitably miss."
+        },
+        {
+          "speaker": "jason",
+          "start": 1614,
+          "end": 1637,
+          "summary": "He had to learn ordinary sales skills himself, because Palantir did not teach them in his day. His point is that the value comes from engineers building the relationship directly, instead of information passing through a sales layer.",
+          "quote": "Part of the magic of forward deployed engineering is just making sure that there's not a game of telephone."
+        }
+      ]
+    },
+    {
+      "id": "fde-vs-consultant",
+      "theme": "services-trap",
+      "asked_by": "finn",
+      "question": "What is the difference between an FDE and a consultant?",
+      "context": "The question the panel keeps returning to. Where is the line between custom work for one customer and something that belongs in the product?",
+      "t": 885,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 907,
+          "end": 939,
+          "summary": "He says he has scars from this. Palantir went through a stretch the team called the dark ages, when the field team effectively rebelled, said the original product was useless for the work they were doing, and started building new things instead.",
+          "quote": "Palantir went through a few years of what we call the dark ages where the FD team essentially revolted."
+        },
+        {
+          "speaker": "jason",
+          "start": 939,
+          "end": 982,
+          "summary": "To avoid repeating that, Nominal's first field engineers were people who had built products themselves and had been on the receiving end of the relay, so he could talk honestly with them about whether they were drifting into consulting. He notes this work can genuinely speed up a sale, which is sometimes a straight win, but says spend that goodwill carefully as the team grows.",
+          "quote": "I could have really high trust conversations with them that they weren't basically going off and doing consulting."
+        }
+      ]
+    },
+    {
+      "id": "example-of-speeding-a-deal",
+      "theme": "boundaries",
+      "asked_by": "finn",
+      "question": "Can you give an example where field work actually sped up a deal?",
+      "context": "Nominal's first large contract. The customer tested drones and wanted more of their team looking at flight data.",
+      "t": 982,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 995,
+          "end": 1024,
+          "summary": "The customer wanted forty people looking at the data after each flight instead of two. The blocker was that data had to be cleaned up by scripts sitting on individual engineers' laptops before anyone could use it.",
+          "quote": "His goal was get 40 people in his organization looking at data every single flight. On average before us it was two."
+        },
+        {
+          "speaker": "jason",
+          "start": 1024,
+          "end": 1067,
+          "summary": "The customer simply asked Nominal to handle it, without knowing what that meant technically. An engineer named Ross built it, but deliberately made it general: a container that holds the data-cleanup logic rather than something tied to one customer's format. It unblocked that customer and became a core feature sold to everyone else.",
+          "quote": "This was on our road map, I knew we would build this at some point. We just pulled it left because the opportunity presented itself."
+        }
+      ]
+    },
+    {
+      "id": "openai-changed-its-mind",
+      "theme": "product-tension",
+      "asked_by": "finn",
+      "question": "How has OpenAI changed its mind about what this team should build?",
+      "context": "Colin says the plan has been rewritten twice in about a year, and one rewrite deleted most of a planned product line.",
+      "t": 1067,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 1070,
+          "end": 1109,
+          "summary": "At the start there was no platform, just the API, the customer, and an engineer in between, so success meant getting anything working at all. He cites the widely quoted finding that only about 5% of companies see real returns from AI spending.",
+          "quote": "When we started, we didn't have a platform at OpenAI. It was just the API and then the customer and then you were in between."
+        },
+        {
+          "speaker": "colin",
+          "start": 1109,
+          "end": 1150,
+          "summary": "Six months before the panel the plan was around fifty small products, maybe with other people building on top. Then Codex got better, and the test for every idea became whether it could just be a Codex extension. That killed roughly 80% of the planned products.",
+          "quote": "Now the question we ask of every product is, can this just be a Codex extension? And that probably ate like 80% of the products that we were making."
+        },
+        {
+          "speaker": "colin",
+          "start": 1150,
+          "end": 1192,
+          "summary": "Two survived because enterprises need very consistent output: writing regulatory documents, and a workflow automation tool. Everything else folded into Codex. The standing questions are now whether it could be Codex, whether it truly needs to be separate, and whether the model could simply get good enough on its own.",
+          "quote": "Can this be Codex? If not, does it really have to be a separate product? Could the model just get smarter and be good at this task?"
+        }
+      ]
+    },
+    {
+      "id": "software-or-consulting",
+      "theme": "economics",
+      "asked_by": "finn",
+      "question": "What makes a company a software company instead of a consulting firm?",
+      "context": "Howard moves the question away from job titles and culture, and onto the numbers.",
+      "t": 1192,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 1192,
+          "end": 1234,
+          "summary": "It is not about having a platform. It is whether you deliver value that keeps arriving, off a cost you pay once. That is what makes investors treat a business as software, and he says there are many ways to satisfy it without selling one product to everybody.",
+          "quote": "The question is, is there recurring value that you're delivering to your customer on some sort of fixed cost."
+        },
+        {
+          "speaker": "howard",
+          "start": 1234,
+          "end": 1275,
+          "summary": "Because code is getting cheaper to write, he is deliberately not attached to finding one thing to sell everyone. The test he applies instead: what does each customer teach us that makes the next custom agent cheaper to build? Once an agent runs a real workflow at scale the recurring value is large, so every use case has its own version of this equation.",
+          "quote": "How can we have this flywheel of learning that reduces that initial fixed cost?"
+        }
+      ]
+    },
+    {
+      "id": "bug-or-feature",
+      "theme": "services-trap",
+      "asked_by": "howard",
+      "question": "Is having an FDE team a weakness or a strength?",
+      "context": "Howard raises the question Palantir argued about internally for years, and gives the answer it landed on.",
+      "t": 1286,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 1286,
+          "end": 1311,
+          "summary": "For years Palantir genuinely did not know whether the model was a flaw to engineer away or a real advantage. By the time he worked there, the answer inside the company had settled firmly on advantage.",
+          "quote": "Palantir wasn't sure for many years, but even in my time there, the realization was FDE is a huge feature. It's not a bug."
+        }
+      ]
+    },
+    {
+      "id": "measuring-roi",
+      "theme": "economics",
+      "asked_by": "finn",
+      "question": "How do you measure whether an FDE team is worth the money?",
+      "context": "The premise: if the work succeeds, you should eventually be able to step back, because what you built lets the customer carry on alone.",
+      "t": 1311,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 1328,
+          "end": 1361,
+          "summary": "His first answer is deliberately blunt arithmetic: enterprise revenue divided by salaries. Then the real version, which is that the team is always either shaping what gets built next or building it.",
+          "quote": "It's really simple at Ramp. We have the revenue from the enterprise customers and the costs of the salaries. Do that division and you get the ROI."
+        },
+        {
+          "speaker": "calvin",
+          "start": 1361,
+          "end": 1405,
+          "summary": "They prefer shipping a planned feature over something custom, because custom work has to be maintained forever. Ramp's engineers work inside the main codebase, partner closely with each product team, and keep changes small on purpose.",
+          "quote": "We love it when we can build a road map feature for the customer instead of having to build something custom cuz the custom stuff tends to require more maintenance."
+        },
+        {
+          "speaker": "colin",
+          "start": 1405,
+          "end": 1447,
+          "summary": "OpenAI runs the opposite shape. They bet on problems worth hundreds of millions, so fewer customers and much more depth. Their biggest engagement has about fifteen engineers at one chip company, trying to change how an entire industry works.",
+          "quote": "We generally go deeper with a fewer amount of customers."
+        },
+        {
+          "speaker": "colin",
+          "start": 1488,
+          "end": 1513,
+          "summary": "So the money from the field work itself is a minor concern for them. The real measure is the recurring revenue unlocked later, when many smaller, faster-moving customers adopt what was proven with one large one.",
+          "quote": "The services line is a small focus, but the bigger focus is what is the long-term value."
+        }
+      ]
+    },
+    {
+      "id": "small-teams-most-profitable",
+      "theme": "economics",
+      "asked_by": "finn",
+      "question": "Which engagements actually make the most money in the long run?",
+      "context": "Not the answer most people expect. The biggest projects are not the most valuable ones.",
+      "t": 1447,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 1443,
+          "end": 1452,
+          "summary": "The most profitable work over time is the small, product-shaped kind with two to four engineers, not the huge engagement. Big custom projects generate revenue now and very little that carries forward.",
+          "quote": "Probably the most long-term profitable engagements are more the product-based ones, which might have only two to four FDEs."
+        }
+      ]
+    },
+    {
+      "id": "why-consultancies-do-it-badly",
+      "theme": "services-trap",
+      "asked_by": "finn",
+      "question": "Why do consulting firms do this badly?",
+      "context": "Colin's diagnosis of the failure mode, plus the structural protection he credits at OpenAI.",
+      "t": 1470,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 1454,
+          "end": 1488,
+          "summary": "The money is addictive. Once services revenue is flowing, the incentive is to sell bigger and bigger custom projects, and nothing pushes back. What protects OpenAI is that the commercial side is not where power sits, product and research are, so the team gets pushed toward work customers can eventually run themselves.",
+          "quote": "The services revenue is like a drug that they just can’t get off of, and they keep selling bigger and bigger custom things."
+        }
+      ]
+    },
+    {
+      "id": "fake-product-market-fit",
+      "theme": "services-trap",
+      "asked_by": "finn",
+      "question": "When does this revenue start fooling you into thinking you have a real product?",
+      "context": "Asked for the founders in the room. Revenue is climbing, but nothing reusable is building up underneath it.",
+      "t": 1513,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 1537,
+          "end": 1573,
+          "summary": "He flips the usual worry around. The danger is not only that your company gets hooked on the money. It is that the customer gets hooked on the specific people, so removing them gets you fired.",
+          "quote": "The customer is addicted to the forward deployed engineers more so than you as the company are addicted to the services revenue, and then when you try to pull the forward deployed engineers away they just fire you."
+        }
+      ]
+    },
+    {
+      "id": "what-a-good-relationship-looks-like",
+      "theme": "boundaries",
+      "asked_by": "finn",
+      "question": "What does a healthy customer relationship look like?",
+      "context": "Jason describes the version worth aiming for, which is a useful checklist when judging a company you might join.",
+      "t": 1573,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 1573,
+          "end": 1614,
+          "summary": "Four signs it is going well: they value the product itself, you teach them how to use it, they treat you as a thinking partner, and they give you blunt feedback. The best ones will host your team so you can build alongside them.",
+          "quote": "There's a really magical sweet spot. They value the product, you teach them about the product and they view you as a thought partner."
+        }
+      ]
+    },
+    {
+      "id": "value-that-evaporates",
+      "theme": "economics",
+      "asked_by": "finn",
+      "question": "How do you tell lasting value from value that disappears?",
+      "context": "Howard uses the same measure as Ramp, revenue divided by headcount, but adds a test for whether the value sticks.",
+      "t": 1637,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 1637,
+          "end": 1699,
+          "summary": "Dataland was two people going to three, aiming for around ten, so revenue per person is the number he watches. Build whatever the customer asks for and the asks never end, and the value shows up once then disappears. Sometimes you build the throwaway thing anyway to earn trust, but the long-term test is value that keeps arriving from a fixed amount of work.",
+          "quote": "If you just build whatever they ask for, there's infinite things they'll ask for, and it might deliver a momentary piece of value, but then that value evaporates."
+        }
+      ]
+    },
+    {
+      "id": "two-people-at-scale",
+      "theme": "economics",
+      "asked_by": "finn",
+      "question": "How do two people serve that many customers?",
+      "context": "Dataland reached real scale with two people. Where does the leverage come from?",
+      "t": 1699,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 1733,
+          "end": 1786,
+          "summary": "Much of their time goes into building agents that help them build agents faster. His deeper point is that an agent is never a finished object. It lives inside a business whose systems, policies and product lines keep changing, and the agent has to keep up.",
+          "quote": "No agent you build is a static thing in time. It's a dynamic actor within the enterprise context of your customer."
+        },
+        {
+          "speaker": "howard",
+          "start": 1786,
+          "end": 1810,
+          "summary": "So the real engineering problem is automating the improvement loop itself, so the agent keeps pace without a person nudging it. That is what lets a tiny team earn many millions per person.",
+          "quote": "You actually must figure out some sort of mechanism to actually autonomize the outer loop."
+        }
+      ]
+    },
+    {
+      "id": "working-with-researchers",
+      "theme": "ai-shift",
+      "asked_by": "finn",
+      "question": "How does the team work with researchers, not just the product team?",
+      "context": "When this works well, sales, product and research stop being separate activities.",
+      "t": 1810,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 1828,
+          "end": 1870,
+          "summary": "The model is outcome first, then scale, and there are two ways to scale: build a product, or improve the model itself. His example is slide making. The model was bad at it, and a Japanese sales organisation of about two thousand people wanted a slide assistant.",
+          "quote": "Outcome first, so always success and then scale, and you've got two ways to scale. One is product, the other is through the model."
+        },
+        {
+          "speaker": "colin",
+          "start": 1870,
+          "end": 1912,
+          "summary": "They worked out how to describe the task so the model could do it, starting with fixed boxes, which looked terrible, then generating HTML instead. Around fifty approaches later they picked one, produced many examples, handed those to the research team, and three months later a new model version made good slides.",
+          "quote": "FDEs embed with the customer, figure out how to represent the task to the model, generate lots of examples of that, and then the research team can understand how to make the model do that thing."
+        }
+      ]
+    },
+    {
+      "id": "voice-customer-service",
+      "theme": "ai-shift",
+      "asked_by": "finn",
+      "question": "What does it look like when the model cannot do the job yet?",
+      "context": "A phone company wanted AI to handle voice customer service. At pitch time the model failed a trivial test.",
+      "t": 1912,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 1912,
+          "end": 1954,
+          "summary": "They ran ten attempts at simply getting the model to read his phone number back, and it would not do it. Alarming, given the real job involves following company policies on live calls.",
+          "quote": "We did a test of 10 to just get it to read back my phone number and it just would not work."
+        },
+        {
+          "speaker": "colin",
+          "start": 1954,
+          "end": 1977,
+          "summary": "Six months of work with the research team later it shipped. He says roughly 70,000 calls a day are now handled, with no serious failures. They also built tools so the customer can write their own tests and keep improving it without the team, which he calls the goal.",
+          "quote": "Something like 70,000 calls a day getting deflected, and no major jailbreaks so far."
+        }
+      ]
+    },
+    {
+      "id": "did-it-replace-consultants",
+      "theme": "ai-shift",
+      "asked_by": "finn",
+      "question": "Did the slide work put consultants out of a job?",
+      "context": "Asked as a joke. The answer is a useful reality check on how good the output really is.",
+      "t": 1977,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 1980,
+          "end": 2014,
+          "summary": "His team includes former consultants who joked about mourning their old colleagues. Then he punctures the hype: the slides are not actually good yet, so nobody is out of a job soon, even if the direction is clear.",
+          "quote": "The slides are actually not very good. So it'll take some time before McKinsey's out of a job."
+        }
+      ]
+    },
+    {
+      "id": "what-makes-a-good-fde",
+      "theme": "hiring",
+      "asked_by": "finn",
+      "question": "What makes someone good at this job?",
+      "context": "The most directly useful question if you are trying to get hired. All four answer, and the answers do not fully agree.",
+      "t": 2014,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 2038,
+          "end": 2080,
+          "summary": "Two skill sets that rarely appear in one person. You need to be genuinely strong technically, keeping up with how fast models change, and also good at ordinary software engineering, because connecting to enterprise systems is hard, unglamorous work.",
+          "quote": "You have to be really good at traditional software engineering as well because you're building really complex integrations."
+        },
+        {
+          "speaker": "howard",
+          "start": 2080,
+          "end": 2121,
+          "summary": "The other half is the customer side: winning trust, then understanding and navigating the politics of their organisation. He says openly that people who can do all of it are very hard to find.",
+          "quote": "You have to figure out the politics of their organization and map it out and traverse it."
+        },
+        {
+          "speaker": "jason",
+          "start": 2121,
+          "end": 2164,
+          "summary": "Only one of his five Palantir years was in the field, but he says he still draws on it constantly, including later as an early engineer at startups. What it taught: be resourceful, be a generalist, stay curious across subjects, and be humble when the situation calls for it.",
+          "quote": "You have to be really scrappy and kind of be super generalist in the way you solve problems."
+        },
+        {
+          "speaker": "calvin",
+          "start": 2231,
+          "end": 2291,
+          "summary": "Ramp likes former founders and early engineers, specifically people who care about revenue, which he says many engineers do not. His framing: this is the team that wants to say yes, because it cares about winning the customer, while many engineers would rather say no and keep building their own thing.",
+          "quote": "The FD team is the team that wants to say yes because they care about us winning that customer."
+        },
+        {
+          "speaker": "colin",
+          "start": 2332,
+          "end": 2379,
+          "summary": "Having grown the team from two people to more than ninety, he names one trait above all: caring about the result more than the thing you made. The usual failure is falling in love with your own work, so when nobody uses it you defend it. The best people throw their own work away and build something different because that is what is needed.",
+          "quote": "So much of the time people love the form of what they've created more than the function."
+        }
+      ]
+    },
+    {
+      "id": "is-fde-good-founder-training",
+      "theme": "hiring",
+      "asked_by": "finn",
+      "question": "Is this job good preparation for starting a company?",
+      "context": "Howard makes the strongest version of this claim, having gone from Palantir to co-founding Dataland.",
+      "t": 2080,
+      "answers": [
+        {
+          "speaker": "howard",
+          "start": 2080,
+          "end": 2108,
+          "summary": "He calls it the best training ground there is for a future founder, and lists why: you have to build from zero to one, stay on the cutting edge of AI, be good with people, win the trust of enterprise customers, and work out the politics of their organisation and navigate it.",
+          "quote": "I think it’s really sort of the best training ground to be a future founder."
+        }
+      ]
+    },
+    {
+      "id": "rotating-field-and-product",
+      "theme": "team",
+      "asked_by": "finn",
+      "question": "Should engineers move between field work and core product work?",
+      "context": "Jason's structural advice, with the story that convinced him.",
+      "t": 2164,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 2164,
+          "end": 2206,
+          "summary": "Rotate people, because two organisations grown separately drift apart. One of his happiest moments was watching an early-career engineer fly out, try to use their own product on site, come back convinced it was bad, and get very motivated to fix it. It goes the other way too, when a field engineer cares enough about something to go and build it properly.",
+          "quote": "If you try to grow those organizations separately, you end up wanting them to be more conjoined so that you can more smoothly rotate."
+        }
+      ]
+    },
+    {
+      "id": "expansion-and-contraction",
+      "theme": "team",
+      "asked_by": "finn",
+      "question": "Does the ideal person for this role change as the company changes?",
+      "context": "A caution worth hearing before you take a job based on how the team works today.",
+      "t": 2206,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 2206,
+          "end": 2231,
+          "summary": "Companies go through phases of expanding and then narrowing what they build, and each phase wants something different from this team. So who they should hire genuinely changes over time, and the people who do well are the ones willing to roll with that.",
+          "quote": "You go through these product expansion and contraction phases, and at different times you might want different things from a forward deployed engineering team."
+        }
+      ]
+    },
+    {
+      "id": "extra-interview-screen",
+      "theme": "hiring",
+      "asked_by": "finn",
+      "question": "How is the interview different from a normal engineering interview?",
+      "context": "One concrete, checkable difference at Ramp.",
+      "t": 2291,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 2291,
+          "end": 2318,
+          "summary": "There is one extra stage compared with a normal engineering loop: can you actually communicate? Ordinary engineering jobs do not usually put you in front of a customer, so it is not normally tested.",
+          "quote": "There's an additional screen on the FD interviews that we do where it's, can you actually communicate?"
+        }
+      ]
+    },
+    {
+      "id": "where-fdes-come-from",
+      "theme": "hiring",
+      "asked_by": "finn",
+      "question": "What backgrounds do these engineers come from?",
+      "context": "Useful if you are wondering whether your own path counts.",
+      "t": 2318,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 2358,
+          "end": 2377,
+          "summary": "OpenAI’s team is a deliberately mixed bag: people from the big consulting firms, a lot of ex-Palantir people, and a lot of former founders. No single background dominates. What they share is caring only about whether the customer actually uses the thing.",
+          "quote": "The common thing is that they’re all just like super outcome focused."
+        }
+      ]
+    },
+    {
+      "id": "stopping-customer-dependency",
+      "theme": "services-trap",
+      "asked_by": "varun",
+      "question": "How do you stop customers becoming dependent on specific engineers?",
+      "context": "Asked by a working FDE in the audience, who names the tension plainly: you hire people who want to say yes and own the outcome, then need to pull them out without losing the account.",
+      "t": 2379,
+      "answers": [
+        {
+          "speaker": "calvin",
+          "start": 2444,
+          "end": 2464,
+          "summary": "Ramp spreads people thin on purpose. Any one customer only ever gets about a third of a person, so dropping to a quarter or a sixth is barely noticed. They have never put two engineers on one customer.",
+          "quote": "We stretch our FDEs very thin at Ramp. So any given customer, they only ever had like a third of an FDE."
+        },
+        {
+          "speaker": "calvin",
+          "start": 2464,
+          "end": 2490,
+          "summary": "He admits this departs from the traditional model, but says it creates the right incentive. Because every customer is asking for something, the engineer has to weigh all of it at once and decide what actually matters to the business.",
+          "quote": "The FDE has to look at that holistically and think to themselves, what will actually move the business."
+        },
+        {
+          "speaker": "howard",
+          "start": 2490,
+          "end": 2506,
+          "summary": "He treats the fear as a diagnosis. If reducing headcount would get you fired, then you never did the work of making the value come from the system rather than from people.",
+          "quote": "If the customer's going to fire you because you reduce the headcount, that means you haven't done the value engineering."
+        },
+        {
+          "speaker": "howard",
+          "start": 2506,
+          "end": 2530,
+          "summary": "Dataland also runs many accounts per person, so customers never come to expect a standing crew. Part of the job is saying out loud that the customer is buying an outcome, not a number of hours from a number of people.",
+          "quote": "Part of the FDE's job is to communicate that that's not what they're buying. They're buying the outcome."
+        },
+        {
+          "speaker": "jason",
+          "start": 2530,
+          "end": 2548,
+          "summary": "The blunt structural tool is a time limit. He has seen companies assign engineers to one customer for twelve or twenty-four months or longer, and others that cap it at six weeks as policy.",
+          "quote": "I've seen companies that have FDEs assigned to customers for 12, 24 months, or even longer. And then I've seen others where it's like 6 weeks as a rule."
+        }
+      ]
+    },
+    {
+      "id": "fde-vs-solutions-architect",
+      "theme": "boundaries",
+      "asked_by": "richa",
+      "question": "How is this different from a solutions engineer or a solutions architect?",
+      "context": "Asked by an audience member finishing at MIT and about to start as an FDE, trying to tell similar-sounding job titles apart.",
+      "t": 2542,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 2584,
+          "end": 2626,
+          "summary": "The clearest breakdown of the night, at least as OpenAI draws it. Solutions engineering happens before the sale, for the broad market. Solutions architecture happens after the sale, for that same broad market. FDE is a separate business unit running only about ten engagements at a time, brought in very early when a problem looks like the right shape, then owning everything before and after the sale as one team.",
+          "quote": "FDE is actually a different business unit that is separate from those, and we only really work like 10 engagements at a time."
+        },
+        {
+          "speaker": "colin",
+          "start": 2626,
+          "end": 2651,
+          "summary": "Because they check whether the work has milestones and could turn into repeat revenue, the team turns down more than it takes on. Plenty of problems are interesting without ever reaching the scale that justifies this team.",
+          "quote": "We have to say no more times than we have to say yes, because there's a lot of people with interesting problems, but not every problem is going to get to scale."
+        }
+      ]
+    },
+    {
+      "id": "how-teams-are-structured",
+      "theme": "team",
+      "asked_by": "emmy",
+      "question": "How do you structure the team, and does Palantir's Echo and Delta split still make sense?",
+      "context": "Asked by a working FDE. Palantir split the role in two: Echo, closer to the customer and the subject matter, and Delta, closer to the code.",
+      "t": 2651,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 2685,
+          "end": 2752,
+          "summary": "Nominal has mission ops, mission development, and a growing sales team. Mission ops are deeply technical but not always coders: often former mechanical or electrical engineers, some who designed engines, though increasingly they write code anyway. The reasoning is that understanding an engineer's workflow is far easier if you have lived it. He calls this a loose descendant of Palantir's Echo role, noting Echoes often lacked the subject background and were instead capable generalists, frequently from consulting.",
+          "quote": "It's really helpful if you have that background being part of that organization before, and that's why we have the mission ops role."
+        },
+        {
+          "speaker": "howard",
+          "start": 2794,
+          "end": 2837,
+          "summary": "He was an Echo intern and then a Delta, and thinks AI collapses the split. The division existed because writing code was expensive enough to need dedicated coders while others owned the relationship. If code gets dramatically cheaper, one person can hold the whole picture, which he calls radical ownership.",
+          "quote": "If you can dramatically reduce the cost of the production of code, then perhaps you can have this radical ownership where one person can actually hold all of that context in their head."
+        },
+        {
+          "speaker": "howard",
+          "start": 2837,
+          "end": 2860,
+          "summary": "Why he thinks that is better: the same person knows what is genuinely hard and what is easy, so decisions about what is worth building are not made by someone who cannot judge the cost. He is candid that it depends on finding people with that range.",
+          "quote": "They're not just a pure non-technical person making those value decisions."
+        },
+        {
+          "speaker": "colin",
+          "start": 2860,
+          "end": 2895,
+          "summary": "He came from traditional consulting and disliked how many narrow roles it had, so OpenAI began with engineers only. They quickly found large accounts needed Echo-style people to carry the account work, so that role came back.",
+          "quote": "When we started the team there was only FDEs, and we realized very quickly that we really needed the echoes to take up a lot of the work around the account."
+        },
+        {
+          "speaker": "colin",
+          "start": 2895,
+          "end": 2922,
+          "summary": "Now they are adding genuine industry experts, such as chip verification engineers and working scientists, because harder problems mean writing good tasks and tests inside a specialism. There are deliberately few, on the bet that the generalists learn from them.",
+          "quote": "When we go up the stack in chip design, we really need to know how to design a chip."
+        }
+      ]
+    },
+    {
+      "id": "sales-and-mission-ops-boundary",
+      "theme": "team",
+      "asked_by": "emmy",
+      "question": "Where does the salesperson end and the field engineer begin?",
+      "context": "Nominal is around 150 people and still working this out. The advice attached to it is the most portable thing said all night.",
+      "t": 2752,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 2752,
+          "end": 2794,
+          "summary": "They have not settled it. Their mission ops role did not exist at Palantir, so there is no template to copy, and the boundary with sales is still being drawn. His advice to anyone considering these jobs: interrogate the company the way this panel was interrogated, because every company answers differently.",
+          "quote": "Anyone who's considering a job in forward deployed engineering, ask a lot of questions like this of any company that you're considering working with."
+        }
+      ]
+    },
+    {
+      "id": "platform-first-or-field-first",
+      "theme": "product-tension",
+      "asked_by": "emmy",
+      "question": "Which comes first, the platform or the field work?",
+      "context": "An audience member notes Ramp is clearly platform-first, and asks whether earlier-stage companies instead discover the product through field engagements.",
+      "t": 2922,
+      "answers": [
+        {
+          "speaker": "jason",
+          "start": 2950,
+          "end": 3006,
+          "summary": "He ties it to those expansion and narrowing phases and says the answer is changing for Nominal right now. They are finally big enough to build a real platform, and the field team is the honest test of it: do they find it useful, do they build on it. He credits Palantir for doing exactly this until customers could build on it directly.",
+          "quote": "In many ways they will be the first users of something that you claim to be a platform."
+        },
+        {
+          "speaker": "calvin",
+          "start": 3006,
+          "end": 3060,
+          "summary": "At Ramp the platform comes first, because they already know what it should do. The field engineers work out how to achieve that inside each customer's constraints rather than inventing something new. But there is a cycle: when many customers hit the same blocker, it belongs in the platform, and that is when one of these engineers gets to work like a core engineer. Same if something already planned needs to arrive sooner.",
+          "quote": "That's where an FDE does get to act like a core engineer."
+        }
+      ]
+    },
+    {
+      "id": "how-to-get-in-touch",
+      "theme": "hiring",
+      "asked_by": "finn",
+      "question": "All four teams are hiring. How do you get in touch?",
+      "context": "Closing question. Each panelist read out a direct work email on stage. Those are in the recording rather than reproduced here, to keep them away from scrapers.",
+      "t": 3071,
+      "answers": [
+        {
+          "speaker": "colin",
+          "start": 3071,
+          "end": 3095,
+          "summary": "All four confirmed they were hiring, and each gave a direct work email rather than pointing at a careers page, which itself says something about how these teams recruit. Listen to the closing minute for the addresses, or go to each company's careers page.",
+          "quote": "So there you have it. You can reach out if you're interested."
+        }
+      ]
+    }
+  ]
+}
