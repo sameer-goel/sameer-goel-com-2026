@@ -63,11 +63,11 @@ Ideal clients: startups, enterprises, universities, students, non-profits, gover
 - [Government Funding Finder](https://build-tomorrow.pages.dev/): Discovery tool for government funding.
 - [Meet Sameer](https://sameer-goel.github.io/meet/): Personal introduction page.
 
-## Visual Revision Guide for Anthropic Certifications
+## Visual Study Guide for Anthropic Certifications
 
 https://sameer-goel.com/anthropic-certifications/visual-study-guide/
 
-A free visual revision guide for the four Anthropic Claude certifications. Every
+A free visual study guide for the four Anthropic Claude certifications. Every
 lesson is condensed to one card with three or four bullets, the official exam
 keywords and memory cues, an illustration, and five real-life scenarios.
 
