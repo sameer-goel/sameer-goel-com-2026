@@ -20,9 +20,12 @@
 /fde-panel                /forward-deployed-engineer/questions/   301
 
 # Anthropic / Claude certification visual revision guide
-/anthropic-certifications          /anthropic-certifications/visual-revision-guide/   301
-/anthropic-certifications/         /anthropic-certifications/visual-revision-guide/   301
-/claude-certification              /anthropic-certifications/visual-revision-guide/   301
-/claude-certifications             /anthropic-certifications/visual-revision-guide/   301
-/visual-revision-guide             /anthropic-certifications/visual-revision-guide/   301
-/claude-cert                       /anthropic-certifications/visual-revision-guide/   301
+/anthropic-certifications          /anthropic-certifications/visual-study-guide/   301
+/anthropic-certifications/         /anthropic-certifications/visual-study-guide/   301
+/claude-certification              /anthropic-certifications/visual-study-guide/   301
+/claude-certifications             /anthropic-certifications/visual-study-guide/   301
+/visual-revision-guide             /anthropic-certifications/visual-study-guide/   301
+/claude-cert                       /anthropic-certifications/visual-study-guide/   301
+/visual-study-guide                /anthropic-certifications/visual-study-guide/   301
+/anthropic-certifications/visual-revision-guide             /anthropic-certifications/visual-study-guide/   301
+/anthropic-certifications/visual-revision-guide/*           /anthropic-certifications/visual-study-guide/:splat   301

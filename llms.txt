@@ -65,14 +65,14 @@ Ideal clients: startups, enterprises, universities, students, non-profits, gover
 
 ## Visual Revision Guide for Anthropic Certifications
 
-https://sameer-goel.com/anthropic-certifications/visual-revision-guide/
+https://sameer-goel.com/anthropic-certifications/visual-study-guide/
 
 A free visual revision guide for the four Anthropic Claude certifications. Every
 lesson is condensed to one card with three or four bullets, the official exam
 keywords and memory cues, an illustration, and five real-life scenarios.
 
-- https://sameer-goel.com/anthropic-certifications/visual-revision-guide/ - all four certifications
-- https://sameer-goel.com/anthropic-certifications/visual-revision-guide/associate.html - Claude Certified Associate - Foundations
-- https://sameer-goel.com/anthropic-certifications/visual-revision-guide/developer.html - Claude Certified Developer - Foundations
-- https://sameer-goel.com/anthropic-certifications/visual-revision-guide/foundations.html - Claude Certified Architect - Foundations
-- https://sameer-goel.com/anthropic-certifications/visual-revision-guide/architect.html - Claude Certified Architect - Professional
+- https://sameer-goel.com/anthropic-certifications/visual-study-guide/ - all four certifications
+- https://sameer-goel.com/anthropic-certifications/visual-study-guide/associate.html - Claude Certified Associate - Foundations
+- https://sameer-goel.com/anthropic-certifications/visual-study-guide/developer.html - Claude Certified Developer - Foundations
+- https://sameer-goel.com/anthropic-certifications/visual-study-guide/foundations.html - Claude Certified Architect - Foundations
+- https://sameer-goel.com/anthropic-certifications/visual-study-guide/architect.html - Claude Certified Architect - Professional
