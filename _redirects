@@ -29,3 +29,5 @@
 /visual-study-guide                /anthropic-certifications/visual-study-guide/   301
 /anthropic-certifications/visual-revision-guide             /anthropic-certifications/visual-study-guide/   301
 /anthropic-certifications/visual-revision-guide/*           /anthropic-certifications/visual-study-guide/:splat   301
+/getting-started                   /anthropic-certifications/getting-started/   301
+/claude-certification-guide        /anthropic-certifications/getting-started/   301

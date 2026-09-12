@@ -76,3 +76,11 @@ keywords and memory cues, an illustration, and five real-life scenarios.
 - https://sameer-goel.com/anthropic-certifications/visual-study-guide/developer.html - Claude Certified Developer - Foundations
 - https://sameer-goel.com/anthropic-certifications/visual-study-guide/foundations.html - Claude Certified Architect - Foundations
 - https://sameer-goel.com/anthropic-certifications/visual-study-guide/architect.html - Claude Certified Architect - Professional
+
+## Getting Started with the Anthropic Claude Certifications
+
+https://sameer-goel.com/anthropic-certifications/getting-started/
+
+How the four certifications fit together, which to sit first, and the logistics
+common to all of them: question formats, retake waits, twelve month expiry with
+free renewal, and prerequisites.
