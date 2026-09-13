@@ -31,3 +31,9 @@
 /anthropic-certifications/visual-revision-guide/*           /anthropic-certifications/visual-study-guide/:splat   301
 /getting-started                   /anthropic-certifications/getting-started/   301
 /claude-certification-guide        /anthropic-certifications/getting-started/   301
+
+# Anthropic certification practice exams
+/practice-exams                    https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/   301
+/practice-exam                     https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/   301
+/claude-practice-exams             https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/   301
+/claude-practice-test              https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/   301
