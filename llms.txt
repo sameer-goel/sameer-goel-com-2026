@@ -84,3 +84,17 @@ https://sameer-goel.com/anthropic-certifications/getting-started/
 How the four certifications fit together, which to sit first, and the logistics
 common to all of them: question formats, retake waits, twelve month expiry with
 free renewal, and prerequisites.
+
+## Practice Exams for the Anthropic Claude Certifications
+
+https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/
+
+Free browser-based practice exams for the four Anthropic Claude certifications.
+Answers, rationale and per-option notes stay hidden for the whole attempt, then
+you get a score, a per-domain breakdown and a full review. No sign-up and no
+tracking. Question order and option order reshuffle on every attempt.
+
+- https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/associate/ - Claude Certified Associate - Foundations, 78 questions
+- https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/developer/ - Claude Certified Developer - Foundations, 57 questions
+- https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/architect-foundation/ - Claude Certified Architect - Foundations, 471 questions
+- https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/architect-professional/ - Claude Certified Architect - Professional, 63 questions
