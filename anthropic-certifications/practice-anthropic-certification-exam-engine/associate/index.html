@@ -689,6 +689,28 @@ fieldset.opts legend {
    focus move itself is the affordance; suppress only its outline. */
 .qtitle:focus { outline: none; }
 
+/* ---------------------------------------------- email the result to yourself */
+.mailcard { border-color: var(--accent); }
+.mailhead { font-size: 17px; margin: 0 0 6px; }
+.mailform { margin-top: 12px; }
+.mailrow { display: flex; gap: 8px; flex-wrap: wrap; }
+.mailinput {
+  flex: 1 1 260px; min-width: 0; padding: 10px 12px; font: inherit; font-size: 15px;
+  color: var(--ink); background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.mailinput:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.mailterms {
+  display: flex; gap: 8px; align-items: flex-start; margin: 10px 0 0;
+  font-size: 13px; color: var(--mut); cursor: pointer;
+}
+.mailconsent { margin-top: 3px; flex: 0 0 auto; }
+.mailstatus:empty { display: none; }
+.mailstatus { margin: 10px 0 0; }
+.mailbad { color: var(--bad); }
+.mailsent { margin: 0; }
+@media print { .mailcard { display: none; } }
+
 
 /* ==========================================================================
    THEME V2 — white / off-white, premium gradient.
@@ -2789,6 +2811,9 @@ window.EXAM_KEYWORDS = {"domains":[{"groups":[{"cue":"Is the answer correct?","k
       el('button', { cls: 'btn', type: 'button', onclick: function () { go('start'); } }, ['New attempt'])
     ]));
 
+    var mail = resultEmailForm();
+    if (mail) f.appendChild(mail);
+
     f.appendChild(questionMap(true));
     return f;
   }
@@ -3042,6 +3067,117 @@ window.EXAM_KEYWORDS = {"domains":[{"groups":[{"cue":"Is the answer correct?","k
     document.body.removeChild(a);
     // Revoking immediately can cancel the download in some browsers, so give it a tick.
     setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+  /* ----------------------------------------------- email the result to myself
+
+     The candidate gets their score by email; the site gets an address. That is
+     the whole exchange, and it is stated plainly on the form rather than buried.
+
+     Only the SUMMARY is emailed: score, totals and the per-domain breakdown.
+     The full question-by-question review stays in the downloaded file, which is
+     built in the browser and never uploaded. That split is deliberate, see the
+     comment at the top of functions/api/email-result.js: posting the whole
+     document would turn the endpoint into an authenticated mailer for anyone.
+
+     Rendered only when the page is served over http(s). Opened from file://
+     there is no endpoint to call, so offering the form would be a dead promise.
+  */
+
+  var EMAIL_ENDPOINT = '/api/email-result';
+
+  function canEmail() {
+    return location.protocol === 'http:' || location.protocol === 'https:';
+  }
+
+  function emailPayload() {
+    var r = S.result, doms = [];
+    Object.keys(r.perDomain).sort(function (a, b) { return a - b; }).forEach(function (id) {
+      var d = r.perDomain[id];
+      doms.push({ name: domainName(id), correct: d.correct, total: d.total });
+    });
+    return {
+      email: '',
+      examId: EXAM.id,
+      correct: r.correct,
+      total: r.total,
+      domains: doms
+    };
+  }
+
+  function resultEmailForm() {
+    if (!canEmail()) return null;
+
+    var wrap = el('section', { cls: 'card mailcard' });
+    var status = el('p', { cls: 'objective mailstatus', role: 'status', 'aria-live': 'polite' });
+    var input = el('input', {
+      cls: 'mailinput', type: 'email', name: 'email', required: 'required',
+      placeholder: 'you@company.com', autocomplete: 'email', inputmode: 'email',
+      maxlength: '254', 'aria-label': 'Your email address'
+    });
+    var consent = el('input', { type: 'checkbox', id: 'mailconsent', cls: 'mailconsent' });
+    var btn = el('button', { cls: 'btn btn-primary', type: 'submit' }, ['Email me my result']);
+
+    var form = el('form', { cls: 'mailform', novalidate: 'novalidate' });
+    form.appendChild(el('div', { cls: 'mailrow' }, [input, btn]));
+    form.appendChild(el('label', { cls: 'mailterms', for: 'mailconsent' }, [
+      consent,
+      document.createTextNode(' Send me my score and occasional updates about these '
+        + 'practice exams. Your address is stored for that only, and every email '
+        + 'has an unsubscribe.')
+    ]));
+    form.appendChild(status);
+
+    function say(msg, bad) {
+      status.textContent = msg;
+      status.className = 'objective mailstatus' + (bad ? ' mailbad' : '');
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var addr = String(input.value || '').trim();
+      if (!addr || addr.indexOf('@') < 1 || addr.indexOf('.') < 0) {
+        say('Enter the address you want it sent to.', true); input.focus(); return;
+      }
+      if (!consent.checked) {
+        say('Please tick the box so it is clear you want the email.', true);
+        consent.focus(); return;
+      }
+      var payload = emailPayload();
+      payload.email = addr;
+      btn.disabled = true;
+      say('Sending\u2026');
+      fetch(EMAIL_ENDPOINT, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (res) {
+        return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+      }).then(function (out) {
+        if (out.ok && out.data && out.data.ok) {
+          form.innerHTML = '';
+          form.appendChild(el('p', { cls: 'objective mailsent' }, [
+            el('strong', { text: 'Sent. ' }),
+            document.createTextNode('Check ' + addr + '. If it is not there in a '
+              + 'few minutes, look in spam, and use the download button above so '
+              + 'you do not lose the result.')
+          ]));
+        } else {
+          btn.disabled = false;
+          say((out.data && out.data.error) || 'Could not send it. Use the download button instead.', true);
+        }
+      }).catch(function () {
+        btn.disabled = false;
+        say('Could not reach the server. Use the download button instead.', true);
+      });
+    });
+
+    wrap.appendChild(el('h2', { cls: 'mailhead', text: 'Send this result to yourself' }));
+    wrap.appendChild(el('p', { cls: 'objective', text:
+      'You get the score and the per-domain breakdown by email. The full review '
+      + 'with the rationale for every question is in the download above, which is '
+      + 'built in your browser and never uploaded.' }));
+    wrap.appendChild(form);
+    return wrap;
   }
   /* ----------------------------------------------------------------- keys */
 
