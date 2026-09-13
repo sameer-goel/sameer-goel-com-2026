@@ -91,8 +91,8 @@ https://sameer-goel.com/anthropic-certifications/practice-anthropic-certificatio
 
 Free browser-based practice exams for the four Anthropic Claude certifications.
 Answers, rationale and per-option notes stay hidden for the whole attempt, then
-you get a score, a per-domain breakdown and a full review. No sign-up and no
-tracking. Question order and option order reshuffle on every attempt.
+you get a score, a per-domain breakdown and a full review. Question order and
+option order reshuffle on every attempt.
 
 - https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/associate/ - Claude Certified Associate - Foundations, 78 questions
 - https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/developer/ - Claude Certified Developer - Foundations, 57 questions
