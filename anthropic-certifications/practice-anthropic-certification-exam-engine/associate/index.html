@@ -279,7 +279,10 @@ table.tbl tr:last-child td { border-bottom: 0; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 18px;
-  margin: 0 0 36px;
+  /* "auto" on the sides, not 0. A bare `margin: 0 0 36px` here outranks the
+     `main > *` rule that centres every other block, which left the tile row
+     sitting 63px to the left of the cards below it. */
+  margin: 0 auto 36px;
   padding: 0;
   list-style: none;
 }
@@ -783,6 +786,10 @@ fieldset.opts legend {
      layout rules do arithmetic on it: zeroing it here is one edit
      rather than eight, and re-adding a dock later is one edit too. */
   --dock-w: 0px;
+  /* One gutter value for both sides. The left side used to also carry the
+     removed dock, and when the dock went the right side was never given a
+     matching gutter, so the whole page sat half a gutter right of centre. */
+  --gutter: 34px;
   --sheet: 1000px;
 }
 
@@ -828,7 +835,8 @@ body {
   font-size: 16.5px;
   line-height: 1.55;
   letter-spacing: -.011em;
-  padding-left: calc(var(--dock-w) + 34px);
+  padding-left: calc(var(--dock-w) + var(--gutter));
+  padding-right: var(--gutter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -847,8 +855,9 @@ h1, h2, h3 { letter-spacing: -.022em; }
   display: flex;
   align-items: center;
   min-height: var(--bar-h);
-  margin-left: calc((var(--dock-w) + 34px) * -1);
-  padding: 0 26px 0 calc(var(--dock-w) + 34px);
+  margin-left: calc((var(--dock-w) + var(--gutter)) * -1);
+  margin-right: calc(var(--gutter) * -1);
+  padding: 0 calc(26px + var(--gutter)) 0 calc(var(--dock-w) + var(--gutter));
   background: rgba(255, 255, 255, .74);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
@@ -897,8 +906,9 @@ h1, h2, h3 { letter-spacing: -.022em; }
 
 .masthead {
   position: relative;
-  margin-left: calc((var(--dock-w) + 34px) * -1);
-  padding: 74px 26px 58px calc(var(--dock-w) + 34px);
+  margin-left: calc((var(--dock-w) + var(--gutter)) * -1);
+  margin-right: calc(var(--gutter) * -1);
+  padding: 74px calc(26px + var(--gutter)) 58px calc(var(--dock-w) + var(--gutter));
   background: transparent;
   border-bottom: 0;
   text-align: center;
@@ -1392,7 +1402,9 @@ table.tbl tr:last-child td { border-bottom: 0; }
 /* --------------------------------------------------------------- print ---- */
 
 @media print {
-  body { padding-left: 0; background: #fff; }
+  /* zero the gutter itself, so the full-bleed negative margins collapse with
+     it. Zeroing only the padding leaves them overhanging the right edge. */
+  body { --gutter: 0px; background: #fff; }
   .v2bar { display: none !important; }
   .masthead { margin-left: 0; padding: 0 0 20px; }
   .masthead::before { display: none; }
@@ -1414,7 +1426,7 @@ table.tbl tr:last-child td { border-bottom: 0; }
 @media (max-width: 820px) {
   :root { --dock-w: 0px; }
 
-  body { padding-left: 0; padding-bottom: 74px; font-size: 16px; }
+  body { --gutter: 0px; padding-bottom: 74px; font-size: 16px; }
 
   .v2bar { margin-left: 0; padding: 0 16px; }
 
