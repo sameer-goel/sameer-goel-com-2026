@@ -70,7 +70,7 @@
 </script>
 <style>
 /* ==========================================================================
-   Anthropic certification practice-exam engine — single stylesheet.
+   Anthropic certification practice-exam engine: single stylesheet.
    One visual language for every exam. An exam differs only by --accent.
    No webfonts, no external references. Works from file://.
    ========================================================================== */
@@ -716,11 +716,11 @@ fieldset.opts legend {
 
 
 /* ==========================================================================
-   THEME V2 — white / off-white, premium gradient.
+   THEME V2: white / off-white, premium gradient.
    Layered ON TOP of engine.css (build.py concatenates: engine.css + this).
    Because it loads second, equal-specificity rules here win.
 
-   Direction: restraint. "Premium" here means depth and light, not colour —
+   Direction: restraint. "Premium" here means depth and light, not colour,
    near-white surfaces separated by soft layered shadows, gradients kept to a
    few percent of luminance, hairlines at 8% opacity instead of grey borders,
    and one accent used sparingly as a glow rather than a fill.
@@ -742,12 +742,12 @@ fieldset.opts legend {
 
   /* five near-whites. The whole design is separation by luminance, not by line */
   --bg: #ffffff;
-  --bg-2: #fbfbfc;
+  --bg-2: #eef1f6;
   --band: #f6f7f9;
   --surface: #ffffff;
   --surface-2: #fafafb;
 
-  /* hairlines, not borders — translucent so they sit on any of the whites */
+  /* hairlines, not borders: translucent so they sit on any of the whites */
   --border: rgba(16, 24, 40, .08);
   --border-strong: rgba(16, 24, 40, .14);
 
@@ -755,7 +755,10 @@ fieldset.opts legend {
      size and weight, never from fading text to the edge of legibility. */
   --text: #0f172a;
   --text-dim: #55607a;
-  --text-faint: #667085;
+  /* Darkened from #667085 when the canvas was tinted: on the deepest canvas
+     tone (#eef1f6) the old value fell to 4.39:1, under the WCAG AA 4.5
+     floor for body text. #5f687c gives 4.94:1 there and 5.59:1 on white. */
+  --text-faint: #5f687c;
 
   --link: #3538cd;
   --link-hover: #262aa8;
@@ -768,11 +771,29 @@ fieldset.opts legend {
   --warn: #b54708;
   --warn-bg: #fffcf5;
 
-  /* layered shadows are what read as "premium" — one shadow reads as cheap */
+  /* layered shadows are what read as "premium"; one shadow reads as cheap */
   --shadow-xs: 0 1px 2px rgba(16, 24, 40, .05);
   --shadow-sm: 0 1px 3px rgba(16, 24, 40, .06), 0 1px 2px rgba(16, 24, 40, .04);
   --shadow:    0 2px 4px rgba(16, 24, 40, .03), 0 12px 24px -8px rgba(16, 24, 40, .10);
   --shadow-lg: 0 4px 8px rgba(16, 24, 40, .03), 0 28px 56px -16px rgba(16, 24, 40, .16);
+
+  /* Card depth is its own scale, not the shared tokens, because those also drive
+     the bar, the buttons and the inputs, and a card needs a far wider ambient
+     layer than a control does. Three layers: a hairline contact shadow so the
+     edge stays crisp, a mid layer for form, and a wide low-opacity layer for
+     the ambient lift. A single shadow at any strength reads as a sticker rather
+     than a raised surface. */
+  --shadow-card:
+    0 1px 1px rgba(16, 24, 40, .05),
+    0 2px 6px -1px rgba(16, 24, 40, .06),
+    0 12px 28px -10px rgba(16, 24, 40, .12);
+  --shadow-card-hover:
+    0 1px 1px rgba(16, 24, 40, .06),
+    0 6px 14px -3px rgba(16, 24, 40, .10),
+    0 28px 56px -16px rgba(16, 24, 40, .20),
+    0 48px 88px -32px rgba(16, 24, 40, .14);
+  /* a 1px inner light line along the top edge, so the surface catches the light */
+  --sheen: inset 0 1px 0 rgba(255, 255, 255, .9);
 
   --radius: 18px;
   --radius-sm: 12px;
@@ -798,7 +819,7 @@ fieldset.opts legend {
   :root {
     color-scheme: light;
     --bg: #ffffff;
-    --bg-2: #fbfbfc;
+    --bg-2: #eef1f6;
     --band: #f6f7f9;
     --surface: #ffffff;
     --surface-2: #fafafb;
@@ -806,7 +827,10 @@ fieldset.opts legend {
     --border-strong: rgba(16, 24, 40, .14);
     --text: #0f172a;
     --text-dim: #55607a;
-    --text-faint: #667085;
+    /* Darkened from #667085 when the canvas was tinted: on the deepest canvas
+     tone (#eef1f6) the old value fell to 4.39:1, under the WCAG AA 4.5
+     floor for body text. #5f687c gives 4.94:1 there and 5.59:1 on white. */
+  --text-faint: #5f687c;
     --link: #3538cd;
     --link-hover: #262aa8;
     --on-accent: #ffffff;
@@ -827,8 +851,11 @@ fieldset.opts legend {
 html { background: var(--bg); }
 
 body {
-  /* the page itself is a gradient: white at the top, settling into off-white */
-  background: linear-gradient(180deg, #ffffff 0%, #fdfdfe 42%, var(--bg-2) 100%);
+  /* The canvas is deliberately DARKER than the cards. This is the whole trick:
+     a white card on a white page cannot separate however good its shadow is, so
+     the page recedes into a cool off-white while the cards stay pure white and
+     advance. It stays bright at the very top so the hero still reads as light. */
+  background: linear-gradient(180deg, #fafbfd 0%, #f4f6fa 38%, var(--bg-2) 100%);
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--sans);
@@ -984,7 +1011,7 @@ main > h2 {
   margin: 0 auto 16px;
   padding: 17px 22px;
   max-width: var(--sheet);
-  background: linear-gradient(180deg, #ffffff, var(--surface-2));
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-xs);
@@ -1004,7 +1031,8 @@ main > h2 {
 
 .card {
   padding: 40px 44px;
-  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  /* pure white, so the card is brighter than the canvas beneath it */
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
@@ -1335,27 +1363,87 @@ table.tbl tr:last-child td { border-bottom: 0; }
 
 .tile {
   position: relative;
-  background: linear-gradient(180deg, #ffffff, #f9fafb);
+  /* The bloom is centred at 50% 0%, exactly where the accent hairline above is
+     brightest, so the colour reads as light spilling DOWN off that bar rather
+     than as an unexplained wash. Each tile carries its own --accent inline, so
+     four tiles become four colour families off a single rule. */
+  background:
+    radial-gradient(90% 72% at 50% 0%, var(--accent-soft) 0%, transparent 58%),
+    #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card), var(--sheen);
   padding: 32px 30px;
   overflow: hidden;
-  transition: transform .32s cubic-bezier(.22,.8,.3,1), box-shadow .32s ease;
+  transition: transform .32s cubic-bezier(.22,.8,.3,1), box-shadow .32s ease,
+              border-color .32s ease, background .32s ease;
 }
-/* accent hairline along the top edge — the only per-exam difference */
+/* accent hairline along the top edge: the only per-exam difference */
 .tile::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: .78;
+  transition: height .32s cubic-bezier(.22,.8,.3,1), opacity .32s ease;
+}
+/* Unpublished tiles have a neutral hairline, so their surface must be neutral
+   too, otherwise they would advertise a colour they have not earned. */
+.tile-soon, .tile-blocked { background: #ffffff; }
+/* A 1px ring, accent-tinted along the top and neutral by the shoulders.
+   This MUST stay inside @supports: without mask compositing the ::after would
+   fill the whole card with the gradient and bury the content, so an
+   unsupporting browser gets no ring rather than a broken card. */
+@supports ((-webkit-mask-composite: xor) or (mask-composite: exclude)) {
+  .tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+                color-mix(in srgb, var(--accent) 42%, transparent) 0%,
+                rgba(16, 24, 40, .05) 38%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    transition: background .32s ease;
+  }
+  .tile-soon::after, .tile-blocked::after {
+    background: linear-gradient(180deg, rgba(16, 24, 40, .12) 0%, rgba(16, 24, 40, .05) 38%);
+  }
+  .tile-live:hover::after, .tile-live:focus-within::after {
+    background: linear-gradient(180deg,
+                color-mix(in srgb, var(--accent) 68%, transparent) 0%,
+                rgba(16, 24, 40, .06) 44%);
+  }
 }
 .tile-soon::before,
 .tile-blocked::before {
   background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
-.tile-live:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+/* Four things move together, which is what makes this read as a physical lift
+   rather than a shadow swap: the card rises, the shadow spreads and softens, the
+   surface brightens to flat white as it comes up into the light, and the border
+   lightens so the edge does not darken on the way up. :focus-within is included
+   so keyboard users get the same affordance as the mouse. */
+.tile-live:hover,
+.tile-live:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px -14px var(--accent-soft), var(--shadow-card-hover), var(--sheen);
+  border-color: color-mix(in srgb, var(--accent) 22%, rgba(16, 24, 40, .09));
+  /* the bloom intensifies as the card rises, and the shadow itself picks up the
+     accent hue. A coloured shadow is what separates a considered hover from a
+     generic grey one. */
+  background:
+    radial-gradient(95% 78% at 50% 0%, color-mix(in srgb, var(--accent) 15%, transparent) 0%, transparent 62%),
+    #ffffff;
+}
+.tile-live:hover::before,
+.tile-live:focus-within::before { height: 4px; opacity: 1; }
 
 .tile h3 { font-size: 22px; line-height: 1.22; font-weight: 600; letter-spacing: -.022em; }
 .tile p { color: var(--text-dim); font-size: 15.5px; line-height: 1.5; }
@@ -1388,6 +1476,43 @@ table.tbl tr:last-child td { border-bottom: 0; }
   background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
 
+/* The footer now leads with an offer of help rather than a legal notice, so the
+   first line is sized up to normal reading weight and the fine print is pushed
+   back. Ordering matters: the useful thing first, the disclaimer after. */
+.footer-cta {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+/* Scoped as .footer .footer-help so it outranks engine.css's `.footer a`
+   (0-1-1), which would otherwise repaint the pill in --text-dim. */
+.footer .footer-help {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--accent);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.footer .footer-help:hover,
+.footer .footer-help:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border-strong));
+  box-shadow: 0 2px 8px -2px var(--accent-soft);
+  transform: translateY(-1px);
+}
+.footer-fine { margin: 0; font-size: 12px; color: var(--text-faint); }
+@media (prefers-reduced-motion: reduce) {
+  .footer .footer-help { transition: none; }
+  .footer .footer-help:hover, .footer .footer-help:focus-visible { transform: none; }
+}
+
 /* ----------------------------------------------------------- skip link ---- */
 
 .skip:focus {
@@ -1410,13 +1535,17 @@ table.tbl tr:last-child td { border-bottom: 0; }
   .masthead::before { display: none; }
   .masthead h1, .score .frac { color: #000 !important; -webkit-text-fill-color: #000; }
   .card, .tile, .note { background: #fff; box-shadow: none; }
+  .tile::after { display: none; }
   main > * { max-width: none; }
 }
 
 /* -------------------------------------------------------------- motion ---- */
 
 @media (prefers-reduced-motion: reduce) {
-  .tile, .btn, .opt > span, .map-btn, .modes label { transition: none; }
+  .tile, .btn, .opt > span, .map-btn, .modes label,
+  .tile::before, .tile-badge { transition: none; }
+  /* the shadow still deepens on hover, only the travel is removed */
+  .tile-live:hover, .tile-live:focus-within { transform: none; }
   .tile-live:hover, .btn:hover, .opt > span:hover,
   .map-btn:hover, .modes label:hover { transform: none; }
 }
@@ -1586,6 +1715,9 @@ body[data-exam="hub"] .tile-foot .btn { padding: 9px 14px; font-size: 13.5px; }
 
 /* Below the fold the prose can breathe again. */
 body[data-exam="hub"] .card { padding: 30px 34px; }
+/* the panels below the tiles share the surface, so they share the resting
+   depth. They are not interactive, so they get no hover. */
+.card { box-shadow: var(--shadow-card), var(--sheen); }
 
 @media print {
   /* No fold on paper, so nothing needs clamping. */
@@ -1796,8 +1928,9 @@ body:has(.exambar) main.wrap-wide { padding-top: 22px; }
   <footer class="footer">
     <p><strong>Associate Foundations practice exam.</strong> 78 questions across 7 domains.
     Answers are scored in your browser; nothing is uploaded and no account is needed.</p>
-    <p>Unofficial study material. Not affiliated with, endorsed by, or produced by Anthropic.
-    <a href="../">Back to all practice exams</a>.</p>
+    <p class="footer-cta">We are here to help you succeed in the AI era.
+    <a class="footer-help" href="https://cal.com/sameer-goel/15min">Stuck? 1:1 help</a></p>
+    <p class="footer-fine"><a href="../">Back to all practice exams</a>.</p>
   </footer>
 </main>
 
@@ -2350,8 +2483,7 @@ window.EXAM_KEYWORDS = {"domains":[{"groups":[{"cue":"Is the answer correct?","k
           text: EXAM.originality
         }),
         document.createTextNode(' \u00b7 bank generated ' + (EXAM.generated && EXAM.generated.date || 'n/a'))
-      ]),
-      el('p', { cls: 'objective', text: 'Unofficial study material. Not affiliated with, endorsed by, or produced by Anthropic.' })
+      ])
     ]);
 
     f.appendChild(card);
