@@ -60,4 +60,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/associate/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/developer/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/architect-foundation/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/architect-professional/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
