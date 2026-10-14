@@ -1,0 +1,55 @@
+name: Deploy sameer-goel.com
+
+# staging branch -> preview project (sameer-goel-staging, branch "staging")
+# main branch    -> LIVE project (sameergoel). Protected by a GitHub Environment
+#                   named "production" that requires a manual approval.
+on:
+  push:
+    branches: [staging, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm, cache-dependency-path: decode-site/package-lock.json }
+      - name: Build bundle
+        env:
+          TARGET: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+        run: bash ci/build-site.sh
+      - uses: actions/upload-artifact@v4
+        with: { name: dist, path: dist, retention-days: 7 }
+
+  staging:
+    if: github.ref_name == 'staging'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_STAGING_API_TOKEN }}
+          accountId: ${{ secrets.CF_STAGING_ACCOUNT_ID }}
+          command: pages deploy dist --project-name sameer-goel-staging --branch staging --commit-dirty=true
+
+  production:
+    if: github.ref_name == 'main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production   # set "Required reviewers" on this environment in GitHub: Sameer approves every live deploy
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_PROD_API_TOKEN }}
+          accountId: ${{ secrets.CF_PROD_ACCOUNT_ID }}
+          command: pages deploy dist --project-name sameergoel --branch main --commit-dirty=true
