@@ -98,3 +98,13 @@ option order reshuffle on every attempt.
 - https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/developer/ - Claude Certified Developer - Foundations, 57 questions
 - https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/architect-foundation/ - Claude Certified Architect - Foundations, 471 questions
 - https://sameer-goel.com/anthropic-certifications/practice-anthropic-certification-exam-engine/architect-professional/ - Claude Certified Architect - Professional, 63 questions
+
+## DeCoDE: mentoring Forward Deployed Engineers (added 2026-10-13)
+
+- [Why](https://sameer-goel.com/why/): Human responsibility is to grow together. Technology is only as good as the human behind it.
+- [DeCoDE, the 4D mindset](https://sameer-goel.com/decode/): Delegation, Communication, Discovery and Ethics, Sameer Goel's framework for mentoring Forward Deployed Engineers, each with a real engineering example and a decision challenge.
+- [Engineering evidence](https://sameer-goel.com/evidence/): AWS blog publications, technical articles, talks, projects and repositories, each linked to its original source.
+- [Thinking](https://sameer-goel.com/thinking/): Writing on AI and human cognition, neuroscience, human-AI collaboration, responsible AI and Forward Deployed Engineering.
+- [Learning Lab](https://sameer-goel.com/lab/): One interactive engineering decision scenario, in the spirit of project-based learning from day one.
+- [Connect](https://sameer-goel.com/connect/): Strategic engineering conversations, speaking and research, engineering leadership exchange, mentorship and community.
+- [Mentoring](https://sameer-goel.com/mentoring/): Mentoring for Forward Deployed Engineers and engineering leaders through DeCoDE: DeCoDE 1:1, FDE Circle and Leader Exchange.
